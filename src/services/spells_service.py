@@ -56,7 +56,11 @@ def load_spells() -> list[Spell]:
                 level=safe_int(item["level"]),
                 mana=safe_int(item["mana"]),
                 effect=str(item["effect"]),
-                type=item.get("type")
+                type=item.get("type"),
+                spell_type=item.get("spell_type"),
+                price=safe_int(item.get("price", 0)),
+                magic_level_required=safe_int(item.get("magic_level_required", 0)),
+                premium=bool(item.get("premium", False))
             )
             spells.append(spell)
         except Exception as e:

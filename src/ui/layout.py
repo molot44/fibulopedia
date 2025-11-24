@@ -12,6 +12,7 @@ from typing import Optional
 from src.config import (
     APP_TITLE,
     APP_SUBTITLE,
+    ASSETS_DIR,
     LOGO_PATH,
     NAVIGATION_ITEMS,
     STYLES_PATH,
@@ -268,20 +269,54 @@ def create_sidebar_navigation() -> None:
         st.subheader("Navigation")
         if st.button(" Home", key="nav_Home", use_container_width=True):
             st.switch_page("app.py")
-        if st.button(" Server Info", key="nav_Server_Info", use_container_width=True):
-            st.switch_page("pages/Server_Info.py")
-        if st.button(" Tibia Map", key="nav_Map", use_container_width=True):
-            st.switch_page("pages/Map.py")
+        
+        # Server Info button with icon
+        serverinfo_icon_path = ASSETS_DIR / "items" / "Parchment_of_Interest.gif"
+        if serverinfo_icon_path.exists():
+            col1, col2 = st.columns([1, 5])
+            with col1:
+                st.image(str(serverinfo_icon_path), width=32)
+            with col2:
+                if st.button("Server Info", key="nav_Server_Info", use_container_width=True):
+                    st.switch_page("pages/Server_Info.py")
+        else:
+            if st.button(" Server Info", key="nav_Server_Info_fallback", use_container_width=True):
+                st.switch_page("pages/Server_Info.py")
+        # Tibia Map button with icon
+        map_icon_path = ASSETS_DIR / "items" / "Compass.gif"
+        if map_icon_path.exists():
+            col1, col2 = st.columns([1, 5])
+            with col1:
+                st.image(str(map_icon_path), width=32)
+            with col2:
+                if st.button("Tibia Map", key="nav_Map", use_container_width=True):
+                    st.switch_page("pages/Map.py")
+        else:
+            if st.button(" Tibia Map", key="nav_Map_fallback", use_container_width=True):
+                st.switch_page("pages/Map.py")
         
         # Gear section
         st.subheader("Gear")
         
-        # Weapons with dropdown - using toggle
+        # Weapons with dropdown - using toggle with icon
         if "show_weapons" not in st.session_state:
             st.session_state.show_weapons = False
         
-        if st.button(" Weapons", key="nav_weapons_toggle", use_container_width=True):
-            st.session_state.show_weapons = not st.session_state.show_weapons
+        # Load weapons icon
+        weapons_icon_path = ASSETS_DIR / "items" / "magic_sword.gif"
+        if weapons_icon_path.exists():
+            # Użyj kolumn dla ikony i przycisku
+            col1, col2 = st.columns([1, 5])
+            with col1:
+                st.image(str(weapons_icon_path), width=32)
+            with col2:
+                if st.button("Weapons", key="nav_weapons_toggle", use_container_width=True):
+                    st.session_state.show_weapons = not st.session_state.show_weapons
+                    st.rerun()
+        else:
+            if st.button(" Weapons", key="nav_weapons_toggle_fallback", use_container_width=True):
+                st.session_state.show_weapons = not st.session_state.show_weapons
+                st.rerun()
         
         if st.session_state.show_weapons:
             with st.container(border=True):
@@ -292,12 +327,24 @@ def create_sidebar_navigation() -> None:
                         st.session_state.show_weapons = False
                         st.switch_page("pages/Weapons.py")
         
-        # Equipment with dropdown - using toggle
+        # Equipment with dropdown - using toggle with icon
         if "show_equipment" not in st.session_state:
             st.session_state.show_equipment = False
         
-        if st.button(" Equipment", key="nav_equipment_toggle", use_container_width=True):
-            st.session_state.show_equipment = not st.session_state.show_equipment
+        # Load equipment icon
+        equipment_icon_path = ASSETS_DIR / "items" / "magic_plate_armor.gif"
+        if equipment_icon_path.exists():
+            col1, col2 = st.columns([1, 5])
+            with col1:
+                st.image(str(equipment_icon_path), width=32)
+            with col2:
+                if st.button("Equipment", key="nav_equipment_toggle", use_container_width=True):
+                    st.session_state.show_equipment = not st.session_state.show_equipment
+                    st.rerun()
+        else:
+            if st.button(" Equipment", key="nav_equipment_toggle_fallback", use_container_width=True):
+                st.session_state.show_equipment = not st.session_state.show_equipment
+                st.rerun()
         
         if st.session_state.show_equipment:
             with st.container(border=True):
@@ -308,18 +355,59 @@ def create_sidebar_navigation() -> None:
                         st.session_state.show_equipment = False
                         st.switch_page("pages/Equipment.py")
         
-        # Tools button
-        if st.button("Tools", key="nav_Tools", use_container_width=True):
-            st.switch_page("pages/Tools.py")
+        # Tools button with icon
+        tools_icon_path = ASSETS_DIR / "items" / "rope.gif"
+        if tools_icon_path.exists():
+            col1, col2 = st.columns([1, 5])
+            with col1:
+                st.image(str(tools_icon_path), width=32)
+            with col2:
+                if st.button("Tools", key="nav_Tools", use_container_width=True):
+                    st.switch_page("pages/Tools.py")
+        else:
+            if st.button("Tools", key="nav_Tools_fallback", use_container_width=True):
+                st.switch_page("pages/Tools.py")
         
         # Others section
         st.subheader("Others")
-        if st.button(" Spells", key="nav_Spells", use_container_width=True):
-            st.switch_page("pages/Spells.py")
-        if st.button(" Monsters", key="nav_Monsters", use_container_width=True):
-            st.switch_page("pages/Monsters.py")
-        if st.button(" Quests", key="nav_Quests", use_container_width=True):
-            st.switch_page("pages/Quests.py")
+        
+        # Spells button (direct navigation with icon)
+        spells_icon_path = ASSETS_DIR / "items" / "purpletome.gif"
+        if spells_icon_path.exists():
+            col1, col2 = st.columns([1, 5])
+            with col1:
+                st.image(str(spells_icon_path), width=32)
+            with col2:
+                if st.button("Spells", key="nav_Spells", use_container_width=True):
+                    st.switch_page("pages/Spells.py")
+        else:
+            if st.button("Spells", key="nav_Spells_fallback", use_container_width=True):
+                st.switch_page("pages/Spells.py")
+        
+        # Monsters button with icon
+        monsters_icon_path = ASSETS_DIR / "items" / "demon.gif"
+        if monsters_icon_path.exists():
+            col1, col2 = st.columns([1, 5])
+            with col1:
+                st.image(str(monsters_icon_path), width=32)
+            with col2:
+                if st.button("Monsters", key="nav_Monsters", use_container_width=True):
+                    st.switch_page("pages/Monsters.py")
+        else:
+            if st.button(" Monsters", key="nav_Monsters_fallback", use_container_width=True):
+                st.switch_page("pages/Monsters.py")
+        # Quests button with icon
+        quests_icon_path = ASSETS_DIR / "items" / "chest.gif"
+        if quests_icon_path.exists():
+            col1, col2 = st.columns([1, 5])
+            with col1:
+                st.image(str(quests_icon_path), width=32)
+            with col2:
+                if st.button("Quests", key="nav_Quests", use_container_width=True):
+                    st.switch_page("pages/Quests.py")
+        else:
+            if st.button(" Quests", key="nav_Quests_fallback", use_container_width=True):
+                st.switch_page("pages/Quests.py")
         
         # Search button (outside categories)
         st.markdown("---")

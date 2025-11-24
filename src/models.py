@@ -103,6 +103,10 @@ class Spell:
         mana: Mana cost to cast the spell.
         effect: Description of what the spell does.
         type: Type of spell (offensive, healing, support, summon, etc.).
+        spell_type: Spell category (instant or rune).
+        price: Price to learn the spell or buy the rune (in gold pieces).
+        magic_level_required: Magic level required to use the spell (for runes).
+        premium: Whether the spell requires premium account.
     """
     
     id: str
@@ -113,6 +117,10 @@ class Spell:
     mana: int
     effect: str
     type: Optional[str] = None
+    spell_type: Optional[str] = None
+    price: int = 0
+    magic_level_required: int = 0
+    premium: bool = False
 
 
 @dataclass

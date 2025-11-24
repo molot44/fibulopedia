@@ -75,6 +75,8 @@ def main() -> None:
             <h1>Welcome to Fibulopedia</h1>
             <p>Your comprehensive guide to the Fibula Project - a faithful recreation of the classic Tibia 7.1 experience.</p>
             <p>Explore weapons, equipment, spells, monsters, quests, and more.</p>
+            <p><i>Please note that the website is currently under construction and may contain incomplete or sometimes even incorrect information. I try to ensure that all information is verified and confirmed, but if you notice any errors or omissions, please contact me on Discord.</i></p>
+            <p>Molot (Grozze in-game)</p>    
         </div>
     """, unsafe_allow_html=True)
     
