@@ -20,6 +20,13 @@ from src.config import (
 )
 
 
+@st.cache_data
+def load_icon_path(icon_name: str) -> str:
+    """Cache icon paths to avoid repeated file system checks."""
+    icon_path = ASSETS_DIR / "items" / icon_name
+    return str(icon_path) if icon_path.exists() else None
+
+
 def load_custom_css() -> None:
     """
     Load and apply custom CSS styles from the assets folder.
@@ -271,11 +278,11 @@ def create_sidebar_navigation() -> None:
             st.switch_page("app.py")
         
         # Server Info button with icon
-        serverinfo_icon_path = ASSETS_DIR / "items" / "Parchment_of_Interest.gif"
-        if serverinfo_icon_path.exists():
+        serverinfo_icon_path = load_icon_path("Parchment_of_Interest.gif")
+        if serverinfo_icon_path:
             col1, col2 = st.columns([1, 5])
             with col1:
-                st.image(str(serverinfo_icon_path), width=32)
+                st.image(serverinfo_icon_path, width=32)
             with col2:
                 if st.button("Server Info", key="nav_Server_Info", use_container_width=True):
                     st.switch_page("pages/Server_Info.py")
@@ -283,11 +290,11 @@ def create_sidebar_navigation() -> None:
             if st.button(" Server Info", key="nav_Server_Info_fallback", use_container_width=True):
                 st.switch_page("pages/Server_Info.py")
         # Tibia Map button with icon
-        map_icon_path = ASSETS_DIR / "items" / "Compass.gif"
-        if map_icon_path.exists():
+        map_icon_path = load_icon_path("Compass.gif")
+        if map_icon_path:
             col1, col2 = st.columns([1, 5])
             with col1:
-                st.image(str(map_icon_path), width=32)
+                st.image(map_icon_path, width=32)
             with col2:
                 if st.button("Tibia Map", key="nav_Map", use_container_width=True):
                     st.switch_page("pages/Map.py")
@@ -332,19 +339,17 @@ def create_sidebar_navigation() -> None:
             st.session_state.show_equipment = False
         
         # Load equipment icon
-        equipment_icon_path = ASSETS_DIR / "items" / "magic_plate_armor.gif"
-        if equipment_icon_path.exists():
+        equipment_icon_path = load_icon_path("magic_plate_armor.gif")
+        if equipment_icon_path:
             col1, col2 = st.columns([1, 5])
             with col1:
-                st.image(str(equipment_icon_path), width=32)
+                st.image(equipment_icon_path, width=32)
             with col2:
                 if st.button("Equipment", key="nav_equipment_toggle", use_container_width=True):
                     st.session_state.show_equipment = not st.session_state.show_equipment
-                    st.rerun()
         else:
             if st.button(" Equipment", key="nav_equipment_toggle_fallback", use_container_width=True):
                 st.session_state.show_equipment = not st.session_state.show_equipment
-                st.rerun()
         
         if st.session_state.show_equipment:
             with st.container(border=True):
@@ -356,11 +361,11 @@ def create_sidebar_navigation() -> None:
                         st.switch_page("pages/Equipment.py")
         
         # Tools button with icon
-        tools_icon_path = ASSETS_DIR / "items" / "rope.gif"
-        if tools_icon_path.exists():
+        tools_icon_path = load_icon_path("rope.gif")
+        if tools_icon_path:
             col1, col2 = st.columns([1, 5])
             with col1:
-                st.image(str(tools_icon_path), width=32)
+                st.image(tools_icon_path, width=32)
             with col2:
                 if st.button("Tools", key="nav_Tools", use_container_width=True):
                     st.switch_page("pages/Tools.py")
@@ -372,11 +377,11 @@ def create_sidebar_navigation() -> None:
         st.subheader("Others")
         
         # Spells button (direct navigation with icon)
-        spells_icon_path = ASSETS_DIR / "items" / "purpletome.gif"
-        if spells_icon_path.exists():
+        spells_icon_path = load_icon_path("purpletome.gif")
+        if spells_icon_path:
             col1, col2 = st.columns([1, 5])
             with col1:
-                st.image(str(spells_icon_path), width=32)
+                st.image(spells_icon_path, width=32)
             with col2:
                 if st.button("Spells", key="nav_Spells", use_container_width=True):
                     st.switch_page("pages/Spells.py")
@@ -385,11 +390,11 @@ def create_sidebar_navigation() -> None:
                 st.switch_page("pages/Spells.py")
         
         # Monsters button with icon
-        monsters_icon_path = ASSETS_DIR / "items" / "demon.gif"
-        if monsters_icon_path.exists():
+        monsters_icon_path = load_icon_path("demon.gif")
+        if monsters_icon_path:
             col1, col2 = st.columns([1, 5])
             with col1:
-                st.image(str(monsters_icon_path), width=32)
+                st.image(monsters_icon_path, width=32)
             with col2:
                 if st.button("Monsters", key="nav_Monsters", use_container_width=True):
                     st.switch_page("pages/Monsters.py")
@@ -397,11 +402,11 @@ def create_sidebar_navigation() -> None:
             if st.button(" Monsters", key="nav_Monsters_fallback", use_container_width=True):
                 st.switch_page("pages/Monsters.py")
         # Quests button with icon
-        quests_icon_path = ASSETS_DIR / "items" / "chest.gif"
-        if quests_icon_path.exists():
+        quests_icon_path = load_icon_path("chest.gif")
+        if quests_icon_path:
             col1, col2 = st.columns([1, 5])
             with col1:
-                st.image(str(quests_icon_path), width=32)
+                st.image(quests_icon_path, width=32)
             with col2:
                 if st.button("Quests", key="nav_Quests", use_container_width=True):
                     st.switch_page("pages/Quests.py")

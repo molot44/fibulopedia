@@ -3,24 +3,8 @@
         "id": 1,
         "date": "2025-11-23",
         "title": "Welcome to Fibulopedia!",
-        "content": "Fibulopedia is now live! Explore our comprehensive guide to the Fibula Project - a faithful recreation of classic Tibia 7.1.",
-        "author": "Admin",
+        "content": "Fibulopedia is now live! Explore guide to the Fibula Project - a faithful recreation of classic Tibia 7.1. Please keep in mind that the website is still under construction and more content will be published soon!",
+        "author": "Molot",
         "category": "announcement"
-    },
-    {
-        "id": 2,
-        "date": "2025-11-20",
-        "title": "New Weapons Database Added",
-        "content": "We've added a complete database of all weapons available in Fibula Project. Check out stats, comparisons, and drop locations!",
-        "author": "Admin",
-        "category": "update"
-    },
-    {
-        "id": 3,
-        "date": "2025-11-18",
-        "title": "Server Rates Information",
-        "content": "Visit our Server Info page to learn about exp rates, loot rates, and unique features of Fibula Project.",
-        "author": "Admin",
-        "category": "info"
     }
 ]

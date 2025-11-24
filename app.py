@@ -100,28 +100,11 @@ def main() -> None:
     
     st.markdown("---")
     
-    # Main content area with search and news on left, placeholder on right
-    col_main, col_placeholder = st.columns([3, 1])
+    # Main content area with news on left, search and links on right
+    col_main, col_sidebar = st.columns([3, 1])
     
     with col_main:
-        # Quick Search
-        st.markdown("## 🔍 Quick Search")
-        search_query = st.text_input(
-            "Search",
-            placeholder="Search for weapons, spells, monsters, quests...",
-            label_visibility="collapsed"
-        )
-        
-        col1, col2, col3 = st.columns([1, 1, 4])
-        with col1:
-            if st.button("Search", type="primary", use_container_width=True):
-                if search_query:
-                    st.session_state["search_query"] = search_query
-                    st.switch_page("pages/Search.py")
-        
-        st.markdown("---")
-        
-        # Latest News in the middle
+        # Latest News in the main area
         st.markdown("## 📰 Latest News")
         
         # Load news from JSON
@@ -174,8 +157,23 @@ def main() -> None:
         else:
             st.info("No news available yet.")
     
-    with col_placeholder:
-        # Placeholder section on the right
+    with col_sidebar:
+        # Quick Search at the top
+        st.markdown("## 🔍 Quick Search")
+        search_query = st.text_input(
+            "Search",
+            placeholder="Search for weapons, spells, monsters, quests...",
+            label_visibility="collapsed"
+        )
+        
+        if st.button("Search", type="primary", use_container_width=True):
+            if search_query:
+                st.session_state["search_query"] = search_query
+                st.switch_page("pages/Search.py")
+        
+        st.markdown("---")
+        
+        # Quick Links section
         st.markdown("## 📌 Quick Links")
         st.markdown("""
             <div style="
