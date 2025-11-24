@@ -419,11 +419,11 @@ def create_sidebar_navigation() -> None:
         if st.button(" Search", key="nav_Search", use_container_width=True):
             st.switch_page("pages/Search.py")
         
-        # Item Editor (admin tool)
-        st.markdown("---")
-        st.caption("Admin Tools")
-        if st.button("✏️ Item Editor", key="nav_Item_Editor", use_container_width=True):
-            st.switch_page("pages/Item_Editor.py")
+        # HIDDEN: Item Editor (admin tool) - temporarily disabled for public release
+        # st.markdown("---")
+        # st.caption("Admin Tools")
+        # if st.button("✏️ Item Editor", key="nav_Item_Editor", use_container_width=True):
+        #     st.switch_page("pages/Item_Editor.py")
 
 
 def create_footer() -> None:
