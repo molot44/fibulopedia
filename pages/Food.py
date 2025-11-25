@@ -9,7 +9,6 @@ import streamlit as st
 import pandas as pd
 from pathlib import Path
 import base64
-import os
 
 from src.services.food_service import load_food, search_food
 from src.ui.layout import (
@@ -19,19 +18,20 @@ from src.ui.layout import (
     create_sidebar_navigation,
     create_footer
 )
+from src.config import PROJECT_ROOT
 from src.logging_utils import setup_logger
 
 logger = setup_logger(__name__)
 
 
-def get_image_as_base64(image_path: str) -> str:
+def get_image_as_base64(image_path: Path) -> str:
     """Convert an image file to base64 string."""
     try:
-        if os.path.exists(image_path):
+        if image_path.exists():
             with open(image_path, "rb") as f:
                 data = f.read()
                 encoded = base64.b64encode(data).decode()
-                ext = os.path.splitext(image_path)[1][1:]  # Get extension without dot
+                ext = image_path.suffix[1:]  # Get extension without dot
                 return f"data:image/{ext};base64,{encoded}"
     except Exception as e:
         logger.error(f"Error loading image {image_path}: {e}")
@@ -78,12 +78,9 @@ def main() -> None:
         # Build image path from food data
         image_base64 = ""
         if food.image:
-            # Convert relative path to absolute
-            full_path = os.path.join(
-                os.path.dirname(os.path.dirname(__file__)),
-                food.image.replace("./", "")
-            )
-            image_base64 = get_image_as_base64(full_path)
+            # Convert relative path to absolute using PROJECT_ROOT
+            image_path = PROJECT_ROOT / food.image.replace("./", "")
+            image_base64 = get_image_as_base64(image_path)
         
         food_data.append({
             "image_base64": image_base64,
