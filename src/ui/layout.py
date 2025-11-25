@@ -289,18 +289,31 @@ def create_sidebar_navigation() -> None:
         else:
             if st.button(" Server Info", key="nav_Server_Info_fallback", use_container_width=True):
                 st.switch_page("pages/Server_Info.py")
-        # Tibia Map button with icon
-        map_icon_path = load_icon_path("Compass.gif")
+        # Maps button with icon
+        map_icon_path = load_icon_path("Treasure_Map_29.webp")
         if map_icon_path:
             col1, col2 = st.columns([1, 5])
             with col1:
                 st.image(map_icon_path, width=32)
             with col2:
-                if st.button("Tibia Map", key="nav_Map", use_container_width=True):
+                if st.button("Maps", key="nav_Map", use_container_width=True):
                     st.switch_page("pages/Map.py")
         else:
-            if st.button(" Tibia Map", key="nav_Map_fallback", use_container_width=True):
+            if st.button(" Maps", key="nav_Map_fallback", use_container_width=True):
                 st.switch_page("pages/Map.py")
+        
+        # Experience Table button with icon
+        exp_icon_path = load_icon_path("XP_Boost.png")
+        if exp_icon_path:
+            col1, col2 = st.columns([1, 5])
+            with col1:
+                st.image(exp_icon_path, width=32)
+            with col2:
+                if st.button("Experience Table", key="nav_Experience_Table", use_container_width=True):
+                    st.switch_page("pages/Experience_Table.py")
+        else:
+            if st.button(" Experience Table", key="nav_Experience_Table_fallback", use_container_width=True):
+                st.switch_page("pages/Experience_Table.py")
         
         # Gear section
         st.subheader("Gear")
@@ -388,6 +401,19 @@ def create_sidebar_navigation() -> None:
         else:
             if st.button("Spells", key="nav_Spells_fallback", use_container_width=True):
                 st.switch_page("pages/Spells.py")
+        
+        # Food button with icon
+        food_icon_path = load_icon_path("ham.gif")
+        if food_icon_path:
+            col1, col2 = st.columns([1, 5])
+            with col1:
+                st.image(food_icon_path, width=32)
+            with col2:
+                if st.button("Food", key="nav_Food", use_container_width=True):
+                    st.switch_page("pages/Food.py")
+        else:
+            if st.button("Food", key="nav_Food_fallback", use_container_width=True):
+                st.switch_page("pages/Food.py")
         
         # Monsters button with icon
         monsters_icon_path = load_icon_path("demon.gif")

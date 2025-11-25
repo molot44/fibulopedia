@@ -1,0 +1,274 @@
+[
+  {
+    "name": "Meat",
+    "image": "./assets/items/meat.gif",
+    "weight": 13.0,
+    "hp_gain": 30,
+    "hp_per_oz": 2.3,
+    "hp_per_gp": 10
+  },
+  {
+    "name": "Ham",
+    "image": "./assets/items/ham.gif",
+    "weight": 20.0,
+    "hp_gain": 60,
+    "hp_per_oz": 3,
+    "hp_per_gp": 10
+  },
+  {
+    "name": "Bread",
+    "image": "./assets/items/bread.gif",
+    "weight": 5.0,
+    "hp_gain": 20,
+    "hp_per_oz": 4,
+    "hp_per_gp": 7
+  },
+  {
+    "name": "Brown Bread",
+    "image": "./assets/items/brown_bread.gif",
+    "weight": 4.0,
+    "hp_gain": 16,
+    "hp_per_oz": 4,
+    "hp_per_gp": 5
+  },
+  {
+    "name": "Melon",
+    "image": "./assets/items/melon.gif",
+    "weight": 9.5,
+    "hp_gain": 40,
+    "hp_per_oz": 4,
+    "hp_per_gp": 5
+  },
+  {
+    "name": "Dragon Ham",
+    "image": "./assets/items/dragon_ham.gif",
+    "weight": 30.0,
+    "hp_gain": 120,
+    "hp_per_oz": 4,
+    "hp_per_gp": null
+  },
+  {
+    "name": "Cheese",
+    "image": "./assets/items/cheese.gif",
+    "weight": 4.0,
+    "hp_gain": 18,
+    "hp_per_oz": 4.5,
+    "hp_per_gp": 3.5
+  },
+  {
+    "name": "Fish",
+    "image": "./assets/items/fish.gif",
+    "weight": 5.2,
+    "hp_gain": 24,
+    "hp_per_oz": 4.5,
+    "hp_per_gp": null
+  },
+  {
+    "name": "Cherry",
+    "image": "./assets/items/cherry.gif",
+    "weight": 0.4,
+    "hp_gain": 2,
+    "hp_per_oz": 5,
+    "hp_per_gp": 2
+  },
+  {
+    "name": "Corncob",
+    "image": "./assets/items/corncob.gif",
+    "weight": 3.5,
+    "hp_gain": 18,
+    "hp_per_oz": 5,
+    "hp_per_gp": null
+  },
+  {
+    "name": "Salmon",
+    "image": "./assets/items/salmon.gif",
+    "weight": 3.2,
+    "hp_gain": 20,
+    "hp_per_oz": 6,
+    "hp_per_gp": 5
+  },
+  {
+    "name": "Roll",
+    "image": "./assets/items/roll.gif",
+    "weight": 1.0,
+    "hp_gain": 6,
+    "hp_per_oz": 6,
+    "hp_per_gp": 3
+  },
+  {
+    "name": "Carrot",
+    "image": "./assets/items/carrot.gif",
+    "weight": 1.6,
+    "hp_gain": 10,
+    "hp_per_oz": 6.3,
+    "hp_per_gp": 5
+  },
+  {
+    "name": "Grapes",
+    "image": "./assets/items/grapes.gif",
+    "weight": 2.5,
+    "hp_gain": 18,
+    "hp_per_oz": 7,
+    "hp_per_gp": 6
+  },
+  {
+    "name": "Pears",
+    "image": "./assets/items/pear.gif",
+    "weight": 1.4,
+    "hp_gain": 10,
+    "hp_per_oz": 7,
+    "hp_per_gp": 2.5
+  },
+  {
+    "name": "Apples",
+    "image": "./assets/items/apples.gif",
+    "weight": 1.5,
+    "hp_gain": 12,
+    "hp_per_oz": 8,
+    "hp_per_gp": 4
+  },
+  {
+    "name": "Banana",
+    "image": "./assets/items/banana.gif",
+    "weight": 1.8,
+    "hp_gain": 16,
+    "hp_per_oz": 9,
+    "hp_per_gp": 8
+  },
+  {
+    "name": "Blueberry",
+    "image": "./assets/items/blueberry.gif",
+    "weight": 0.2,
+    "hp_gain": 2,
+    "hp_per_oz": 10,
+    "hp_per_gp": 2
+  },
+  {
+    "name": "Tomato",
+    "image": "./assets/items/tomato.gif",
+    "weight": 1.0,
+    "hp_gain": 12,
+    "hp_per_oz": 12,
+    "hp_per_gp": 2.4
+  },
+  {
+    "name": "Pumpkin",
+    "image": "./assets/items/pumpkin.gif",
+    "weight": null,
+    "hp_gain": null,
+    "hp_per_oz": null,
+    "hp_per_gp": null
+  },
+  {
+    "name": "Red Mushroom",
+    "image": "./assets/items/red_mushroom.gif",
+    "weight": 0.5,
+    "hp_gain": 8,
+    "hp_per_oz": 16,
+    "hp_per_gp": 0.5
+  },
+  {
+    "name": "Strawberry",
+    "image": "./assets/items/strawberry.gif",
+    "weight": 0.2,
+    "hp_gain": 4,
+    "hp_per_oz": 20,
+    "hp_per_gp": 4
+  },
+  {
+    "name": "Orange",
+    "image": "./assets/items/orange.gif",
+    "weight": 1.1,
+    "hp_gain": 26,
+    "hp_per_oz": 23.5,
+    "hp_per_gp": 5
+  },
+  {
+    "name": "Cookie",
+    "image": "./assets/items/cookie.gif",
+    "weight": 0.1,
+    "hp_gain": 4,
+    "hp_per_oz": 40,
+    "hp_per_gp": 2
+  },
+  {
+    "name": "Egg",
+    "image": "./assets/items/egg.gif",
+    "weight": 0.3,
+    "hp_gain": 12,
+    "hp_per_oz": 40,
+    "hp_per_gp": 6
+  },
+  {
+    "name": "White Mushroom",
+    "image": "./assets/items/white_mushroom.gif",
+    "weight": 0.4,
+    "hp_gain": 18,
+    "hp_per_oz": 45,
+    "hp_per_gp": 3
+  },
+  {
+    "name": "Wood Mushroom",
+    "image": "./assets/items/wood_mushroom.gif",
+    "weight": 0.3,
+    "hp_gain": 18,
+    "hp_per_oz": 60,
+    "hp_per_gp": null
+  },
+  {
+    "name": "Green Mushroom",
+    "image": "./assets/items/green_mushroom.gif",
+    "weight": 0.1,
+    "hp_gain": 10,
+    "hp_per_oz": 100,
+    "hp_per_gp": null
+  },
+  {
+    "name": "Brown Mushroom",
+    "image": "./assets/items/brown_mushroom.gif",
+    "weight": 0.2,
+    "hp_gain": 44,
+    "hp_per_oz": 220,
+    "hp_per_gp": 4.5
+  },
+  {
+    "name": "Dark Mushroom",
+    "image": "./assets/items/dark_mushroom.gif",
+    "weight": 0.1,
+    "hp_gain": null,
+    "hp_per_oz": null,
+    "hp_per_gp": null
+  },
+  {
+    "name": "Orange Mushroom",
+    "image": "./assets/items/orange_mushroom.gif",
+    "weight": null,
+    "hp_gain": null,
+    "hp_per_oz": null,
+    "hp_per_gp": null
+  },
+  {
+    "name": "Some Mushrooms",
+    "image": "./assets/items/some_mushrooms_1.gif",
+    "weight": null,
+    "hp_gain": null,
+    "hp_per_oz": null,
+    "hp_per_gp": null
+  },
+  {
+    "name": "Fire Mushroom",
+    "image": "./assets/items/fire_mushroom.gif",
+    "weight": 0.1,
+    "hp_gain": 0,
+    "hp_per_oz": 0,
+    "hp_per_gp": 0
+  },
+  {
+    "name": "Coconut",
+    "image": "./assets/items/coconut.gif",
+    "weight": 4.8,
+    "hp_gain": null,
+    "hp_per_oz": null,
+    "hp_per_gp": null
+  }
+]

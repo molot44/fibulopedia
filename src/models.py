@@ -235,3 +235,25 @@ class MapInfo:
     description: str
     image_path: str
     regions: Optional[list[dict[str, str]]] = None
+
+
+@dataclass
+class Food:
+    """
+    Represents a food item in the game.
+    
+    Attributes:
+        name: Display name of the food.
+        image: Optional path to food image.
+        weight: Weight in oz (can be None for unknown values).
+        hp_gain: Total HP restored by consuming (can be None for unknown values).
+        hp_per_oz: HP restored per oz of weight (can be None for unknown values).
+        hp_per_gp: HP restored per gold piece of value (can be None for unknown values).
+    """
+    
+    name: str
+    image: Optional[str] = None
+    weight: Optional[float] = None
+    hp_gain: Optional[int] = None
+    hp_per_oz: Optional[float] = None
+    hp_per_gp: Optional[float] = None
