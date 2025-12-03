@@ -35,33 +35,33 @@ def calculate_spell_damage(level: int, mlvl: int, spell_type: str) -> dict:
     attack_runes = {
         "Light Magic Missile": {
             "formula": (0.81, 4, 0.4, 2),
-            "mana": 120,
+            "mana": 40,
             "type": "Single Target",
             "element": "Energy"
         },
         "Heavy Magic Missile": {
             "formula": (1.59, 10, 0.81, 4),
-            "mana": 350,
+            "mana": 70,
             "type": "Single Target",
             "element": "Energy"
         },
         "Fireball": {
             "formula": (3.0, 18, 1.81, 10),
-            "mana": 460,
+            "mana": 60,
             "type": "Area (3x3)",
             "element": "Fire"
         },
         "Great Fireball": {
             "formula": (2.8, 17, 1.2, 7),
-            "mana": 530,
+            "mana": 120,
             "type": "Area (3x3)",
             "element": "Fire"
         },
         "Sudden Death": {
             "formula": (7.395, 46, 4.605, 28),
-            "mana": 985,
+            "mana": 220,
             "type": "Single Target",
-            "element": "Death"
+            "element": "Physical"
         }
     }
     
@@ -69,7 +69,7 @@ def calculate_spell_damage(level: int, mlvl: int, spell_type: str) -> dict:
     old_formula_spells = {
         "Explosion": {
             "formula": (4.8, 0.0),  # (max_mult, min_mult)
-            "mana": 570,
+            "mana": 180,
             "type": "Area (3x3)",
             "element": "Physical"
         }
@@ -92,14 +92,14 @@ def calculate_spell_damage(level: int, mlvl: int, spell_type: str) -> dict:
         },
         "Exevo Gran Vis Lux": {  # Great Energy Beam
             "formula": (7.0, 0, 4.0, 0),  # Using old formula pattern converted
-            "mana": 550,
+            "mana": 200,
             "type": "Beam",
             "element": "Energy",
             "old_formula": True
         },
         "Exevo Gran Mas Vis": {  # Rage of the Skies
             "formula": (12.0, 0, 5.0, 0),  # Using old formula pattern converted
-            "mana": 1200,
+            "mana": 800,
             "type": "Area (Large)",
             "element": "Energy",
             "old_formula": True
@@ -109,7 +109,7 @@ def calculate_spell_damage(level: int, mlvl: int, spell_type: str) -> dict:
     # Spells with unknown formulas
     unknown_formula_spells = {
         "Exevo Mort Hur": {
-            "mana": 0,
+            "mana": 250,
             "type": "Unknown",
             "element": "Death"
         }

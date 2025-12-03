@@ -522,7 +522,7 @@
     "type": "club",
     "name": "War Hammer",
     "attack": 45,
-    "defense": 11,
+    "defense": 10,
     "weight": 85.0,
     "hands": "Two-handed",
     "image": "./assets/items/war_hammer.gif",
