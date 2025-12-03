@@ -1,0 +1,105 @@
+MONSTER DATA REFERENCE - Extracted from Screenshots
+================================================
+This document contains all monster data extracted from the 4 screenshots.
+Use this as reference for updating monsters.json and for validation.
+
+Format: Name | HP | EXP | Summon/Convince | Loot
+
+SCREENSHOT 1 - Easy Creatures
+==============================
+1. Rat | 20 | 5 | 200/200 | Cheese, Gold Coin
+2. Cave Rat | 30 | 10 | 250/250 | Cheese, Gold Coin, Cookie
+3. Snake | 15 | 10 | 205/- | —
+4. Spider | 20 | 12 | 210/210 | Gold Coin
+5. Bug | 29 | 18 | 250/250 | Cherry, Gold Coin
+6. Wolf | 25 | 18 | 255/255 | Meat
+7. Troll | 50 | 20 | 290/290 | Wooden Shield, Gold Coin, Spear, Leather Boots, Leather Helmet, Rope, Meat, Hand Axe
+8. Winter Wolf | 30 | 20 | 260/260 | Meat
+9. Poison Spider | 26 | 22 | 270/270 | Gold Coin
+10. Bear | 80 | 23 | 300/300 | Meat, Ham
+11. Frost Troll | 55 | 23 | 300/300 | Wooden Shield, Twigs, Spear, Rapier, Gold Coin, Fish, Jacket, Club
+12. Wasp | 35 | 24 | 280/280 | —
+13. Goblin | 50 | 25 | 290/290 | Small Stone, Small Axe, Short Sword, Mouldy Cheese, Leather Helmet, Gold Coin
+14. Orc | 70 | 25 | 300/300 | Axe, Gold Coin, Studded Armor, Studded Shield, Studded Helmet, Meat, Bottle, Sabre
+15. Swamp Troll | 55 | 25 | 320/- | Gold Coin, Dagger, Leather Boots, Fish, Fishing Rod, Mouldy Cheese
+16. Polar Bear | 85 | 28 | 315/315 | Meat, Ham
+17. Lion | 80 | 30 | 320/320 | Meat, Ham
+18. Skeleton | 50 | 35 | 300/300 | Bone, Gold Coin, Bag, Sword, Mace, Hatchet, Brass Shield, Viking Helmet, Torch
+
+SCREENSHOT 2 - Medium Creatures
+================================
+19. Orc Spearman | 105 | 38 | 310/310 | Spear, Studded Legs, Machete, Gold Coin
+20. Rotworm | 65 | 40 | -/305 | Meat, Gold Coin, Ham, Sword, Mace, Copper Shield, Legion Helmet, Katana, Bag
+21. Elf | 100 | 42 | 320/320 | Studded Helmet, Studded Armor, Plum, Longsword, Leather Boots, Brass Shield, Arrow
+22. Dwarf | 90 | 45 | 320/320 | White Mushroom, Studded Armor, Pick, Letter, Leather legs, Hatchet, Gold Coin, Copper Shield, Axe
+23. Scorpion | 45 | 45 | 310/310 | —
+24. Minotaur | 100 | 50 | 330/330 | Sword, Shovel, Plate Shield, Meat, Mace, Leather Legs, Gold Coin, Chain Helmet, Chain Armor, Bronze Amulet, Brass Helmet, Axe
+25. Orc Warrior | 125 | 50 | 360/360 | Wooden Shield, Gold Coin, Sabre, Poison Dagger, Meat, Chain Armor, Bottle, Copper Shield
+26. Wild Warrior | 120 | 55 | 420/420 | Gold Coin, Axe, Mace, Brass Shield, Leather Legs, War Hammer, Brass Armor, Doll, Meat, Iron Helmet, Steel Shield, Copper Shield
+27. Amazon | 110 | 60 | 390/390 | Torch, Studded Shield, Small Ruby, Skull Sabre, Leather Armor, Gold Coin, Dagger, Crystal Necklace, Braid
+28. Minotaur Mage | 100 | 65 | 390/390 | Soldier Helmet, Scale Armor, Meat, Leather Legs, Leather Helmet, Gold Coin, Crossbow, Brass Armor, Bolt
+29. Dwarf Soldier | 135 | 70 | 360/360 | White Mushroom, Soldier Helmet, Shovel, Gold Coin, Dwarven Shield, Crossbow, Chain Armor, Bolt, Battle Axe, Axe Ring
+30. Elf Scout | 160 | 75 | 360/360 | Waterskin, Studded Helmet, Studded Armor, Sandals, Poison Arrow, Longsword, Grapes, Gold Coin, Bow, Arrow
+31. Valkyrie | 160 | 75 | 360/360 | Gold Coin, Chain, Plate Armor, Meat, Dagger, Apple, Skull Protection Amulet, Small Ruby, Crystal Necklace, Small Diamond, Double Axe, Chain Helmet
+
+SCREENSHOT 3 - Hard Creatures
+==============================
+32. Ghoul | 100 | 85 | 450/450 | Viking Helmet, Torch, Skull, Scale Armor, Life Ring, Knife, Gold Coin, Brass Helmet
+33. Stalker | 120 | 90 | -/- | Gold Coin, Throwing Knife, Leather Legs, Brass Legs, Blank Rune, Obsidian Lance, Stealth Ring
+34. Fire Devil | 200 | 110 | 530/530 | Torch, Small Amethyst, Scimitar, Pitchfork, Guardian Shield, Cleaver, Blank Rune
+35. Orc Shaman | 115 | 110 | -/- | Spear, Gold Coin, Dead Snake, Corn, Chain Armor, Staff, Chain Helmet
+36. Ghost | 150 | 120 | -/- | Stealth Ring, Shadow Herb, Sandals, Morning Star, Combat Knife, Cape, Book, Ancient Shield
+37. Witch | 300 | 120 | -/- | Gold Coin, Wolf Tooth Chain, Sickle, Silver Dagger, Broom, Leather Boots, Coat, Cape, Cookie, Cheese, Golden Sickle, Garlic Necklace
+38. Cyclops | 260 | 150 | 490/490 | Wolf Tooth Chain, Short Sword, Plate Shield, Meat, Ham, Halberd, Gold Coin, Dark Helmet, Club Ring, Battle Shield
+39. Hunter | 150 | 150 | -/530 | Torch, Small Ruby, Roll, Orange, Leather Legs, Leather Helmet, Dragon Necklace, Burst Arrow, Brass Helmet, Bow, Arrow, Brass Armor
+40. Minotaur Mage | 155 | 150 | -/- | Torch, Leather Legs, Knife, Gold Coin, Dead Snake, Dagger, Chain Legs, Carrot, Brass Armor
+41. Mummy | 240 | 150 | -/510 | Gold Coin, Magic Light Wand, Silver Brooch, Black Pearl, Poison Dagger, Strange Talisman, Crystal Ring, Black Shield, Silver Amulet, Time Ring
+42. Minotaur Guard | 185 | 160 | 550/550 | Meat, Leather Legs, Hatchet, Gold Coin, Fishing Rod, Double Axe, Chain Legs, Chain Armor, Brass Armor, Battle Shield, Minotaur Trophy
+43. Slime | 150 | 160 | -/- | —
+44. Stone Golem | 270 | 160 | 590/590 | Gold Coin, Small Stone, Scale Armor, Power Ring, Carlin Sword, Crystal Ring, Steel Shield, Torch, Red Gem
+45. Beholder | 260 | 170 | -/- | Wooden Shield, Two Handed Sword, Steel Shield, Spellbook, Morning Star, Beholder Shield, Longsword, Gold Coin
+46. Dwarf Guard | 240 | 170 | 600/600 | White Mushroom, Steel Helmet, Small Amethyst, Scale Armor, Leather Boots, Gold Coin, Double Axe, Dwarven Axe, Battle Shield, Battle Hammer, Axe Ring
+47. Elf Arcanist | 220 | 175 | -/- | Gold Coin, Scroll, Melon, Blank Rune, Bread, Green Tunic, Arrow, Sling Herb, Health Potion, Candlestick, Elven Amulet, Life Crystal, Sandals, Inkwell, Grave Flower, Yellow Gem, Staff
+
+SCREENSHOT 4 - Very Hard Creatures + Passive
+=============================================
+48. Orc Berserker | 210 | 195 | 590/590 | Halberd, Gold Coin, Chain Armor, Chain Helmet, Lamp, Meat, Battle Axe, Sacred Ring
+49. Monk | 240 | 200 | 600/- | Staff, Scroll, Sandals, Power Ring, Lamp, Life Crystal, Leather Armor, Gold Coin, Bottle, Bread, Bag, Ankh
+50. Fire Elemental | 280 | 220 | 690/690 | —
+51. Demon Skeleton | 400 | 240 | 620/620 | Torch, Throwing Star, Mysterious Fetish, Mind Stone, Iron Helmet, Guardian Shield, Gold Coin, Battle Shield, Battle Hammer
+52. Orc Leader | 450 | 270 | 640/640 | Brass Legs, Gold Coin, Sword Ring, Fish, Plate Shield, Longsword, Plate Legs, Brown Mushroom, Throwing Knife, Scimitar, Warrior Helmet
+53. Vampire | 450 | 290 | -/- | Vampire Shield, Gold Coin, Leather Legs, Bowl, Skull, Katana, Grave Flower, Black Pearl, Emerald Bangle, Spike Sword, Strange Helmet, Ice Rapier
+54. Priestess | 390 | 420 | -/- | Gold Coin, Bowl, Dagger, Sling Herb, Talon, Crystal Ball, Wooden Flute, Black Shield, Silver Amulet, Wood Mushroom, Dark Mushroom, Clerical Mace
+55. Necromancer | 580 | 580 | -/- | Skull Staff, Gold Coin, Bowl, Katana, Mystic Turban, Clerical Mace, Boots of Haste
+56. Dragon | 1000 | 700 | -/- | Gold Coin, Dragon Ham, Steel Shield, Crossbow, Burst Arrow, Longsword, Steel Helmet, Plate Legs, Broadsword, Double Axe, Dragon Shield, Dragon Scale Mail, Fire Sword, Mace, Dragon Hammer, Serpent Sword, Short Sword
+57. Giant Spider | 1300 | 900 | -/- | Time Ring, Steel Helmet, Platinum Amulet, Plate Armor, Knight Legs, Knight Armor, Gold Coin, Brass Legs
+58. Hero | 1400 | 1200 | -/- | Wedding Ring, War Hammer, Two Handed Sword, Scroll, Scarf, Rope, Red Rose, Might Ring, Meat, Harp, Green Tunic, Grapes, Gold Coin, Fire Sword, Crown Shield, Crown Legs, Crown Helmet, Crown Armor, Arrow
+59. Black Knight | 1800 | 1600 | -/- | Warrior Helmet, Two Handed Sword, Steel Helmet, Spear, Ruby Necklace, Rope, Plate Armor, Knight Legs, Knight Axe, Knight Armor, Halberd, Gold Coin, Dragon Lance, Dark Helmet, Dark Armor, Brown Bread, Brass Legs, Boots of Haste, Battle Hammer
+60. Dragon Lord | 1900 | 2100 | -/- | Dragon Scale Mail, Dragon Lance, Dragon Ham, Gold Coin, Dragon Lord Trophy, Tower Shield, Royal Helmet, Strange Helmet, Small Ruby, Life Crystal, Fire Sword, Energy Ring, Power Bolt, Book (Holy Tibia), Golden Mug, Green Mushroom
+61. Behemoth | 4000 | 2500 | -/- | Two Handed Sword, Strange Symbol, Steel Boots, Small Amethyst, Plate Armor, Pick, Meat, Gold Coin, Guardian Halberd, Giant Sword, Double Axe, Dark Armor, Crystal Necklace, Crowbar, Bone, Amphora, Green Tunic
+62. Warlock | 3200 | 4400 | -/- | Gold Coin, Candlestick, Poison Dagger, Inkwell, Cherry, Golden Armor, Blue Robe, Skull Staff, Ring of the Sky, Stone Skin Amulet, Might Wand, Energy Ring, Red Tome
+63. Demon | 8200 | 6000 | -/- | Talon, Stealth Ring, Small Emerald, Ring of Healing, Purple Tome, Platinum Amulet, Soul Orb, Might Ring, Mastermind Shield, Magic Plate Armor, Ice Rapier, Golden Sickle, Golden Legs, Gold Ring, Gold Coin, Giant Sword, Fire Mushroom, Fire Axe, Double Axe, Dark Helmet, Demon Shield, Coconut
+64. Deer | 25 | 0 | 260/260 | Meat, Ham
+65. Dog | 20 | 0 | 220/220 | —
+66. Pig | 25 | 0 | 255/255 | Meat
+67. Rabbit | 15 | 0 | 220/220 | Carrot, Meat
+68. Sheep | 20 | 0 | 250/250 | Meat
+
+TOTAL: 68 monsters extracted from screenshots
+
+NOTES:
+- Summon/Convince format: XXX/YYY means summon cost XXX, convince cost YYY
+- "-/-" means creature cannot be summoned or convinced
+- "XXX/-" means can be summoned but not convinced
+- "-/XXX" means can be convinced but not summoned
+- "—" in loot means no loot drops
+- Some creatures have 0 EXP (passive animals: Deer, Dog, Pig, Rabbit, Sheep)
+
+DATA VALIDATION CHECKLIST:
+□ All HP values are positive integers
+□ All EXP values are non-negative integers (0 allowed for passive creatures)
+□ Summon/Convince values are either numeric or null
+□ Loot strings are comma-separated item names
+□ All monster names are unique
+□ Image files should exist in assets/monsters/
+□ Difficulty classification should match HP/EXP ranges

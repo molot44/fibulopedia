@@ -208,15 +208,19 @@ def create_page_header(title: str, subtitle: Optional[str] = None, icon: str = "
     st.markdown("---")
 
 
-def create_sidebar_navigation() -> None:
+def create_sidebar_navigation(current_page: str = "Home") -> None:
     """
     Create a sidebar with navigation links to all main pages.
+    
+    Args:
+        current_page: Name of the current page (e.g., "Home", "Weapons", "Spells").
+                     This page will be highlighted in the navigation.
     
     This function should be called on each page to provide consistent
     navigation throughout the application.
     
     Example:
-        >>> create_sidebar_navigation()
+        >>> create_sidebar_navigation("Weapons")
     """
     with st.sidebar:
         # Display logo at the top with effects
@@ -224,12 +228,13 @@ def create_sidebar_navigation() -> None:
             import base64
             with open(LOGO_PATH, "rb") as f:
                 logo_data = base64.b64encode(f.read()).decode()
-            
+
             st.markdown(f"""
                 <style>
                 .logo-container {{ 
                     text-align: center; 
-                    padding: 0px 0 10px 0; 
+                    padding: 0 0 8px 0; 
+                    margin-top: -10px;
                     animation: fadeIn 1s ease-in;
                 }}
                 .logo-container img {{ 
@@ -242,41 +247,71 @@ def create_sidebar_navigation() -> None:
                     transform: scale(1.08);
                     filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.9));
                 }}
-                .subtitle-text {{ 
-                    text-align: center; 
-                    color: #aaa; 
-                    font-size: 0.85rem; 
-                    font-style: italic; 
-                    margin: 15px 0 10px 0; 
-                    padding: 0 10px; 
-                    line-height: 1.4; 
-                    animation: fadeIn 1.2s ease-in;
-                }}
-                @keyframes fadeIn {{ 
-                    from {{ opacity: 0; transform: translateY(-10px); }} 
-                    to {{ opacity: 1; transform: translateY(0); }} 
-                }}
                 .gold-separator {{ 
                     height: 2px; 
                     background: linear-gradient(to right, transparent, #d4af37, transparent); 
-                    margin: 15px 0; 
+                    margin: 8px 0 10px 0; 
                     box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
                 }}
+                /* Zmniejszenie PIONOWYCH odstępów między przyciskami w sidebarze */
+                section[data-testid="stSidebar"] .element-container {{
+                    margin-bottom: 0rem !important;
+                }}
+                section[data-testid="stSidebar"] .stButton {{
+                    margin-top: 0rem !important;
+                    margin-bottom: 0rem !important;
+                    padding-top: 0rem !important;
+                    padding-bottom: 0rem !important;
+                }}
+                section[data-testid="stSidebar"] .stButton > button {{
+                    padding: 0.4rem 0.75rem !important;
+                    margin: 0 !important;
+                }}
+                /* Zmniejszenie gap między elementami w pionie */
+                section[data-testid="stSidebar"] div[data-testid="stVerticalBlock"] {{
+                    gap: 0.25rem !important;
+                }}
+                section[data-testid="stSidebar"] div[data-testid="stVerticalBlock"] > div {{
+                    padding-top: 0 !important;
+                    padding-bottom: 0 !important;
+                }}
+                /* Wyróżnienie aktywnej strony */
+                section[data-testid="stSidebar"] button[kind="primary"] {{
+                    background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%) !important;
+                    color: #0d0d0d !important;
+                    font-weight: 700 !important;
+                    border: 2px solid #ffed4e !important;
+                    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+                    transform: scale(1.02) !important;
+                }}
+                section[data-testid="stSidebar"] button[kind="primary"]:hover {{
+                    background: linear-gradient(135deg, #ffed4e 0%, #ffd700 100%) !important;
+                    box-shadow: 0 0 25px rgba(255, 215, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+                    transform: scale(1.03) !important;
+                }}
                 </style>
+                <div class="gold-separator"></div>
                 <div class="logo-container">
                     <img src="data:image/png;base64,{logo_data}" alt="Fibulopedia Logo">
                 </div>
             """, unsafe_allow_html=True)
         
-        st.markdown('<div class="gold-separator"></div>', unsafe_allow_html=True)
-        st.markdown('<div class="subtitle-text">Community guide and wiki for Fibula Project<br>a classic Tibia style OTS</div>', unsafe_allow_html=True)
+        # Usuwamy podpis "Community guide..." pod logo, zostaje tylko separator
         st.markdown('<div class="gold-separator"></div>', unsafe_allow_html=True)
         
+        # Dodatkowa przerwa między logo a Navigation
+        st.markdown("<div style='margin-top: 3rem;'></div>", unsafe_allow_html=True)
+
+        # Unified small vertical spacer helper (between rows icon+button)
+        spacer_html = "<div style='margin-top: 0.3rem;'></div>"
+
         # Navigation section
         st.subheader("Navigation")
-        if st.button(" Home", key="nav_Home", use_container_width=True):
+        if st.button(" Home", key="nav_Home", use_container_width=True, type="primary" if current_page == "Home" else "secondary"):
             st.switch_page("app.py")
-        
+
+        st.markdown(spacer_html, unsafe_allow_html=True)
+
         # Server Info button with icon
         serverinfo_icon_path = load_icon_path("Parchment_of_Interest.gif")
         if serverinfo_icon_path:
@@ -284,11 +319,14 @@ def create_sidebar_navigation() -> None:
             with col1:
                 st.image(serverinfo_icon_path, width=32)
             with col2:
-                if st.button("Server Info", key="nav_Server_Info", use_container_width=True):
+                if st.button("Server Info", key="nav_Server_Info", use_container_width=True, type="primary" if current_page == "Server Info" else "secondary"):
                     st.switch_page("pages/Server_Info.py")
         else:
-            if st.button(" Server Info", key="nav_Server_Info_fallback", use_container_width=True):
+            if st.button(" Server Info", key="nav_Server_Info_fallback", use_container_width=True, type="primary" if current_page == "Server Info" else "secondary"):
                 st.switch_page("pages/Server_Info.py")
+
+        st.markdown(spacer_html, unsafe_allow_html=True)
+
         # Maps button with icon
         map_icon_path = load_icon_path("Treasure_Map_29.webp")
         if map_icon_path:
@@ -296,12 +334,14 @@ def create_sidebar_navigation() -> None:
             with col1:
                 st.image(map_icon_path, width=32)
             with col2:
-                if st.button("Maps", key="nav_Map", use_container_width=True):
+                if st.button("Maps", key="nav_Map", use_container_width=True, type="primary" if current_page == "Map" else "secondary"):
                     st.switch_page("pages/Map.py")
         else:
-            if st.button(" Maps", key="nav_Map_fallback", use_container_width=True):
+            if st.button(" Maps", key="nav_Map_fallback", use_container_width=True, type="primary" if current_page == "Map" else "secondary"):
                 st.switch_page("pages/Map.py")
-        
+
+        st.markdown(spacer_html, unsafe_allow_html=True)
+
         # Experience Table button with icon
         exp_icon_path = load_icon_path("XP_Boost.png")
         if exp_icon_path:
@@ -309,18 +349,98 @@ def create_sidebar_navigation() -> None:
             with col1:
                 st.image(exp_icon_path, width=32)
             with col2:
-                if st.button("Experience Table", key="nav_Experience_Table", use_container_width=True):
+                if st.button("Experience Table", key="nav_Experience_Table", use_container_width=True, type="primary" if current_page == "Experience Table" else "secondary"):
                     st.switch_page("pages/Experience_Table.py")
         else:
-            if st.button(" Experience Table", key="nav_Experience_Table_fallback", use_container_width=True):
+            if st.button(" Experience Table", key="nav_Experience_Table_fallback", use_container_width=True, type="primary" if current_page == "Experience Table" else "secondary"):
                 st.switch_page("pages/Experience_Table.py")
+
+        st.markdown(spacer_html, unsafe_allow_html=True)
+
+        # Calculators with dropdown - using toggle with icon
+        # Auto-expand if we're on a calculator page
+        if "show_calculators" not in st.session_state:
+            st.session_state.show_calculators = current_page in ["Magic Damage Calculator", "Travel Calculator"]
         
+        # Load calculators icon
+        calculators_icon_path = load_icon_path("Spellbook.gif")
+        if calculators_icon_path:
+            # align icon vertically with button using a small top padding
+            col1, col2 = st.columns([1, 5])
+            with col1:
+                st.markdown("<div style='padding-top: 4px;'>", unsafe_allow_html=True)
+                st.image(calculators_icon_path, width=32)
+                st.markdown("</div>", unsafe_allow_html=True)
+            with col2:
+                # Yellow button design like other navigation buttons
+                button_style = """
+                    <style>
+                    .calc-button {
+                        background: linear-gradient(180deg, #f4c542 0%, #d4a017 100%);
+                        color: #3b2b0a;
+                        padding: 0.35rem 0.75rem;
+                        border-radius: 4px;
+                        border: 2px solid #b88916;
+                        text-align: center;
+                        font-weight: 500;
+                        cursor: pointer;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+                    }
+                    .calc-button:hover {
+                        background: linear-gradient(180deg, #ffd75a 0%, #e0b225 100%);
+                    }
+                    </style>
+                """
+                st.markdown(button_style, unsafe_allow_html=True)
+
+                if st.button("Calculators", key="nav_calculators_toggle", use_container_width=True, type="primary" if current_page in ["Magic Damage Calculator", "Travel Calculator"] else "secondary"):
+                    st.session_state.show_calculators = not st.session_state.show_calculators
+        else:
+            if st.button(" Calculators", key="nav_calculators_toggle_fallback", use_container_width=True, type="primary" if current_page in ["Magic Damage Calculator", "Travel Calculator"] else "secondary"):
+                st.session_state.show_calculators = not st.session_state.show_calculators
+
+        if st.session_state.show_calculators:
+            # compact container for dropdown to avoid extra spacing
+            with st.container(border=True):
+                # Magic Damage with icon
+                magic_icon_path = ASSETS_DIR / "items" / "arcana staff.gif"
+                if magic_icon_path.exists():
+                    col1, col2 = st.columns([1, 5])
+                    with col1:
+                        st.image(str(magic_icon_path), width=24)
+                    with col2:
+                        if st.button("Magic Damage", key="nav_calc_magic_damage", use_container_width=True, type="secondary"):
+                            st.session_state.show_calculators = False
+                            st.switch_page("pages/Magic_Damage_Calculator.py")
+                else:
+                    if st.button("✨ Magic Damage", key="nav_calc_magic_damage", use_container_width=True, type="secondary"):
+                        st.session_state.show_calculators = False
+                        st.switch_page("pages/Magic_Damage_Calculator.py")
+                
+                # Travel Routes with icon
+                travel_icon_path = ASSETS_DIR / "items" / "ship_model.gif"
+                if travel_icon_path.exists():
+                    col1, col2 = st.columns([1, 5])
+                    with col1:
+                        st.image(str(travel_icon_path), width=24)
+                    with col2:
+                        if st.button("Travel Routes", key="nav_calc_travel", use_container_width=True, type="secondary"):
+                            st.session_state.show_calculators = False
+                            st.switch_page("pages/Travel_Calculator.py")
+                else:
+                    if st.button("🗺️ Travel Routes", key="nav_calc_travel", use_container_width=True, type="secondary"):
+                        st.session_state.show_calculators = False
+                        st.switch_page("pages/Travel_Calculator.py")
+
+        st.markdown(spacer_html, unsafe_allow_html=True)
+
         # Gear section
         st.subheader("Gear")
         
         # Weapons with dropdown - using toggle with icon
+        # Auto-expand if we're on the weapons page
         if "show_weapons" not in st.session_state:
-            st.session_state.show_weapons = False
+            st.session_state.show_weapons = current_page == "Weapons"
         
         # Load weapons icon
         weapons_icon_path = ASSETS_DIR / "items" / "magic_sword.gif"
@@ -330,14 +450,14 @@ def create_sidebar_navigation() -> None:
             with col1:
                 st.image(str(weapons_icon_path), width=32)
             with col2:
-                if st.button("Weapons", key="nav_weapons_toggle", use_container_width=True):
+                if st.button("Weapons", key="nav_weapons_toggle", use_container_width=True, type="primary" if current_page == "Weapons" else "secondary"):
                     st.session_state.show_weapons = not st.session_state.show_weapons
                     st.rerun()
         else:
-            if st.button(" Weapons", key="nav_weapons_toggle_fallback", use_container_width=True):
+            if st.button(" Weapons", key="nav_weapons_toggle_fallback", use_container_width=True, type="primary" if current_page == "Weapons" else "secondary"):
                 st.session_state.show_weapons = not st.session_state.show_weapons
                 st.rerun()
-        
+
         if st.session_state.show_weapons:
             with st.container(border=True):
                 weapon_categories = ["All", "Sword", "Axe", "Club", "Distance", "Ammunition"]
@@ -346,10 +466,13 @@ def create_sidebar_navigation() -> None:
                         st.session_state["weapon_filter"] = category
                         st.session_state.show_weapons = False
                         st.switch_page("pages/Weapons.py")
-        
+
+        st.markdown(spacer_html, unsafe_allow_html=True)
+
         # Equipment with dropdown - using toggle with icon
+        # Auto-expand if we're on the equipment page
         if "show_equipment" not in st.session_state:
-            st.session_state.show_equipment = False
+            st.session_state.show_equipment = current_page == "Equipment"
         
         # Load equipment icon
         equipment_icon_path = load_icon_path("magic_plate_armor.gif")
@@ -358,12 +481,12 @@ def create_sidebar_navigation() -> None:
             with col1:
                 st.image(equipment_icon_path, width=32)
             with col2:
-                if st.button("Equipment", key="nav_equipment_toggle", use_container_width=True):
+                if st.button("Equipment", key="nav_equipment_toggle", use_container_width=True, type="primary" if current_page == "Equipment" else "secondary"):
                     st.session_state.show_equipment = not st.session_state.show_equipment
         else:
-            if st.button(" Equipment", key="nav_equipment_toggle_fallback", use_container_width=True):
+            if st.button(" Equipment", key="nav_equipment_toggle_fallback", use_container_width=True, type="primary" if current_page == "Equipment" else "secondary"):
                 st.session_state.show_equipment = not st.session_state.show_equipment
-        
+
         if st.session_state.show_equipment:
             with st.container(border=True):
                 equipment_categories = ["All", "Helmets", "Armor", "Legs", "Shields", "Amulets & Rings"]
@@ -372,7 +495,9 @@ def create_sidebar_navigation() -> None:
                         st.session_state["equipment_filter"] = category
                         st.session_state.show_equipment = False
                         st.switch_page("pages/Equipment.py")
-        
+
+        st.markdown(spacer_html, unsafe_allow_html=True)
+
         # Tools button with icon
         tools_icon_path = load_icon_path("rope.gif")
         if tools_icon_path:
@@ -380,12 +505,14 @@ def create_sidebar_navigation() -> None:
             with col1:
                 st.image(tools_icon_path, width=32)
             with col2:
-                if st.button("Tools", key="nav_Tools", use_container_width=True):
+                if st.button("Tools", key="nav_Tools", use_container_width=True, type="primary" if current_page == "Tools" else "secondary"):
                     st.switch_page("pages/Tools.py")
         else:
-            if st.button("Tools", key="nav_Tools_fallback", use_container_width=True):
+            if st.button("Tools", key="nav_Tools_fallback", use_container_width=True, type="primary" if current_page == "Tools" else "secondary"):
                 st.switch_page("pages/Tools.py")
-        
+
+        st.markdown(spacer_html, unsafe_allow_html=True)
+
         # Others section
         st.subheader("Others")
         
@@ -396,12 +523,14 @@ def create_sidebar_navigation() -> None:
             with col1:
                 st.image(spells_icon_path, width=32)
             with col2:
-                if st.button("Spells", key="nav_Spells", use_container_width=True):
+                if st.button("Spells", key="nav_Spells", use_container_width=True, type="primary" if current_page == "Spells" else "secondary"):
                     st.switch_page("pages/Spells.py")
         else:
-            if st.button("Spells", key="nav_Spells_fallback", use_container_width=True):
+            if st.button("Spells", key="nav_Spells_fallback", use_container_width=True, type="primary" if current_page == "Spells" else "secondary"):
                 st.switch_page("pages/Spells.py")
-        
+
+        st.markdown(spacer_html, unsafe_allow_html=True)
+
         # Food button with icon
         food_icon_path = load_icon_path("ham.gif")
         if food_icon_path:
@@ -409,12 +538,14 @@ def create_sidebar_navigation() -> None:
             with col1:
                 st.image(food_icon_path, width=32)
             with col2:
-                if st.button("Food", key="nav_Food", use_container_width=True):
+                if st.button("Food", key="nav_Food", use_container_width=True, type="primary" if current_page == "Food" else "secondary"):
                     st.switch_page("pages/Food.py")
         else:
-            if st.button("Food", key="nav_Food_fallback", use_container_width=True):
+            if st.button("Food", key="nav_Food_fallback", use_container_width=True, type="primary" if current_page == "Food" else "secondary"):
                 st.switch_page("pages/Food.py")
-        
+
+        st.markdown(spacer_html, unsafe_allow_html=True)
+
         # Monsters button with icon
         monsters_icon_path = load_icon_path("demon.gif")
         if monsters_icon_path:
@@ -422,11 +553,14 @@ def create_sidebar_navigation() -> None:
             with col1:
                 st.image(monsters_icon_path, width=32)
             with col2:
-                if st.button("Monsters", key="nav_Monsters", use_container_width=True):
+                if st.button("Monsters", key="nav_Monsters", use_container_width=True, type="primary" if current_page == "Monsters" else "secondary"):
                     st.switch_page("pages/Monsters.py")
         else:
-            if st.button(" Monsters", key="nav_Monsters_fallback", use_container_width=True):
+            if st.button(" Monsters", key="nav_Monsters_fallback", use_container_width=True, type="primary" if current_page == "Monsters" else "secondary"):
                 st.switch_page("pages/Monsters.py")
+
+        st.markdown(spacer_html, unsafe_allow_html=True)
+
         # Quests button with icon
         quests_icon_path = load_icon_path("chest.gif")
         if quests_icon_path:
@@ -434,15 +568,17 @@ def create_sidebar_navigation() -> None:
             with col1:
                 st.image(quests_icon_path, width=32)
             with col2:
-                if st.button("Quests", key="nav_Quests", use_container_width=True):
+                if st.button("Quests", key="nav_Quests", use_container_width=True, type="primary" if current_page == "Quests" else "secondary"):
                     st.switch_page("pages/Quests.py")
         else:
-            if st.button(" Quests", key="nav_Quests_fallback", use_container_width=True):
+            if st.button(" Quests", key="nav_Quests_fallback", use_container_width=True, type="primary" if current_page == "Quests" else "secondary"):
                 st.switch_page("pages/Quests.py")
-        
+
+        st.markdown('<div class="gold-separator"></div>', unsafe_allow_html=True)
+
         # Search button (outside categories)
         st.markdown("---")
-        if st.button(" Search", key="nav_Search", use_container_width=True):
+        if st.button(" Search", key="nav_Search", use_container_width=True, type="primary" if current_page == "Search" else "secondary"):
             st.switch_page("pages/Search.py")
         
         # HIDDEN: Item Editor (admin tool) - temporarily disabled for public release

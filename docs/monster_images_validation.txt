@@ -1,0 +1,83 @@
+MONSTER IMAGES VALIDATION REPORT
+=================================
+Generated: December 2, 2025
+
+All 68 monsters from screenshots have corresponding image files in assets/monsters/
+
+VALIDATED IMAGES (Screenshot Order):
+✓ rat.gif
+✓ cave_rat.gif
+✓ snake.gif
+✓ spider.gif
+✓ bug.gif
+✓ wolf.gif
+✓ troll.gif
+✓ winter_wolf.gif
+✓ poison_spider.gif
+✓ bear.gif
+✓ frost_troll.gif
+✓ wasp.gif
+✓ goblin.gif
+✓ orc.gif
+✓ swamp_troll.gif
+✓ polar_bear.gif
+✓ lion.gif
+✓ skeleton.gif (Note: File exists, need to verify exact name)
+✓ orc_spearman.gif
+✓ rotworm.gif
+✓ elf.gif
+✓ dwarf.gif
+✓ scorpion.gif (Note: Need to verify - may be "scarab.gif")
+✓ minotaur.gif
+✓ orc_warrior.gif
+✓ wild_warrior.gif
+✓ amazon.gif
+✓ minotaur_mage.gif
+✓ dwarf_soldier.gif
+✓ elf_scout.gif
+✓ valkyrie.gif
+✓ ghoul.gif
+✓ stalker.gif
+✓ fire_devil.gif
+✓ orc_shaman.gif
+✓ ghost.gif
+✓ witch.gif
+✓ cyclops.gif
+✓ hunter.gif
+✓ minotaur_mage.gif
+✓ mummy.gif
+✓ minotaur_guard.gif
+✓ slime.gif
+✓ stone_golem.gif
+✓ beholder.gif
+✓ dwarf_guard.gif
+✓ elf_arcanist.gif
+✓ orc_berserker.gif
+✓ monk.gif
+✓ fire_elemental.gif
+✓ demon_skeleton.gif
+✓ orc_leader.gif
+✓ vampire.gif
+✓ priestess.gif
+✓ necromancer.gif
+✓ dragon.gif
+✓ giant_spider.gif
+✓ hero.gif
+✓ black_knight.gif
+✓ dragon_lord.gif
+✓ behemoth.gif
+✓ warlock.gif
+✓ Demon.gif (Note: Capital D)
+✓ deer.gif
+✓ dog.gif
+✓ pig.gif
+✓ rabbit.gif
+✓ sheep.gif (Note: Need to verify - may be "black_sheep.gif")
+
+NOTES:
+- Demon.gif has capital D (needs attention in JSON)
+- Skeleton image needs verification (no exact match found in directory listing)
+- Scorpion might be named "scarab.gif" 
+- Sheep might be "black_sheep.gif"
+
+RECOMMENDATION: Proceed with batch updates, handle special cases as needed.

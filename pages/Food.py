@@ -40,7 +40,7 @@ def get_image_as_base64(image_path: Path) -> str:
 # Configure page
 setup_page_config("Food", "🍖")
 load_custom_css()
-create_sidebar_navigation()
+create_sidebar_navigation("Food")
 
 
 def main() -> None:

@@ -41,7 +41,7 @@ def get_image_as_base64(image_path: str) -> str:
 # Configure page
 setup_page_config("Weapons", "")
 load_custom_css()
-create_sidebar_navigation()
+create_sidebar_navigation("Weapons")
 
 
 def main() -> None:
@@ -84,32 +84,32 @@ def main() -> None:
     col_btn1, col_btn2, col_btn3, col_btn4, col_btn5, col_btn6 = st.columns(6)
     
     with col_btn1:
-        if st.button("🗡️ All weapons", use_container_width=True, key="btn_all"):
+        if st.button("All weapons", use_container_width=True, key="btn_all"):
             st.session_state.quick_filter = "All"
             st.rerun()
     
     with col_btn2:
-        if st.button("⚔️ Sword", use_container_width=True, key="btn_sword"):
+        if st.button("Sword", use_container_width=True, key="btn_sword"):
             st.session_state.quick_filter = "Sword"
             st.rerun()
     
     with col_btn3:
-        if st.button("🪓 Axe", use_container_width=True, key="btn_axe"):
+        if st.button("Axe", use_container_width=True, key="btn_axe"):
             st.session_state.quick_filter = "Axe"
             st.rerun()
     
     with col_btn4:
-        if st.button("🔨 Club", use_container_width=True, key="btn_club"):
+        if st.button("Club", use_container_width=True, key="btn_club"):
             st.session_state.quick_filter = "Club"
             st.rerun()
     
     with col_btn5:
-        if st.button("🏹 Distance", use_container_width=True, key="btn_distance"):
+        if st.button("Distance", use_container_width=True, key="btn_distance"):
             st.session_state.quick_filter = "Distance"
             st.rerun()
     
     with col_btn6:
-        if st.button("🎯 Ammunition", use_container_width=True, key="btn_ammo"):
+        if st.button("Ammunition", use_container_width=True, key="btn_ammo"):
             st.session_state.quick_filter = "Ammunition"
             st.rerun()
     

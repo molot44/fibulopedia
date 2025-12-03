@@ -23,7 +23,7 @@ logger = setup_logger(__name__)
 # Configure page
 setup_page_config("Item Editor", "✏️")
 load_custom_css()
-create_sidebar_navigation()
+create_sidebar_navigation("Item Editor")
 
 # Available NPCs and locations
 NPCS = [

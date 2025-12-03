@@ -18,7 +18,7 @@ from src.ui.layout import (
 # Configure page
 setup_page_config("Quests", "📜")
 load_custom_css()
-create_sidebar_navigation()
+create_sidebar_navigation("Quests")
 
 # Page header
 create_page_header(

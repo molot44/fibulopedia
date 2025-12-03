@@ -20,7 +20,7 @@ logger = setup_logger(__name__)
 # Configure page
 setup_page_config("Experience Table", "📊")
 load_custom_css()
-create_sidebar_navigation()
+create_sidebar_navigation("Experience Table")
 
 
 def main() -> None:

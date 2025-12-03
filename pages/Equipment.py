@@ -40,7 +40,7 @@ def get_image_as_base64(image_path: str) -> str:
 # Configure page
 setup_page_config("Equipment", "🛡️")
 load_custom_css()
-create_sidebar_navigation()
+create_sidebar_navigation("Equipment")
 
 
 def main() -> None:
@@ -51,7 +51,7 @@ def main() -> None:
     create_page_header(
         title="Equipment",
         subtitle="Browse all equipment available on the Fibula server",
-        icon="🛡️"
+        icon=""
     )
     
     # Search and filter section
@@ -83,37 +83,37 @@ def main() -> None:
     col_btn0, col_btn1, col_btn2, col_btn3, col_btn4, col_btn5, col_btn6 = st.columns(7)
     
     with col_btn0:
-        if st.button("📦 All Equipment", use_container_width=True, key="btn_all_equip"):
+        if st.button("All Equipment", use_container_width=True, key="btn_all_equip"):
             st.session_state.quick_filter_equip = None
             st.rerun()
     
     with col_btn1:
-        if st.button("⛑️ Helmets", use_container_width=True, key="btn_helmets"):
+        if st.button("Helmets", use_container_width=True, key="btn_helmets"):
             st.session_state.quick_filter_equip = "Helmets"
             st.rerun()
     
     with col_btn2:
-        if st.button("🦺 Armor", use_container_width=True, key="btn_armor"):
+        if st.button("Armor", use_container_width=True, key="btn_armor"):
             st.session_state.quick_filter_equip = "Armor"
             st.rerun()
     
     with col_btn3:
-        if st.button("👖 Legs", use_container_width=True, key="btn_legs"):
+        if st.button("Legs", use_container_width=True, key="btn_legs"):
             st.session_state.quick_filter_equip = "Legs"
             st.rerun()
     
     with col_btn4:
-        if st.button("👢 Boots", use_container_width=True, key="btn_boots"):
+        if st.button("Boots", use_container_width=True, key="btn_boots"):
             st.session_state.quick_filter_equip = "Boots"
             st.rerun()
     
     with col_btn5:
-        if st.button("🛡️ Shields", use_container_width=True, key="btn_shields"):
+        if st.button("Shields", use_container_width=True, key="btn_shields"):
             st.session_state.quick_filter_equip = "Shields"
             st.rerun()
     
     with col_btn6:
-        if st.button("💍 Amulets & Rings", use_container_width=True, key="btn_amulets"):
+        if st.button("Amulets & Rings", use_container_width=True, key="btn_amulets"):
             st.session_state.quick_filter_equip = "Amulets & Rings"
             st.rerun()
     

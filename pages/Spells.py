@@ -27,7 +27,7 @@ logger = setup_logger(__name__)
 # Configure page
 setup_page_config("Spells", "")
 load_custom_css()
-create_sidebar_navigation()
+create_sidebar_navigation("Spells")
 
 
 def main() -> None:
@@ -70,27 +70,27 @@ def main() -> None:
     col_btn1, col_btn2, col_btn3, col_btn4, col_btn5 = st.columns(5)
     
     with col_btn1:
-        if st.button("✨ All Vocations", use_container_width=True, key="btn_all"):
+        if st.button("All Vocations", use_container_width=True, key="btn_all"):
             st.session_state.quick_filter = "All"
             st.rerun()
     
     with col_btn2:
-        if st.button("🔥 Sorcerer", use_container_width=True, key="btn_sorcerer"):
+        if st.button("Sorcerer", use_container_width=True, key="btn_sorcerer"):
             st.session_state.quick_filter = "Sorcerer"
             st.rerun()
     
     with col_btn3:
-        if st.button("🌿 Druid", use_container_width=True, key="btn_druid"):
+        if st.button("Druid", use_container_width=True, key="btn_druid"):
             st.session_state.quick_filter = "Druid"
             st.rerun()
     
     with col_btn4:
-        if st.button("🏹 Paladin", use_container_width=True, key="btn_paladin"):
+        if st.button("Paladin", use_container_width=True, key="btn_paladin"):
             st.session_state.quick_filter = "Paladin"
             st.rerun()
     
     with col_btn5:
-        if st.button("⚔️ Knight", use_container_width=True, key="btn_knight"):
+        if st.button("Knight", use_container_width=True, key="btn_knight"):
             st.session_state.quick_filter = "Knight"
             st.rerun()
     

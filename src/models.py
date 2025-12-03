@@ -136,6 +136,10 @@ class Monster:
         loot: Description or list of loot items.
         location: Spawn location or area.
         difficulty: Optional difficulty rating (easy, medium, hard).
+        image: Optional filename for monster image (e.g., 'rat.gif').
+        summon: Optional mana cost to summon this creature.
+        convince: Optional mana cost to convince this creature.
+        loot_items: Structured loot data with items and quantities.
     """
     
     id: str
@@ -145,6 +149,10 @@ class Monster:
     loot: str
     location: str
     difficulty: Optional[str] = None
+    image: Optional[str] = None
+    summon: Optional[int] = None
+    convince: Optional[int] = None
+    loot_items: list[dict[str, str | int]] = field(default_factory=list)
 
 
 @dataclass

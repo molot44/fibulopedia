@@ -23,7 +23,7 @@ logger = setup_logger(__name__)
 # Configure page
 setup_page_config("Search", "🔍")
 load_custom_css()
-create_sidebar_navigation()
+create_sidebar_navigation("Search")
 
 
 def main() -> None:

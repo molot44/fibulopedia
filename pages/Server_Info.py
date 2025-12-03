@@ -8,6 +8,7 @@ rules, and links to the community.
 import streamlit as st
 
 from src.services.server_info_service import load_server_info
+from src.services.fibula_status import fetch_online_count
 from src.ui.layout import (
     setup_page_config,
     load_custom_css,
@@ -22,7 +23,13 @@ logger = setup_logger(__name__)
 # Configure page
 setup_page_config("Server Info", "ℹ")
 load_custom_css()
-create_sidebar_navigation()
+create_sidebar_navigation("Server Info")
+
+
+@st.cache_data(ttl=60)
+def get_cached_online_count():
+    """Fetch online player count with 60-second cache."""
+    return fetch_online_count()
 
 
 def main() -> None:
@@ -35,6 +42,11 @@ def main() -> None:
         subtitle="Learn about Fibula Project rates and features",
         icon="ℹ"
     )
+    
+    # Note: Online player count feature disabled due to Cloudflare protection
+    # on the MyAAC website preventing automated scraping
+    
+    st.markdown("---")
 
     # Load server info
     server_info = load_server_info()

@@ -23,7 +23,7 @@ logger = setup_logger(__name__)
 # Configure page
 setup_page_config("Maps", "🗺️")
 load_custom_css()
-create_sidebar_navigation()
+create_sidebar_navigation("Map")
 
 
 def get_image_base64(image_path: Path) -> str:
@@ -45,7 +45,7 @@ def main() -> None:
     create_page_header(
         title="Tibia Maps",
         subtitle="Classic Tibia 7.1 maps",
-        icon="🗺️"
+        icon=""
     )
 
     # Define map paths

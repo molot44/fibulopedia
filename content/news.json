@@ -1,5 +1,13 @@
 [
     {
+        "id": 2,
+        "date": "2025-12-03",
+        "title": "December Update #1 - New Features & Improvements",
+        "content": "A new update has just been released on Fibulopedia, bringing several useful additions and improvements.\n\n---\n\n<span style='color: #d4af37; font-weight: bold;'>New Features:</span>\n\n- Magic Damage Calculator (work in progress) - The first version of the calculator is now available. The values should be close to real in-game numbers, and the tool will continue to be refined.\n- Travel Routes Tool - A new feature that calculates the cheapest and most efficient travel path between cities.\n- Updated Monsters Page - The Monsters section now includes every creature that appears in the game, together with their loot information.\n- Improved Homepage UI - The main page has been redesigned for better clarity and navigation.\n\n<span style='color: #d4af37; font-weight: bold;'>Coming Soon:</span>\n\n- Further refinement of the Magic Damage Calculator\n- Buy & sell information for every item in the game\n- An expanded Quests page with all available quests\n\nIn addition, a new piece of community content is on the horizon - an interview with a special guest, featuring answers to many questions players have been asking. Stay tuned!",
+        "author": "Molot",
+        "category": "announcement"
+    },
+    {
         "id": 1,
         "date": "2025-11-23",
         "title": "Welcome to Fibulopedia!",

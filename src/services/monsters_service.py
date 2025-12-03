@@ -17,8 +17,58 @@ from src.services.data_loader import (
     safe_int
 )
 from src.logging_utils import setup_logger
+from src.config import ASSETS_DIR
 
 logger = setup_logger(__name__)
+
+
+def monster_name_to_image_path(name: str) -> Optional[str]:
+    """
+    Convert monster name to image file path.
+    
+    Args:
+        name: Monster name (e.g., "Cave Rat", "Dragon Lord").
+    
+    Returns:
+        Absolute path to image file if it exists, None otherwise.
+    
+    Example:
+        >>> path = monster_name_to_image_path("Cave Rat")
+        >>> # Returns: "assets/monsters/cave_rat.gif"
+    """
+    # Convert name to filename format: lowercase, spaces to underscores
+    filename = name.lower().replace(" ", "_").replace("'", "") + ".gif"
+    image_path = ASSETS_DIR / "monsters" / filename
+    
+    if image_path.exists():
+        return str(image_path)
+    
+    logger.warning(f"Monster image not found: {filename}")
+    return None
+
+
+def get_monster_image_path(monster: Monster) -> Optional[str]:
+    """
+    Get the image path for a monster, using the image field or name fallback.
+    
+    Args:
+        monster: Monster object.
+    
+    Returns:
+        Path to monster image or None.
+    
+    Example:
+        >>> monster = get_monster_by_id("monster_001")
+        >>> path = get_monster_image_path(monster)
+    """
+    if monster.image:
+        # Use explicit image field
+        image_path = ASSETS_DIR / "monsters" / monster.image
+        if image_path.exists():
+            return str(image_path)
+    
+    # Fallback to name-based lookup
+    return monster_name_to_image_path(monster.name)
 
 
 def load_monsters() -> list[Monster]:
@@ -55,7 +105,11 @@ def load_monsters() -> list[Monster]:
                 exp=safe_int(item["exp"]),
                 loot=str(item["loot"]),
                 location=str(item["location"]),
-                difficulty=item.get("difficulty")
+                difficulty=item.get("difficulty"),
+                image=item.get("image"),
+                summon=safe_int(item["summon"]) if item.get("summon") else None,
+                convince=safe_int(item["convince"]) if item.get("convince") else None,
+                loot_items=item.get("loot_items", [])
             )
             monsters.append(monster)
         except Exception as e:

@@ -52,7 +52,7 @@ def load_tools():
 # Configure page
 setup_page_config("Tools", "")
 load_custom_css()
-create_sidebar_navigation()
+create_sidebar_navigation("Tools")
 
 
 def main() -> None:

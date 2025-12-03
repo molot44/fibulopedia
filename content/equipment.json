@@ -546,19 +546,6 @@
     "description": "A mystical turban."
   },
   {
-    "id": "hat_003",
-    "slot": "helmet",
-    "name": "Post Officers Hat",
-    "defense": 1,
-    "weight": 7.0,
-    "image": "./assets/items/post_officers_hat.gif",
-    "dropped_by": [],
-    "buy_from": [],
-    "sell_to": [],
-    "reward_from": ["Postman Quest"],
-    "description": "A hat for post officers."
-  },
-  {
     "id": "legs_001",
     "slot": "legs",
     "name": "Dragon Scale Legs",
