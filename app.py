@@ -40,11 +40,18 @@ def main() -> None:
     """Main function to render the home page."""
     logger.info("Rendering home page")
     
-    # Large centered logo with subtitle
+    # Large centered logo with subtitle and rotworm gif
     logo_path = Path("assets/logo_fibulopedia.png")
+    rotworm_path = Path("assets/monsters/rotworm.gif")
+    
     if logo_path.exists():
         with open(logo_path, "rb") as f:
             logo_data = base64.b64encode(f.read()).decode()
+        
+        rotworm_data = ""
+        if rotworm_path.exists():
+            with open(rotworm_path, "rb") as f:
+                rotworm_data = base64.b64encode(f.read()).decode()
         
         st.markdown(f"""
             <style>
@@ -53,17 +60,29 @@ def main() -> None:
                     margin: -3rem 0 0.5rem 0;
                     padding-top: 0;
                     animation: fadeInDown 1s ease-out;
+                    position: relative;
                 }}
-                .main-logo-container img {{
+                .main-logo-container img.logo {{
                     max-width: 450px;
                     width: 100%;
                     height: auto;
                     filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
                     transition: transform 0.3s ease, filter 0.3s ease;
                 }}
-                .main-logo-container img:hover {{
+                .main-logo-container img.logo:hover {{
                     transform: scale(1.02);
                     filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.6));
+                }}
+                .rotworm-gif {{
+                    position: absolute;
+                    top: 50%;
+                    right: calc(50% - 250px);
+                    transform: translateY(-50%);
+                    width: 96px;
+                    height: 96px;
+                    image-rendering: pixelated;
+                    animation: fadeIn 2s ease-out;
+                    z-index: 10;
                 }}
                 .main-subtitle {{
                     text-align: center;
@@ -109,7 +128,8 @@ def main() -> None:
                 }}
             </style>
             <div class="main-logo-container">
-                <img src="data:image/png;base64,{logo_data}" alt="Fibulopedia">
+                <img class="logo" src="data:image/png;base64,{logo_data}" alt="Fibulopedia">
+                {"<img class='rotworm-gif' src='data:image/gif;base64," + rotworm_data + "' alt='Rotworm'>" if rotworm_data else ""}
             </div>
             <div class="main-subtitle">
                 Your ultimate community hub and knowledge base for Fibula Project
