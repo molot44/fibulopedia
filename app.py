@@ -14,6 +14,7 @@ import streamlit as st
 import json
 from pathlib import Path
 from datetime import datetime
+import streamlit_analytics2 as streamlit_analytics
 
 from src.config import APP_TITLE, APP_SUBTITLE, APP_ICON
 from src.ui.layout import (
@@ -39,6 +40,9 @@ def get_cached_online_count():
 def main() -> None:
     """Main function to render the home page."""
     logger.info("Rendering home page")
+    
+    # Start analytics tracking
+    streamlit_analytics.start_tracking()
     
     # Large centered logo with subtitle and rotworm gif
     logo_path = Path("assets/logo_fibulopedia.png")
@@ -298,5 +302,8 @@ if __name__ == "__main__":
     create_sidebar_navigation("Home")
     
     main()
+    
+    # Stop analytics tracking
+    streamlit_analytics.stop_tracking()
     
     create_footer()
