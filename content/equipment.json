@@ -778,8 +778,15 @@
     ],
     "sell_to": [
       {"npc": "Hardek", "location": "Thais", "price": 115},
+      {"npc": "Sam", "location": "Thais", "price": 115},
+      {"npc": "Timur", "location": "Fibula", "price": 115},
       {"npc": "Kroox", "location": "Kazordoon", "price": 115},
-      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 115}
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 115},
+      {"npc": "Rowenna", "location": "Carlin", "price": 115},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 115},
+      {"npc": "Willard", "location": "Edron", "price": 115},
+      {"npc": "Yanni", "location": "Venore", "price": 115},
+      {"npc": "Romella", "location": "Venore", "price": 115}
     ],
     "reward_from": [],
     "description": "Plate leg armor."
@@ -800,9 +807,15 @@
     ],
     "sell_to": [
       {"npc": "Hardek", "location": "Thais", "price": 49},
+      {"npc": "Sam", "location": "Thais", "price": 49},
+      {"npc": "Timur", "location": "Fibula", "price": 49},
       {"npc": "Kroox", "location": "Kazordoon", "price": 49},
-      {"npc": "Cornelia", "location": "Carlin", "price": 49},
-      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 49}
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 49},
+      {"npc": "Rowenna", "location": "Carlin", "price": 49},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 49},
+      {"npc": "Willard", "location": "Edron", "price": 49},
+      {"npc": "Yanni", "location": "Venore", "price": 49},
+      {"npc": "Romella", "location": "Venore", "price": 49}
     ],
     "reward_from": [
       "Edron Troll Cave Quest"
@@ -1201,10 +1214,7 @@
     "dropped_by": [
       "Dwarven Soldier"
     ],
-    "sell_to": [
-      {"npc": "Kroox", "location": "Kazordoon", "price": 100},
-      {"npc": "H.L.", "location": "Outlaw Camp", "price": 55}
-    ],
+    "sell_to": [],
     "reward_from": [],
     "description": "Dwarven shield."
   },
@@ -1244,9 +1254,7 @@
     "weight": 66.0,
     "image": "./assets/items/viking_shield.gif",
     "dropped_by": [],
-    "sell_to": [
-      {"npc": "Willard", "location": "Edron", "price": 85}
-    ],
+    "sell_to": [],
     "reward_from": [],
     "description": "Viking shield."
   },
@@ -1263,7 +1271,16 @@
       "Dwarf"
     ],
     "sell_to": [
-      {"npc": "H.L.", "location": "Outlaw Camp", "price": 10}
+      {"npc": "Hardek", "location": "Thais", "price": 50},
+      {"npc": "Sam", "location": "Thais", "price": 50},
+      {"npc": "Timur", "location": "Fibula", "price": 50},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 50},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 50},
+      {"npc": "Rowenna", "location": "Carlin", "price": 50},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 50},
+      {"npc": "Willard", "location": "Edron", "price": 50},
+      {"npc": "Yanni", "location": "Venore", "price": 50},
+      {"npc": "Romella", "location": "Venore", "price": 50}
     ],
     "reward_from": [
       "Copper Shield Quest"
@@ -1298,11 +1315,16 @@
       "Cyclops"
     ],
     "sell_to": [
-      {"npc": "Hardek", "location": "Thais", "price": 31},
+      {"npc": "Hardek", "location": "Thais", "price": 45},
+      {"npc": "Sam", "location": "Thais", "price": 45},
+      {"npc": "Timur", "location": "Fibula", "price": 45},
       {"npc": "Kroox", "location": "Kazordoon", "price": 45},
-      {"npc": "Cornelia", "location": "Carlin", "price": 45},
-      {"npc": "Azil", "location": "Darashia", "price": 45},
-      {"npc": "Yanni", "location": "Venore", "price": 25}
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 45},
+      {"npc": "Rowenna", "location": "Carlin", "price": 45},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 45},
+      {"npc": "Willard", "location": "Edron", "price": 45},
+      {"npc": "Yanni", "location": "Venore", "price": 45},
+      {"npc": "Romella", "location": "Venore", "price": 45}
     ],
     "reward_from": [],
     "description": "Plate shield."
@@ -1321,11 +1343,16 @@
       "Elf"
     ],
     "sell_to": [
-      {"npc": "Hardek", "location": "Thais", "price": 16},
-      {"npc": "Kroox", "location": "Kazordoon", "price": 16},
-      {"npc": "Cornelia", "location": "Carlin", "price": 16},
-      {"npc": "Azil", "location": "Darashia", "price": 16},
-      {"npc": "Yanni", "location": "Venore", "price": 15}
+      {"npc": "Hardek", "location": "Thais", "price": 25},
+      {"npc": "Sam", "location": "Thais", "price": 25},
+      {"npc": "Timur", "location": "Fibula", "price": 25},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 25},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 25},
+      {"npc": "Rowenna", "location": "Carlin", "price": 25},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 25},
+      {"npc": "Willard", "location": "Edron", "price": 25},
+      {"npc": "Yanni", "location": "Venore", "price": 25},
+      {"npc": "Romella", "location": "Venore", "price": 25}
     ],
     "reward_from": [],
     "description": "Brass shield."
@@ -1373,12 +1400,16 @@
       "Frost Troll"
     ],
     "sell_to": [
-      {"npc": "Sam", "location": "Thais", "price": 3},
-      {"npc": "Kroox", "location": "Kazordoon", "price": 3},
-      {"npc": "Cornelia", "location": "Carlin", "price": 3},
+      {"npc": "Hardek", "location": "Thais", "price": 5},
+      {"npc": "Sam", "location": "Thais", "price": 5},
+      {"npc": "Timur", "location": "Fibula", "price": 5},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 5},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 5},
+      {"npc": "Rowenna", "location": "Carlin", "price": 5},
       {"npc": "Shanar", "location": "Ab'Dendriel", "price": 5},
       {"npc": "Willard", "location": "Edron", "price": 5},
-      {"npc": "Azil", "location": "Darashia", "price": 3}
+      {"npc": "Yanni", "location": "Venore", "price": 5},
+      {"npc": "Romella", "location": "Venore", "price": 5}
     ],
     "reward_from": [],
     "description": "Wooden shield."
@@ -1394,10 +1425,12 @@
       "Dragon"
     ],
     "sell_to": [
-      {"npc": "Sam", "location": "Thais", "price": 80},
-      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 80},
-      {"npc": "Willard", "location": "Edron", "price": 80},
-      {"npc": "Yanni", "location": "Venore", "price": 80}
+      {"npc": "Sam", "location": "Thais", "price": 3},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 3},
+      {"npc": "Cornelia", "location": "Carlin", "price": 3},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 5},
+      {"npc": "Willard", "location": "Edron", "price": 5},
+      {"npc": "Azil", "location": "Darashia", "price": 3}
     ],
     "reward_from": [],
     "description": "Wooden shield."
@@ -1413,14 +1446,10 @@
       "Cyclops"
     ],
     "sell_to": [
-      {"npc": "Sam", "location": "Thais", "price": 95},
-      {"npc": "Hardek", "location": "Thais", "price": 95},
-      {"npc": "Kroox", "location": "Kazordoon", "price": 60},
-      {"npc": "Cornelia", "location": "Carlin", "price": 60},
-      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 95},
-      {"npc": "Willard", "location": "Edron", "price": 95},
-      {"npc": "Azil", "location": "Darashia", "price": 60},
-      {"npc": "Yanni", "location": "Venore", "price": 95}
+      {"npc": "Sam", "location": "Thais", "price": 80},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 80},
+      {"npc": "Willard", "location": "Edron", "price": 80},
+      {"npc": "Yanni", "location": "Venore", "price": 80}
     ],
     "reward_from": [],
     "description": "Wooden shield."
