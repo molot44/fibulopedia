@@ -41,7 +41,7 @@ def load_quests() -> list[Quest]:
     for item in data:
         if not validate_required_fields(
             item,
-            ["id", "name", "location", "short_description", "reward"],
+            ["id", "name", "location", "reward"],
             "Quest"
         ):
             continue
@@ -51,8 +51,9 @@ def load_quests() -> list[Quest]:
                 id=str(item["id"]),
                 name=str(item["name"]),
                 location=str(item["location"]),
-                short_description=str(item["short_description"]),
                 reward=str(item["reward"]),
+                min_level=int(item.get("min_level", 0)),
+                short_description=item.get("short_description"),
                 difficulty=item.get("difficulty"),
                 steps=item.get("steps")
             )

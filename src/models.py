@@ -206,17 +206,19 @@ class Quest:
         id: Unique identifier for the quest.
         name: Display name of the quest.
         location: Where the quest starts or takes place.
-        short_description: Brief description of the quest.
         reward: Description of the quest reward.
-        difficulty: Optional difficulty rating.
+        min_level: Minimum level required to complete the quest.
+        short_description: Brief description of the quest (optional, legacy).
+        difficulty: Optional difficulty rating (legacy).
         steps: Optional list of quest steps (for future expansion).
     """
     
     id: str
     name: str
     location: str
-    short_description: str
     reward: str
+    min_level: int = 0
+    short_description: Optional[str] = None
     difficulty: Optional[str] = None
     steps: Optional[list[str]] = None
 

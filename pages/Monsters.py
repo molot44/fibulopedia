@@ -15,6 +15,8 @@ from src.services.monsters_service import (
     get_monster_image_path,
     get_locations
 )
+from src.services.equipment_service import load_equipment
+from src.services.weapons_service import load_weapons
 from src.ui.layout import (
     setup_page_config,
     load_custom_css,
@@ -66,6 +68,28 @@ def get_loot_item_image_path(image_name: str) -> str:
     return None
 
 
+def get_item_sell_info(item_name: str):
+    """Get sell_to information for a loot item by searching equipment and weapons."""
+    # Load equipment and weapons
+    equipment_list = load_equipment()
+    weapons_list = load_weapons()
+    
+    # Search for item by name (case-insensitive)
+    item_name_lower = item_name.lower()
+    
+    # Check equipment
+    for eq in equipment_list:
+        if eq.name.lower() == item_name_lower and eq.sell_to and len(eq.sell_to) > 0:
+            return eq.sell_to
+    
+    # Check weapons
+    for weapon in weapons_list:
+        if weapon.name.lower() == item_name_lower and weapon.sell_to and len(weapon.sell_to) > 0:
+            return weapon.sell_to
+    
+    return None
+
+
 @st.dialog("Monster Details")
 def show_monster_details(monster):
     """Display detailed monster information in a modal dialog."""
@@ -98,39 +122,160 @@ def show_monster_details(monster):
     # Loot section
     st.markdown("### 💰 Loot")
     
+    # CSS for sell tooltip
+    st.markdown("""
+        <style>
+        .loot-item-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .loot-npc-icon {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .loot-npc-tooltip {
+            visibility: hidden;
+            position: absolute;
+            z-index: 1000;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            border: 1px solid #d4af37;
+            border-radius: 6px;
+            padding: 8px 12px;
+            left: 25px;
+            top: -5px;
+            width: max-content;
+            max-width: 300px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .loot-npc-icon:hover .loot-npc-tooltip {
+            visibility: visible;
+        }
+        .loot-npc-tooltip-title {
+            color: #d4af37;
+            font-weight: bold;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+        .loot-npc-tooltip-item {
+            color: #e0e0e0;
+            font-size: 0.85rem;
+            margin-left: 8px;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    
     if monster.loot_items:
         for item in monster.loot_items:
-            with st.container():
-                item_col1, item_col2 = st.columns([1, 8])
+            item_name = item.get("name", "Unknown")
+            min_qty = item.get("min", 1)
+            max_qty = item.get("max", 1)
+            
+            if min_qty == max_qty and max_qty == 1:
+                qty_text = ""
+            elif min_qty == max_qty:
+                qty_text = f" ({max_qty}x)"
+            else:
+                qty_text = f" ({min_qty}-{max_qty}x)"
+            
+            # Get sell info for this item
+            sell_info = get_item_sell_info(item_name)
+            
+            # Build sell tooltip HTML
+            sell_icon_html = ""
+            if sell_info:
+                # Group by price
+                price_groups = {}
+                for npc_price in sell_info:
+                    price = npc_price.price
+                    if price not in price_groups:
+                        price_groups[price] = []
+                    npc_info = f"{npc_price.npc}"
+                    if npc_price.location:
+                        npc_info += f" ({npc_price.location})"
+                    price_groups[price].append(npc_info)
                 
-                with item_col1:
-                    # Item image
-                    item_image = get_loot_item_image_path(item.get("image"))
-                    if item_image:
-                        st.image(item_image, width=32)
-                    else:
-                        st.write("📦")
+                # Build tooltip content
+                tooltip_content = ""
+                for price in sorted(price_groups.keys(), reverse=True):
+                    tooltip_content += f'<div class="loot-npc-tooltip-title">Sell To ({price} gp)</div>'
+                    for npc_info in price_groups[price]:
+                        tooltip_content += f'<div class="loot-npc-tooltip-item">{npc_info}</div>'
                 
-                with item_col2:
-                    # Item name and quantity
-                    item_name = item.get("name", "Unknown")
-                    min_qty = item.get("min", 1)
-                    max_qty = item.get("max", 1)
-                    
-                    if min_qty == max_qty and max_qty == 1:
-                        qty_text = ""
-                    elif min_qty == max_qty:
-                        qty_text = f" ({max_qty}x)"
-                    else:
-                        qty_text = f" ({min_qty}-{max_qty}x)"
-                    
+                npc_count = len(sell_info)
+                npc_text = "NPC" if npc_count == 1 else "NPC's"
+                sell_icon_html = f'<span class="loot-npc-icon">💰 {npc_count} {npc_text}<div class="loot-npc-tooltip">{tooltip_content}</div></span>'
+            
+            # Display item with image and name
+            item_col1, item_col2 = st.columns([1, 8])
+            
+            with item_col1:
+                item_image = get_loot_item_image_path(item.get("image"))
+                if item_image:
+                    st.image(item_image, width=32)
+                else:
+                    st.write("📦")
+            
+            with item_col2:
+                # Combine name and sell icon in one markdown
+                if sell_icon_html:
+                    # Display inline with proper spacing
+                    st.markdown(f"""
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="font-weight: bold;">{item_name}{qty_text}</span>
+                            {sell_icon_html}
+                        </div>
+                    """, unsafe_allow_html=True)
+                else:
                     st.markdown(f"**{item_name}**{qty_text}")
     else:
-        # Fallback to text loot - split by comma and display as list
+        # Fallback to text loot - split by comma and display with sell info
         if monster.loot:
             loot_items = [item.strip() for item in monster.loot.split(',')]
             for loot_item in loot_items:
-                st.markdown(f"• {loot_item}")
+                # Get sell info for this item
+                sell_info = get_item_sell_info(loot_item)
+                
+                # Build sell icon HTML
+                sell_icon_html = ""
+                if sell_info:
+                    # Group by price
+                    price_groups = {}
+                    for npc_price in sell_info:
+                        price = npc_price.price
+                        if price not in price_groups:
+                            price_groups[price] = []
+                        npc_info = f"{npc_price.npc}"
+                        if npc_price.location:
+                            npc_info += f" ({npc_price.location})"
+                        price_groups[price].append(npc_info)
+                    
+                    # Build tooltip content
+                    tooltip_content = ""
+                    for price in sorted(price_groups.keys(), reverse=True):
+                        tooltip_content += f'<div class="loot-npc-tooltip-title">Sell To ({price} gp)</div>'
+                        for npc_info in price_groups[price]:
+                            tooltip_content += f'<div class="loot-npc-tooltip-item">{npc_info}</div>'
+                    
+                    npc_count = len(sell_info)
+                    npc_text = "NPC" if npc_count == 1 else "NPC's"
+                    sell_icon_html = f'<span class="loot-npc-icon">💰 {npc_count} {npc_text}<div class="loot-npc-tooltip">{tooltip_content}</div></span>'
+                
+                # Display with or without sell icon
+                if sell_icon_html:
+                    st.markdown(f"""
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                            <span>• <strong>{loot_item}</strong></span>
+                            {sell_icon_html}
+                        </div>
+                    """, unsafe_allow_html=True)
+                else:
+                    st.markdown(f"• **{loot_item}**")
         else:
             st.write("Nothing")
 
