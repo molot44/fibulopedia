@@ -2,13 +2,23 @@
 Search service for Fibulopedia.
 
 This module provides global search functionality across all content types:
-weapons, equipment, spells, monsters, and quests. It returns unified
+weapons, equipment, spells, monsters, quests, food, and tools. It returns unified
 search results with entity type, name, and snippet information.
+
+Version: 2.0 - Added food and tools search support.
 """
 
 from src.config import MAX_SEARCH_RESULTS, SEARCH_SNIPPET_LENGTH
 from src.models import SearchResult
-from src.services import weapons_service, equipment_service, spells_service, monsters_service, quests_service
+from src.services import (
+    weapons_service,
+    equipment_service,
+    spells_service,
+    monsters_service,
+    quests_service,
+    food_service,
+    tools_service
+)
 from src.logging_utils import setup_logger
 
 logger = setup_logger(__name__)
@@ -61,7 +71,7 @@ def create_snippet(text: str, query: str, max_length: int = SEARCH_SNIPPET_LENGT
 
 def search_all(query: str) -> list[SearchResult]:
     """
-    Search across all content types (weapons, equipment, spells, monsters, quests).
+    Search across all content types (weapons, equipment, spells, monsters, quests, food, tools).
     
     Args:
         query: The search query string.
@@ -84,7 +94,7 @@ def search_all(query: str) -> list[SearchResult]:
     # Search weapons
     try:
         weapons = weapons_service.search_weapons(query)
-        for weapon in weapons[:MAX_SEARCH_RESULTS // 5]:
+        for weapon in weapons[:MAX_SEARCH_RESULTS // 7]:
             snippet_text = f"Type: {weapon.type}, Attack: {weapon.attack}, Defense: {weapon.defense}"
             if weapon.description:
                 snippet_text = weapon.description
@@ -101,7 +111,7 @@ def search_all(query: str) -> list[SearchResult]:
     # Search equipment
     try:
         equipment = equipment_service.search_equipment(query)
-        for item in equipment[:MAX_SEARCH_RESULTS // 5]:
+        for item in equipment[:MAX_SEARCH_RESULTS // 7]:
             snippet_text = f"Slot: {item.slot}, Defense: {item.defense}"
             if item.description:
                 snippet_text = item.description
@@ -118,7 +128,7 @@ def search_all(query: str) -> list[SearchResult]:
     # Search spells
     try:
         spells = spells_service.search_spells(query)
-        for spell in spells[:MAX_SEARCH_RESULTS // 5]:
+        for spell in spells[:MAX_SEARCH_RESULTS // 7]:
             snippet_text = f"Incantation: {spell.incantation}, Vocation: {spell.vocation}, Effect: {spell.effect}"
             
             results.append(SearchResult(
@@ -133,7 +143,7 @@ def search_all(query: str) -> list[SearchResult]:
     # Search monsters
     try:
         monsters = monsters_service.search_monsters(query)
-        for monster in monsters[:MAX_SEARCH_RESULTS // 5]:
+        for monster in monsters[:MAX_SEARCH_RESULTS // 7]:
             snippet_text = f"HP: {monster.hp}, EXP: {monster.exp}, Location: {monster.location}, Loot: {monster.loot}"
             
             results.append(SearchResult(
@@ -148,7 +158,7 @@ def search_all(query: str) -> list[SearchResult]:
     # Search quests
     try:
         quests = quests_service.search_quests(query)
-        for quest in quests[:MAX_SEARCH_RESULTS // 5]:
+        for quest in quests[:MAX_SEARCH_RESULTS // 7]:
             snippet_text = f"Location: {quest.location}, {quest.short_description}"
             
             results.append(SearchResult(
@@ -159,6 +169,38 @@ def search_all(query: str) -> list[SearchResult]:
             ))
     except Exception as e:
         logger.error(f"Error searching quests: {e}")
+    
+    # Search food
+    try:
+        food_items = food_service.search_food(query)
+        for food in food_items[:MAX_SEARCH_RESULTS // 7]:
+            snippet_text = f"HP Gain: {food.hp_gain or 'N/A'}, Weight: {food.weight or 'N/A'} oz"
+            
+            results.append(SearchResult(
+                entity_type="food",
+                entity_id=food.name,  # Food uses name as ID
+                name=food.name,
+                snippet=create_snippet(snippet_text, query)
+            ))
+    except Exception as e:
+        logger.error(f"Error searching food: {e}")
+    
+    # Search tools
+    try:
+        tools = tools_service.search_tools(query)
+        for tool in tools[:MAX_SEARCH_RESULTS // 7]:
+            snippet_text = f"Type: {tool.type}, Weight: {tool.weight} oz"
+            if tool.description:
+                snippet_text = tool.description
+            
+            results.append(SearchResult(
+                entity_type="tool",
+                entity_id=tool.id,
+                name=tool.name,
+                snippet=create_snippet(snippet_text, query)
+            ))
+    except Exception as e:
+        logger.error(f"Error searching tools: {e}")
     
     # Limit total results
     results = results[:MAX_SEARCH_RESULTS]
@@ -173,7 +215,7 @@ def search_by_entity_type(query: str, entity_type: str) -> list[SearchResult]:
     
     Args:
         query: The search query string.
-        entity_type: The type to search (weapon, equipment, spell, monster, quest).
+        entity_type: The type to search (weapon, equipment, spell, monster, quest, food, tool).
     
     Returns:
         List of SearchResult objects for the specified entity type.
@@ -241,6 +283,30 @@ def search_by_entity_type(query: str, entity_type: str) -> list[SearchResult]:
                 snippet=f"Location: {q.location}"
             )
             for q in quests
+        ]
+    
+    elif entity_type == "food":
+        food_items = food_service.search_food(query)
+        return [
+            SearchResult(
+                entity_type="food",
+                entity_id=f.name,
+                name=f.name,
+                snippet=f"HP Gain: {f.hp_gain or 'N/A'}, Weight: {f.weight or 'N/A'} oz"
+            )
+            for f in food_items
+        ]
+    
+    elif entity_type == "tool":
+        tools = tools_service.search_tools(query)
+        return [
+            SearchResult(
+                entity_type="tool",
+                entity_id=t.id,
+                name=t.name,
+                snippet=f"Type: {t.type}, Weight: {t.weight} oz"
+            )
+            for t in tools
         ]
     
     else:

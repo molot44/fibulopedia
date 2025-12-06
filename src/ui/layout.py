@@ -360,7 +360,7 @@ def create_sidebar_navigation(current_page: str = "Home") -> None:
         # Calculators with dropdown - using toggle with icon
         # Auto-expand if we're on a calculator page
         if "show_calculators" not in st.session_state:
-            st.session_state.show_calculators = current_page in ["Magic Damage Calculator", "Travel Calculator"]
+            st.session_state.show_calculators = current_page in ["Magic Damage Calculator", "Travel Calculator", "Loot Calculator"]
         
         # Load calculators icon
         calculators_icon_path = load_icon_path("Spellbook.gif")
@@ -393,10 +393,10 @@ def create_sidebar_navigation(current_page: str = "Home") -> None:
                 """
                 st.markdown(button_style, unsafe_allow_html=True)
 
-                if st.button("Calculators", key="nav_calculators_toggle", use_container_width=True, type="primary" if current_page in ["Magic Damage Calculator", "Travel Calculator"] else "secondary"):
+                if st.button("Calculators", key="nav_calculators_toggle", use_container_width=True, type="primary" if current_page in ["Magic Damage Calculator", "Travel Calculator", "Loot Calculator"] else "secondary"):
                     st.session_state.show_calculators = not st.session_state.show_calculators
         else:
-            if st.button(" Calculators", key="nav_calculators_toggle_fallback", use_container_width=True, type="primary" if current_page in ["Magic Damage Calculator", "Travel Calculator"] else "secondary"):
+            if st.button(" Calculators", key="nav_calculators_toggle_fallback", use_container_width=True, type="primary" if current_page in ["Magic Damage Calculator", "Travel Calculator", "Loot Calculator"] else "secondary"):
                 st.session_state.show_calculators = not st.session_state.show_calculators
 
         if st.session_state.show_calculators:
@@ -431,6 +431,21 @@ def create_sidebar_navigation(current_page: str = "Home") -> None:
                     if st.button("🗺️ Travel Routes", key="nav_calc_travel", use_container_width=True, type="secondary"):
                         st.session_state.show_calculators = False
                         st.switch_page("pages/Travel_Calculator.py")
+                
+                # Loot Calculator with icon
+                loot_icon_path = ASSETS_DIR / "items" / "bag.gif"
+                if loot_icon_path.exists():
+                    col1, col2 = st.columns([1, 5])
+                    with col1:
+                        st.image(str(loot_icon_path), width=24)
+                    with col2:
+                        if st.button("Loot Calculator", key="nav_calc_loot", use_container_width=True, type="secondary"):
+                            st.session_state.show_calculators = False
+                            st.switch_page("pages/Loot_Calculator.py")
+                else:
+                    if st.button("💰 Loot Calculator", key="nav_calc_loot", use_container_width=True, type="secondary"):
+                        st.session_state.show_calculators = False
+                        st.switch_page("pages/Loot_Calculator.py")
 
         st.markdown(spacer_html, unsafe_allow_html=True)
 

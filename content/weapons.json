@@ -8,9 +8,8 @@
     "weight": 10.5,
     "hands": "One-handed",
     "image": "./assets/items/sickle.gif",
-    "dropped_by": ["Witch"],
-    "buy_from": [
-      {"npc": "Hardek", "location": "Thais", "price": 1000}
+    "dropped_by": [
+      "Witch"
     ],
     "sell_to": [],
     "reward_from": [],
@@ -25,9 +24,12 @@
     "weight": 18.0,
     "hands": "One-handed",
     "image": "./assets/items/hand_axe.gif",
-    "dropped_by": ["Troll"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Troll"
+    ],
+    "sell_to": [
+      {"npc": "Willard", "location": "Edron", "price": 4}
+    ],
     "reward_from": [],
     "description": "A small axe for one-handed use."
   },
@@ -40,9 +42,18 @@
     "weight": 40.0,
     "hands": "One-handed",
     "image": "./assets/items/axe.gif",
-    "dropped_by": ["Wild Warrior", "Bandit", "Dwarf", "Minotaur", "Orc"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Wild Warrior",
+      "Bandit",
+      "Dwarf",
+      "Minotaur",
+      "Orc"
+    ],
+    "sell_to": [
+      {"npc": "Sam", "location": "Thais", "price": 7},
+      {"npc": "Willard", "location": "Edron", "price": 7},
+      {"npc": "Romella", "location": "Venore", "price": 7}
+    ],
     "reward_from": [],
     "description": "A standard battle axe."
   },
@@ -55,8 +66,10 @@
     "weight": 19.5,
     "hands": "One-handed",
     "image": "./assets/items/golden_sickle.gif",
-    "dropped_by": ["Demon", "Orshabaal"],
-    "buy_from": [],
+    "dropped_by": [
+      "Demon",
+      "Orshabaal"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A ceremonial golden sickle."
@@ -70,9 +83,15 @@
     "weight": 35.0,
     "hands": "One-handed",
     "image": "./assets/items/hatchet.gif",
-    "dropped_by": ["Dwarf", "Minotaur Guard", "Skeleton", "The Horned Fox"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Dwarf",
+      "Minotaur Guard",
+      "Skeleton",
+      "The Horned Fox"
+    ],
+    "sell_to": [
+      {"npc": "Timur", "location": "Fibula", "price": 25}
+    ],
     "reward_from": [],
     "description": "A woodcutter's hatchet."
   },
@@ -85,8 +104,10 @@
     "weight": 45.0,
     "hands": "One-handed",
     "image": "./assets/items/orcish_axe.gif",
-    "dropped_by": ["Orc Rider", "Orc Warlord"],
-    "buy_from": [],
+    "dropped_by": [
+      "Orc Rider",
+      "Orc Warlord"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "An axe wielded by orc warriors."
@@ -101,9 +122,12 @@
     "hands": "One-handed",
     "image": "./assets/items/barbarian axe.gif",
     "dropped_by": [],
-    "buy_from": [],
-    "sell_to": [],
-    "reward_from": ["Barbarian Axe Quest"],
+    "sell_to": [
+      {"npc": "Willard", "location": "Edron", "price": 185}
+    ],
+    "reward_from": [
+      "Barbarian Axe Quest"
+    ],
     "description": "A crude but effective axe used by barbarians."
   },
   {
@@ -116,9 +140,10 @@
     "hands": "One-handed",
     "image": "./assets/items/dwarven_axe.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
-    "reward_from": ["Griffin Shield Quest"],
+    "reward_from": [
+      "Griffin Shield Quest"
+    ],
     "description": "An axe crafted by dwarven smiths."
   },
   {
@@ -130,10 +155,14 @@
     "weight": 59.0,
     "hands": "One-handed",
     "image": "./assets/items/knight axe.gif",
-    "dropped_by": ["Black Knight"],
-    "buy_from": [],
+    "dropped_by": [
+      "Black Knight"
+    ],
     "sell_to": [],
-    "reward_from": ["Orc Fortress Quest", "Deeper Fibula Quest"],
+    "reward_from": [
+      "Orc Fortress Quest",
+      "Deeper Fibula Quest"
+    ],
     "description": "A knight's heavy battle axe."
   },
   {
@@ -145,10 +174,15 @@
     "weight": 40.0,
     "hands": "One-handed",
     "image": "./assets/items/fire axe.gif",
-    "dropped_by": ["Demon", "Orshabaal", "Mahrdis"],
-    "buy_from": [],
+    "dropped_by": [
+      "Demon",
+      "Orshabaal",
+      "Mahrdis"
+    ],
     "sell_to": [],
-    "reward_from": ["Fire Axe Quest"],
+    "reward_from": [
+      "Fire Axe Quest"
+    ],
     "description": "An axe enchanted with fire."
   },
   {
@@ -161,9 +195,10 @@
     "hands": "One-handed",
     "image": "./assets/items/stonecutter_axe.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
-    "reward_from": ["Annihilator Quest"],
+    "reward_from": [
+      "Annihilator Quest"
+    ],
     "description": "A heavy mining axe."
   },
   {
@@ -176,7 +211,6 @@
     "hands": "Two-handed",
     "image": "./assets/items/scythe.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A farming tool adapted as a weapon."
@@ -190,10 +224,21 @@
     "weight": 50.0,
     "hands": "Two-handed",
     "image": "./assets/items/battle_axe.gif",
-    "dropped_by": ["Dwarf Soldier", "Orc Berserker"],
-    "buy_from": [],
-    "sell_to": [],
-    "reward_from": ["Battle Axe Quest"],
+    "dropped_by": [
+      "Dwarf Soldier",
+      "Orc Berserker"
+    ],
+    "sell_to": [
+      {"npc": "Sam", "location": "Thais", "price": 80},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 75},
+      {"npc": "Rowenna", "location": "Carlin", "price": 75},
+      {"npc": "Willard", "location": "Edron", "price": 80},
+      {"npc": "Habdel", "location": "Darashia", "price": 75},
+      {"npc": "Romella", "location": "Venore", "price": 80}
+    ],
+    "reward_from": [
+      "Battle Axe Quest"
+    ],
     "description": "A large two-handed battle axe."
   },
   {
@@ -205,10 +250,14 @@
     "weight": 80.0,
     "hands": "Two-handed",
     "image": "./assets/items/obsidian_lance.gif",
-    "dropped_by": ["Orc Rider", "Stalker"],
-    "buy_from": [],
+    "dropped_by": [
+      "Orc Rider",
+      "Stalker"
+    ],
     "sell_to": [],
-    "reward_from": ["Griffin Shield Quest"],
+    "reward_from": [
+      "Griffin Shield Quest"
+    ],
     "description": "A lance made from volcanic glass."
   },
   {
@@ -220,9 +269,16 @@
     "weight": 70.0,
     "hands": "Two-handed",
     "image": "./assets/items/double_axe.gif",
-    "dropped_by": ["Dwarf Guard", "Dragon", "Behemoth", "Minotaur Guard"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Dwarf Guard",
+      "Dragon",
+      "Behemoth",
+      "Minotaur Guard"
+    ],
+    "sell_to": [
+      {"npc": "Rowenna", "location": "Carlin", "price": 260},
+      {"npc": "Habdel", "location": "Darashia", "price": 260}
+    ],
     "reward_from": [],
     "description": "An axe with two cutting edges."
   },
@@ -235,9 +291,19 @@
     "weight": 90.0,
     "hands": "Two-handed",
     "image": "./assets/items/halberd.gif",
-    "dropped_by": ["Cyclops", "Orc Berserker", "Behemoth"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Cyclops",
+      "Orc Berserker",
+      "Behemoth"
+    ],
+    "sell_to": [
+      {"npc": "Sam", "location": "Thais", "price": 400},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 310},
+      {"npc": "Rowenna", "location": "Carlin", "price": 310},
+      {"npc": "Willard", "location": "Edron", "price": 400},
+      {"npc": "Habdel", "location": "Darashia", "price": 310},
+      {"npc": "Romella", "location": "Venore", "price": 400}
+    ],
     "reward_from": [],
     "description": "A pole weapon with an axe blade."
   },
@@ -251,13 +317,16 @@
     "hands": "Two-handed",
     "image": "./assets/items/naginata.gif",
     "dropped_by": [],
-    "buy_from": [
-      {"npc": "Rowenna", "location": "Carlin", "price": 118}
-    ],
     "sell_to": [
-      {"npc": "Rowenna", "location": "Carlin", "price": 118}
+      {
+        "npc": "Rowenna",
+        "location": "Carlin",
+        "price": 118
+      }
     ],
-    "reward_from": ["Naginata Quest"],
+    "reward_from": [
+      "Naginata Quest"
+    ],
     "description": "An eastern pole weapon."
   },
   {
@@ -270,9 +339,10 @@
     "hands": "Two-handed",
     "image": "./assets/items/guardian_halberd.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
-    "reward_from": ["Behemoth Quest"],
+    "reward_from": [
+      "Behemoth Quest"
+    ],
     "description": "A ceremonial halberd of the royal guard."
   },
   {
@@ -284,10 +354,13 @@
     "weight": 67.0,
     "hands": "Two-handed",
     "image": "./assets/items/dragon lance.gif",
-    "dropped_by": ["Black Knight"],
-    "buy_from": [],
+    "dropped_by": [
+      "Black Knight"
+    ],
     "sell_to": [],
-    "reward_from": ["Vampire Shield Quest"],
+    "reward_from": [
+      "Vampire Shield Quest"
+    ],
     "description": "A lance forged from dragon bone."
   },
   {
@@ -300,7 +373,6 @@
     "hands": "Two-handed",
     "image": "./assets/items/War_Axe.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A massive two-handed axe."
@@ -314,8 +386,9 @@
     "weight": 21.0,
     "hands": "One-handed",
     "image": "./assets/items/crowbar.gif",
-    "dropped_by": ["Behemoth"],
-    "buy_from": [],
+    "dropped_by": [
+      "Behemoth"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A simple crowbar."
@@ -329,8 +402,12 @@
     "weight": 25.0,
     "hands": "One-handed",
     "image": "./assets/items/club.gif",
-    "dropped_by": ["Troll", "Orc", "Ghoul", "Dwarf"],
-    "buy_from": [],
+    "dropped_by": [
+      "Troll",
+      "Orc",
+      "Ghoul",
+      "Dwarf"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A simple wooden club."
@@ -344,13 +421,27 @@
     "weight": 38.0,
     "hands": "One-handed",
     "image": "./assets/items/mace.gif",
-    "dropped_by": ["Skeleton", "Rotworm", "Minotaur", "Wild Warrior"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Skeleton",
+      "Rotworm",
+      "Minotaur",
+      "Wild Warrior"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 23},
+      {"npc": "Sam", "location": "Thais", "price": 30},
+      {"npc": "Timur", "location": "Fibula", "price": 30},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 23},
+      {"npc": "Rowenna", "location": "Carlin", "price": 23},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 23},
+      {"npc": "Willard", "location": "Edron", "price": 30},
+      {"npc": "Habdel", "location": "Darashia", "price": 23},
+      {"npc": "H.L.", "location": "Outlaw Camp", "price": 8},
+      {"npc": "Romella", "location": "Venore", "price": 30}
+    ],
     "reward_from": [],
     "description": "A metal-headed mace."
   },
-
   {
     "id": "club_004",
     "type": "club",
@@ -361,9 +452,10 @@
     "hands": "One-handed",
     "image": "./assets/items/iron_hammer.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
-    "reward_from": ["Iron Hammer Quest"],
+    "reward_from": [
+      "Iron Hammer Quest"
+    ],
     "description": "A sturdy iron hammer."
   },
   {
@@ -375,9 +467,18 @@
     "weight": 68.0,
     "hands": "One-handed",
     "image": "./assets/items/battle_hammer.gif",
-    "dropped_by": ["Dwarf Guard", "Demon Skeleton", "Black Knight"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Dwarf Guard",
+      "Demon Skeleton",
+      "Black Knight"
+    ],
+    "sell_to": [
+      {"npc": "Sam", "location": "Thais", "price": 120},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 50},
+      {"npc": "Rowenna", "location": "Carlin", "price": 50},
+      {"npc": "Willard", "location": "Edron", "price": 120},
+      {"npc": "Habdel", "location": "Darashia", "price": 50}
+    ],
     "reward_from": [],
     "description": "A heavy war hammer."
   },
@@ -391,9 +492,10 @@
     "hands": "One-handed",
     "image": "./assets/items/battle_hammer.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
-    "reward_from": ["Giant Smithhammer Quest"],
+    "reward_from": [
+      "Giant Smithhammer Quest"
+    ],
     "description": "A massive hammer forged by giants."
   },
   {
@@ -405,13 +507,20 @@
     "weight": 54.0,
     "hands": "One-handed",
     "image": "./assets/items/morning_star.gif",
-    "dropped_by": ["Beholder", "Ghost"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Beholder",
+      "Ghost"
+    ],
+    "sell_to": [
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 100},
+      {"npc": "Rowenna", "location": "Carlin", "price": 100},
+      {"npc": "Willard", "location": "Edron", "price": 90},
+      {"npc": "Habdel", "location": "Darashia", "price": 100},
+      {"npc": "Romella", "location": "Venore", "price": 90}
+    ],
     "reward_from": [],
     "description": "A spiked mace."
   },
-
   {
     "id": "club_008",
     "type": "club",
@@ -421,9 +530,14 @@
     "weight": 58.0,
     "hands": "One-handed",
     "image": "./assets/items/clerical_mace.gif",
-    "dropped_by": ["Priestess", "Necromancer", "Dwarf Geomancer"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Priestess",
+      "Necromancer",
+      "Dwarf Geomancer"
+    ],
+    "sell_to": [
+      {"npc": "Willard", "location": "Edron", "price": 170}
+    ],
     "reward_from": [],
     "description": "A blessed mace used by priests."
   },
@@ -436,8 +550,9 @@
     "weight": 97.0,
     "hands": "One-handed",
     "image": "./assets/items/dragon_hammer.gif",
-    "dropped_by": ["Dragon"],
-    "buy_from": [],
+    "dropped_by": [
+      "Dragon"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A hammer forged from dragon bones."
@@ -451,10 +566,14 @@
     "weight": 17.0,
     "hands": "One-handed",
     "image": "./assets/items/skull_staff.gif",
-    "dropped_by": ["Necromancer", "Warlock"],
-    "buy_from": [],
+    "dropped_by": [
+      "Necromancer",
+      "Warlock"
+    ],
     "sell_to": [],
-    "reward_from": ["Medusa Shield Quest"],
+    "reward_from": [
+      "Medusa Shield Quest"
+    ],
     "description": "A staff topped with a skull."
   },
   {
@@ -467,7 +586,6 @@
     "hands": "One-handed",
     "image": "./assets/items/silver_mace.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A mace made from pure silver."
@@ -481,8 +599,9 @@
     "weight": 125.0,
     "hands": "One-handed",
     "image": "./assets/items/thunder_hammer.gif",
-    "dropped_by": ["Orshabaal"],
-    "buy_from": [],
+    "dropped_by": [
+      "Orshabaal"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A hammer that crackles with lightning."
@@ -497,7 +616,6 @@
     "hands": "Two-handed",
     "image": "./assets/items/staff.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A wooden staff."
@@ -512,7 +630,6 @@
     "hands": "Two-handed",
     "image": "./assets/items/enchanted_staff.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A staff infused with magical power."
@@ -526,10 +643,14 @@
     "weight": 85.0,
     "hands": "Two-handed",
     "image": "./assets/items/war_hammer.gif",
-    "dropped_by": ["Wild Warrior", "Hero"],
-    "buy_from": [],
+    "dropped_by": [
+      "Wild Warrior",
+      "Hero"
+    ],
     "sell_to": [],
-    "reward_from": ["Circle Room Quest"],
+    "reward_from": [
+      "Circle Room Quest"
+    ],
     "description": "A massive two-handed war hammer."
   },
   {
@@ -541,11 +662,20 @@
     "weight": 4.2,
     "hands": "One-handed",
     "image": "./assets/items/knife.gif",
-    "dropped_by": ["Ghoul"],
-    "buy_from": [],
+    "dropped_by": [
+      "Ghoul"
+    ],
     "sell_to": [
-      {"npc": "Hardek", "location": "Thais", "price": 1},
-      {"npc": "Memech", "location": "Ankrahmun", "price": 1}
+      {
+        "npc": "Hardek",
+        "location": "Thais",
+        "price": 1
+      },
+      {
+        "npc": "Memech",
+        "location": "Ankrahmun",
+        "price": 1
+      }
     ],
     "reward_from": [],
     "description": "A simple knife."
@@ -559,14 +689,12 @@
     "weight": 9.5,
     "hands": "One-handed",
     "image": "./assets/items/dagger.gif",
-    "dropped_by": ["Goblin"],
-    "buy_from": [
-      {"npc": "Hardek", "location": "Thais", "price": 5},
-      {"npc": "Memech", "location": "Ankrahmun", "price": 5}
+    "dropped_by": [
+      "Goblin"
     ],
     "sell_to": [
-      {"npc": "Hardek", "location": "Thais", "price": 2},
-      {"npc": "Memech", "location": "Ankrahmun", "price": 2}
+      {"npc": "Sam", "location": "Thais", "price": 2},
+      {"npc": "Romella", "location": "Venore", "price": 2}
     ],
     "reward_from": [],
     "description": "A small dagger."
@@ -580,12 +708,16 @@
     "weight": 8.7,
     "hands": "One-handed",
     "image": "./assets/items/combat_knife.gif",
-    "dropped_by": ["Bandit", "Assassin"],
-    "buy_from": [
-      {"npc": "Memech", "location": "Ankrahmun", "price": 6}
+    "dropped_by": [
+      "Bandit",
+      "Assassin"
     ],
     "sell_to": [
-      {"npc": "Memech", "location": "Ankrahmun", "price": 5}
+      {
+        "npc": "Memech",
+        "location": "Ankrahmun",
+        "price": 5
+      }
     ],
     "reward_from": [],
     "description": "A military knife."
@@ -600,7 +732,6 @@
     "hands": "One-handed",
     "image": "./assets/items/silver_dagger.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A dagger made from silver."
@@ -615,16 +746,13 @@
     "hands": "One-handed",
     "image": "./assets/items/rapier.gif",
     "dropped_by": [],
-    "buy_from": [
-      {"npc": "Hardek", "location": "Thais", "price": 15},
-      {"npc": "Memech", "location": "Ankrahmun", "price": 15},
-      {"npc": "Robert", "location": "Svargrond", "price": 15}
-    ],
     "sell_to": [
-      {"npc": "Hardek", "location": "Thais", "price": 5},
-      {"npc": "Memech", "location": "Ankrahmun", "price": 5},
-      {"npc": "Robert", "location": "Svargrond", "price": 5},
-      {"npc": "Rowenna", "location": "Carlin", "price": 3}
+      {"npc": "Sam", "location": "Thais", "price": 5},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 3},
+      {"npc": "Rowenna", "location": "Carlin", "price": 3},
+      {"npc": "Willard", "location": "Edron", "price": 5},
+      {"npc": "Habdel", "location": "Darashia", "price": 3},
+      {"npc": "Romella", "location": "Venore", "price": 5}
     ],
     "reward_from": [],
     "description": "A light, fast thrusting sword."
@@ -638,12 +766,15 @@
     "weight": 35.0,
     "hands": "One-handed",
     "image": "./assets/items/short_sword.gif",
-    "dropped_by": ["Dwarf", "Minotaur", "Orc Spearman"],
-    "buy_from": [
-      {"npc": "Hardek", "location": "Thais", "price": 10}
+    "dropped_by": [
+      "Dwarf",
+      "Minotaur",
+      "Orc Spearman"
     ],
     "sell_to": [
-      {"npc": "Hardek", "location": "Thais", "price": 10}
+      {"npc": "Sam", "location": "Thais", "price": 10},
+      {"npc": "Willard", "location": "Edron", "price": 10},
+      {"npc": "Romella", "location": "Venore", "price": 10}
     ],
     "reward_from": [],
     "description": "A short blade for close combat."
@@ -658,11 +789,12 @@
     "hands": "One-handed",
     "image": "./assets/items/machete.gif",
     "dropped_by": [],
-    "buy_from": [
-      {"npc": "Memech", "location": "Ankrahmun", "price": 35}
-    ],
     "sell_to": [
-      {"npc": "Memech", "location": "Ankrahmun", "price": 12}
+      {
+        "npc": "Memech",
+        "location": "Ankrahmun",
+        "price": 12
+      }
     ],
     "reward_from": [],
     "description": "A heavy jungle blade."
@@ -676,17 +808,18 @@
     "weight": 25.0,
     "hands": "One-handed",
     "image": "./assets/items/sabre.gif",
-    "dropped_by": ["Wild Warrior", "Orc Warrior"],
-    "buy_from": [
-      {"npc": "Hardek", "location": "Thais", "price": 35},
-      {"npc": "Memech", "location": "Ankrahmun", "price": 35},
-      {"npc": "Rowenna", "location": "Carlin", "price": 25}
+    "dropped_by": [
+      "Wild Warrior",
+      "Orc Warrior"
     ],
     "sell_to": [
-      {"npc": "Hardek", "location": "Thais", "price": 12},
-      {"npc": "Memech", "location": "Ankrahmun", "price": 12},
+      {"npc": "Sam", "location": "Thais", "price": 12},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 5},
       {"npc": "Rowenna", "location": "Carlin", "price": 5},
-      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 5}
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 12},
+      {"npc": "Willard", "location": "Edron", "price": 12},
+      {"npc": "Habdel", "location": "Darashia", "price": 5},
+      {"npc": "Romella", "location": "Venore", "price": 12}
     ],
     "reward_from": [],
     "description": "A curved cavalry sword."
@@ -700,27 +833,18 @@
     "weight": 35.0,
     "hands": "One-handed",
     "image": "./assets/items/sword.gif",
-    "dropped_by": ["Minotaur Guard", "Dwarf Guard"],
-    "buy_from": [
-      {"npc": "Hardek", "location": "Thais", "price": 85},
-      {"npc": "Ulrik", "location": "Greenshore", "price": 85},
-      {"npc": "Romella", "location": "Venore", "price": 85},
-      {"npc": "Memech", "location": "Ankrahmun", "price": 85},
-      {"npc": "Rowenna", "location": "Carlin", "price": 85},
-      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 85},
-      {"npc": "Willard", "location": "Edron", "price": 85},
-      {"npc": "Uzgod", "location": "Kazordoon", "price": 85}
+    "dropped_by": [
+      "Minotaur Guard",
+      "Dwarf Guard"
     ],
     "sell_to": [
-      {"npc": "Hardek", "location": "Thais", "price": 25},
-      {"npc": "Ulrik", "location": "Greenshore", "price": 25},
-      {"npc": "Romella", "location": "Venore", "price": 25},
-      {"npc": "Memech", "location": "Ankrahmun", "price": 25},
+      {"npc": "Sam", "location": "Thais", "price": 25},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 15},
       {"npc": "Rowenna", "location": "Carlin", "price": 15},
       {"npc": "Shanar", "location": "Ab'Dendriel", "price": 25},
       {"npc": "Willard", "location": "Edron", "price": 25},
-      {"npc": "Uzgod", "location": "Kazordoon", "price": 15},
-      {"npc": "Willard", "location": "Edron", "price": 25}
+      {"npc": "Habdel", "location": "Darashia", "price": 15},
+      {"npc": "Romella", "location": "Venore", "price": 25}
     ],
     "reward_from": [],
     "description": "A standard longsword."
@@ -734,14 +858,15 @@
     "weight": 31.0,
     "hands": "One-handed",
     "image": "./assets/items/katana.gif",
-    "dropped_by": ["Rotworm"],
-    "buy_from": [
-      {"npc": "Rowenna", "location": "Carlin", "price": 118}
+    "dropped_by": [
+      "Rotworm"
     ],
     "sell_to": [
-      {"npc": "Rowenna", "location": "Carlin", "price": 473}
+      {"npc": "H.L.", "location": "Outlaw Camp", "price": 8}
     ],
-    "reward_from": ["Katana Quest (Rook)"],
+    "reward_from": [
+      "Katana Quest (Rook)"
+    ],
     "description": "A curved eastern blade."
   },
   {
@@ -753,14 +878,13 @@
     "weight": 42.0,
     "hands": "One-handed",
     "image": "./assets/items/longsword.gif",
-    "dropped_by": ["Elf"],
-    "buy_from": [
-      {"npc": "Ulrik", "location": "Greenshore", "price": 51},
-      {"npc": "Memech", "location": "Ankrahmun", "price": 160},
-      {"npc": "Willard", "location": "Edron", "price": 160}
+    "dropped_by": [
+      "Elf"
     ],
     "sell_to": [
-      {"npc": "Willard", "location": "Edron", "price": 51}
+      {"npc": "Hardek", "location": "Thais", "price": 51},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 51},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 51}
     ],
     "reward_from": [],
     "description": "An extended blade for greater reach."
@@ -774,8 +898,9 @@
     "weight": 8.8,
     "hands": "One-handed",
     "image": "./assets/items/poison_dagger.gif",
-    "dropped_by": ["Smuggler"],
-    "buy_from": [],
+    "dropped_by": [
+      "Smuggler"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A dagger coated with venom."
@@ -789,12 +914,15 @@
     "weight": 29.0,
     "hands": "One-handed",
     "image": "./assets/items/scimitar.gif",
-    "dropped_by": ["Orc Leader"],
-    "buy_from": [
-      {"npc": "Memech", "location": "Ankrahmun", "price": 150}
+    "dropped_by": [
+      "Orc Leader"
     ],
     "sell_to": [
-      {"npc": "Memech", "location": "Ankrahmun", "price": 150}
+      {
+        "npc": "Memech",
+        "location": "Ankrahmun",
+        "price": 150
+      }
     ],
     "reward_from": [],
     "description": "A curved blade from the desert."
@@ -808,13 +936,21 @@
     "weight": 50.0,
     "hands": "One-handed",
     "image": "./assets/items/spike_sword.gif",
-    "dropped_by": ["Orc Berserker", "Stone Golem"],
-    "buy_from": [
-      {"npc": "Willard", "location": "Edron", "price": 240}
+    "dropped_by": [
+      "Orc Berserker",
+      "Stone Golem"
     ],
     "sell_to": [
-      {"npc": "Willard", "location": "Edron", "price": 240},
-      {"npc": "Uzgod", "location": "Kazordoon", "price": 225}
+      {
+        "npc": "Willard",
+        "location": "Edron",
+        "price": 240
+      },
+      {
+        "npc": "Uzgod",
+        "location": "Kazordoon",
+        "price": 225
+      }
     ],
     "reward_from": [],
     "description": "A sword with a spiked blade."
@@ -828,10 +964,15 @@
     "weight": 41.0,
     "hands": "One-handed",
     "image": "./assets/items/serpent_sword.gif",
-    "dropped_by": ["Dragon"],
-    "buy_from": [],
+    "dropped_by": [
+      "Dragon"
+    ],
     "sell_to": [
-      {"npc": "Willard", "location": "Edron", "price": 900}
+      {
+        "npc": "Willard",
+        "location": "Edron",
+        "price": 900
+      }
     ],
     "reward_from": [],
     "description": "A sword with a serpentine blade."
@@ -845,16 +986,24 @@
     "weight": 23.0,
     "hands": "Two-handed",
     "image": "./assets/items/fire_sword.gif",
-    "dropped_by": ["Dragon Lord"],
-    "buy_from": [
-      {"npc": "Hardek", "location": "Thais", "price": 1000},
-      {"npc": "Ulrik", "location": "Greenshore", "price": 1000}
+    "dropped_by": [
+      "Dragon Lord"
     ],
     "sell_to": [
-      {"npc": "Hardek", "location": "Thais", "price": 1000},
-      {"npc": "Ulrik", "location": "Greenshore", "price": 1000}
+      {
+        "npc": "Hardek",
+        "location": "Thais",
+        "price": 1000
+      },
+      {
+        "npc": "Ulrik",
+        "location": "Greenshore",
+        "price": 1000
+      }
     ],
-    "reward_from": ["Orc Fortress Quest"],
+    "reward_from": [
+      "Orc Fortress Quest"
+    ],
     "description": "A blade wreathed in flames."
   },
   {
@@ -867,13 +1016,16 @@
     "hands": "One-handed",
     "image": "./assets/items/bright_sword.gif",
     "dropped_by": [],
-    "buy_from": [
-      {"npc": "Ulrik", "location": "Greenshore", "price": 600}
-    ],
     "sell_to": [
-      {"npc": "Ulrik", "location": "Greenshore", "price": 600}
+      {
+        "npc": "Ulrik",
+        "location": "Greenshore",
+        "price": 600
+      }
     ],
-    "reward_from": ["Bright Sword Quest"],
+    "reward_from": [
+      "Bright Sword Quest"
+    ],
     "description": "A sword that glows with inner light."
   },
   {
@@ -886,11 +1038,16 @@
     "hands": "One-handed",
     "image": "./assets/items/magic_longsword.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [
-      {"npc": "Hardek", "location": "Thais", "price": 350}
+      {
+        "npc": "Hardek",
+        "location": "Thais",
+        "price": 350
+      }
     ],
-    "reward_from": ["Annihilator Quest"],
+    "reward_from": [
+      "Annihilator Quest"
+    ],
     "description": "A sword pulsing with magic."
   },
   {
@@ -903,7 +1060,6 @@
     "hands": "One-handed",
     "image": "./assets/items/ice_rapier.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A rapier frozen solid."
@@ -917,12 +1073,15 @@
     "weight": 52.5,
     "hands": "Two-handed",
     "image": "./assets/items/broad_sword.gif",
-    "dropped_by": ["Dragon"],
-    "buy_from": [
-      {"npc": "Willard", "location": "Edron", "price": 500}
+    "dropped_by": [
+      "Dragon"
     ],
     "sell_to": [
-      {"npc": "Willard", "location": "Edron", "price": 500}
+      {
+        "npc": "Willard",
+        "location": "Edron",
+        "price": 500
+      }
     ],
     "reward_from": [],
     "description": "A wide-bladed sword."
@@ -936,19 +1095,17 @@
     "weight": 70.0,
     "hands": "Two-handed",
     "image": "./assets/items/twohanded_sword.gif",
-    "dropped_by": ["Skeleton Warrior"],
-    "buy_from": [
-      {"npc": "Memech", "location": "Ankrahmun", "price": 450},
-      {"npc": "Robert", "location": "Svargrond", "price": 950},
-      {"npc": "Willard", "location": "Edron", "price": 450},
-      {"npc": "Uzgod", "location": "Kazordoon", "price": 950}
+    "dropped_by": [
+      "Skeleton Warrior"
     ],
     "sell_to": [
+      {"npc": "Sam", "location": "Thais", "price": 450},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 190},
       {"npc": "Rowenna", "location": "Carlin", "price": 190},
-      {"npc": "Robert", "location": "Svargrond", "price": 950},
-      {"npc": "Willard", "location": "Edron", "price": 190},
-      {"npc": "Uzgod", "location": "Kazordoon", "price": 950},
-      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 190}
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 450},
+      {"npc": "Willard", "location": "Edron", "price": 450},
+      {"npc": "Habdel", "location": "Darashia", "price": 190},
+      {"npc": "Romella", "location": "Venore", "price": 450}
     ],
     "reward_from": [],
     "description": "A large blade requiring both hands."
@@ -962,10 +1119,16 @@
     "weight": 180.0,
     "hands": "Two-handed",
     "image": "./assets/items/giant_sword.gif",
-    "dropped_by": ["Behemoth", "Demon"],
-    "buy_from": [],
+    "dropped_by": [
+      "Behemoth",
+      "Demon"
+    ],
     "sell_to": [
-      {"npc": "Willard", "location": "Edron", "price": 1000}
+      {
+        "npc": "Willard",
+        "location": "Edron",
+        "price": 1000
+      }
     ],
     "reward_from": [],
     "description": "An enormous blade wielded by giants."
@@ -980,9 +1143,12 @@
     "hands": "Two-handed",
     "image": "./assets/items/warlord_sword.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [
-      {"npc": "Willard", "location": "Edron", "price": 900}
+      {
+        "npc": "Willard",
+        "location": "Edron",
+        "price": 900
+      }
     ],
     "reward_from": [],
     "description": "A sword fit for a warlord."
@@ -997,9 +1163,30 @@
     "hands": "Two-handed",
     "image": "./assets/items/magic_longsword.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [
-      {"npc": "Willard", "location": "Edron", "price": 1000}
+      {
+        "npc": "Willard",
+        "location": "Edron",
+        "price": 1000
+      }
+    ],
+    "reward_from": [],
+    "description": "The ultimate magical blade."
+  },
+    {
+    "id": "sword_026",
+    "type": "sword",
+    "name": "Carlin Sword",
+    "attack": 15,
+    "defense": 13,
+    "weight": 40.0,
+    "hands": "One-handed",
+    "image": "./assets/items/Carlin_Sword.gif",
+    "dropped_by": [],
+    "sell_to": [
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 118},
+      {"npc": "Rowenna", "location": "Carlin", "price": 118},
+      {"npc": "Habdel", "location": "Darashia", "price": 118}
     ],
     "reward_from": [],
     "description": "The ultimate magical blade."
@@ -1013,9 +1200,12 @@
     "weight": 31.0,
     "hands": "Two-handed",
     "image": "./assets/items/bow.gif",
-    "dropped_by": ["Elf Scout"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Elf Scout"
+    ],
+    "sell_to": [
+      {"npc": "Timur", "location": "Fibula", "price": 130}
+    ],
     "reward_from": [],
     "description": "A wooden bow."
   },
@@ -1028,9 +1218,14 @@
     "weight": 40.0,
     "hands": "Two-handed",
     "image": "./assets/items/crossbow.gif",
-    "dropped_by": ["Dragon", "Dwarf Soldier", "Minotaur Archer"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Dragon",
+      "Dwarf Soldier",
+      "Minotaur Archer"
+    ],
+    "sell_to": [
+      {"npc": "Timur", "location": "Fibula", "price": 160}
+    ],
     "reward_from": [],
     "description": "A mechanical bow."
   },
@@ -1043,8 +1238,9 @@
     "weight": 20.0,
     "hands": "One-handed",
     "image": "./assets/items/spear.gif",
-    "dropped_by": ["Troll"],
-    "buy_from": [],
+    "dropped_by": [
+      "Troll"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A throwing spear."
@@ -1058,8 +1254,9 @@
     "weight": 5.0,
     "hands": "One-handed",
     "image": "./assets/items/throwing_knife.gif",
-    "dropped_by": ["Orc Leader"],
-    "buy_from": [],
+    "dropped_by": [
+      "Orc Leader"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A balanced throwing knife."
@@ -1073,8 +1270,9 @@
     "weight": 2.0,
     "hands": "One-handed",
     "image": "./assets/items/throwing_star.gif",
-    "dropped_by": ["Stalker"],
-    "buy_from": [],
+    "dropped_by": [
+      "Stalker"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A sharp throwing star."
@@ -1088,8 +1286,9 @@
     "weight": 3.6,
     "hands": "One-handed",
     "image": "./assets/items/small_stone.gif",
-    "dropped_by": ["Goblin"],
-    "buy_from": [],
+    "dropped_by": [
+      "Goblin"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A small throwable stone."
@@ -1103,13 +1302,13 @@
     "weight": 0.8,
     "hands": "One-handed",
     "image": "./assets/items/snowball.gif",
-    "dropped_by": ["Yeti"],
-    "buy_from": [],
+    "dropped_by": [
+      "Yeti"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A ball of packed snow."
   },
-
   {
     "id": "ammo_001",
     "type": "ammunition",
@@ -1119,8 +1318,11 @@
     "weight": 0.7,
     "hands": "Ammunition",
     "image": "./assets/items/arrow.gif",
-    "dropped_by": ["Hunter", "Elf", "Elf Scout"],
-    "buy_from": [],
+    "dropped_by": [
+      "Hunter",
+      "Elf",
+      "Elf Scout"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A standard arrow."
@@ -1135,7 +1337,6 @@
     "hands": "Ammunition",
     "image": "./assets/items/poison_arrow.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "An arrow tipped with poison."
@@ -1149,8 +1350,9 @@
     "weight": 0.9,
     "hands": "Ammunition",
     "image": "./assets/items/burst_arrow.gif",
-    "dropped_by": ["Dragon"],
-    "buy_from": [],
+    "dropped_by": [
+      "Dragon"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "An explosive arrow."
@@ -1164,8 +1366,10 @@
     "weight": 0.8,
     "hands": "Ammunition",
     "image": "./assets/items/bolt.gif",
-    "dropped_by": ["Dwarf Soldier", "Minotaur Archer"],
-    "buy_from": [],
+    "dropped_by": [
+      "Dwarf Soldier",
+      "Minotaur Archer"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A crossbow bolt."
@@ -1179,8 +1383,9 @@
     "weight": 0.9,
     "hands": "Ammunition",
     "image": "./assets/items/power_bolt.gif",
-    "dropped_by": ["Dragon Lord"],
-    "buy_from": [],
+    "dropped_by": [
+      "Dragon Lord"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A reinforced bolt."

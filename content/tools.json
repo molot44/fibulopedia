@@ -5,7 +5,6 @@
     "name": "Pick",
     "weight": 45.0,
     "image": "./assets/items/pick.gif",
-    "buy_from": [],
     "sell_to": [],
     "description": "A heavy mining tool essential for breaking through stone barriers and excavating hidden passages in muddy terrain. This versatile implement can shape marble sculptures and is awarded through the Small Axe Quest."
   },
@@ -15,7 +14,6 @@
     "name": "Rope",
     "weight": 18.0,
     "image": "./assets/items/rope.gif",
-    "buy_from": [],
     "sell_to": [],
     "description": "A sturdy climbing aid that allows adventurers to ascend through vertical shafts. This reliable tool can also be employed to haul fellow travelers, monsters, and objects up from lower levels."
   },
@@ -25,7 +23,6 @@
     "name": "Shovel",
     "weight": 35.0,
     "image": "./assets/items/shovel.gif",
-    "buy_from": [],
     "sell_to": [],
     "description": "An indispensable excavation tool for any explorer's journey. Perfect for clearing loose rubble and burrowing through sandy desert terrain to uncover hidden treasures beneath."
   },
@@ -35,7 +32,6 @@
     "name": "Scythe",
     "weight": 30.0,
     "image": "./assets/items/scythe.gif",
-    "buy_from": [],
     "sell_to": [],
     "description": "A curved farming blade that serves dual purposes as both harvesting equipment and makeshift weapon. Ideal for reaping wheat stalks in agricultural fields."
   },
@@ -45,7 +41,6 @@
     "name": "Trap",
     "weight": 21.0,
     "image": "./assets/items/trap.gif",
-    "buy_from": [],
     "sell_to": [],
     "description": "A mechanical snare device that damages enemies and adventurers upon contact without hindering their movement. Particularly effective for weakening formidable beasts during prolonged battles. Available from Beatrice in Edron."
   },
@@ -55,7 +50,6 @@
     "name": "Machete",
     "weight": 16.5,
     "image": "./assets/items/machete.gif",
-    "buy_from": [],
     "sell_to": [],
     "description": "A sharp jungle blade designed to hack through dense vegetation and overgrowth. Essential for clearing paths through wild foliage and tropical grasslands."
   },
@@ -65,7 +59,6 @@
     "name": "Fishing Rod",
     "weight": 8.5,
     "image": "./assets/items/fishing_rod.gif",
-    "buy_from": [],
     "sell_to": [],
     "description": "An angler's companion for catching aquatic creatures from rivers and seas. Regular practice with this equipment gradually improves your fishing proficiency over time."
   }

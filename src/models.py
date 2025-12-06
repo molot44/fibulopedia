@@ -4,6 +4,9 @@ Data models for Fibulopedia.
 This module contains all dataclass definitions for the entities used
 throughout the application. These models provide type safety and clear
 structure for all data objects.
+
+Version: 2.0 - Refactored to use NPCPrice dataclass for sell_to data.
+Removed buy_from functionality as per project requirements.
 """
 
 from dataclasses import dataclass, field
@@ -12,11 +15,26 @@ from typing import Optional
 
 @dataclass
 class NPCPrice:
-    """Represents an NPC and the price for buying or selling an item."""
+    """
+    Represents an NPC seller and the price they offer for an item.
+    
+    This dataclass is used to store information about NPCs who buy items
+    from players. It provides type safety and clear structure for trading data.
+    
+    Attributes:
+        npc: Name of the NPC (e.g., "Rashid", "Yasir").
+        price: Price in gold pieces that the NPC pays for the item.
+        location: City or location where the NPC can be found (e.g., "Thais", "Carlin").
+    
+    Example:
+        >>> npc_price = NPCPrice(npc="Rashid", price=100, location="Carlin")
+        >>> print(f"{npc_price.npc} in {npc_price.location} pays {npc_price.price} gp")
+        Rashid in Carlin pays 100 gp
+    """
     
     npc: str
     price: int
-    location: Optional[str] = None
+    location: str = ""
 
 
 @dataclass
@@ -34,8 +52,7 @@ class Weapon:
         hands: Number of hands required (One-handed or Two-handed).
         image: Optional path to weapon image.
         dropped_by: List of monster names that drop this weapon.
-        buy_from: List of NPCPrice objects where weapon can be bought.
-        sell_to: List of NPCPrice objects where weapon can be sold.
+        sell_to: List of NPCPrice objects representing NPCs who buy this weapon.
         reward_from: List of quest names that reward this weapon.
         description: Optional description or special properties.
     """
@@ -49,8 +66,7 @@ class Weapon:
     hands: str = "One-handed"
     image: Optional[str] = None
     dropped_by: list[str] = field(default_factory=list)
-    buy_from: list[dict[str, str | int]] = field(default_factory=list)
-    sell_to: list[dict[str, str | int]] = field(default_factory=list)
+    sell_to: list[NPCPrice] = field(default_factory=list)
     reward_from: list[str] = field(default_factory=list)
     description: Optional[str] = None
 
@@ -69,8 +85,7 @@ class EquipmentItem:
         image: Optional path to equipment image.
         properties: Special properties/effects (for rings and amulets).
         dropped_by: List of monster names that drop this equipment.
-        buy_from: List of NPCPrice objects where equipment can be bought.
-        sell_to: List of NPCPrice objects where equipment can be sold.
+        sell_to: List of NPCPrice objects representing NPCs who buy this equipment.
         reward_from: List of quest names that reward this equipment.
         description: Optional description or special properties.
     """
@@ -83,8 +98,35 @@ class EquipmentItem:
     image: Optional[str] = None
     properties: Optional[str] = None
     dropped_by: list[str] = field(default_factory=list)
-    buy_from: list[dict[str, str | int]] = field(default_factory=list)
-    sell_to: list[dict[str, str | int]] = field(default_factory=list)
+    sell_to: list[NPCPrice] = field(default_factory=list)
+    reward_from: list[str] = field(default_factory=list)
+    description: Optional[str] = None
+
+
+@dataclass
+class Tool:
+    """
+    Represents a tool item in the game (rope, shovel, pick, etc.).
+    
+    Attributes:
+        id: Unique identifier for the tool.
+        type: Type of tool (e.g., "mining", "utility").
+        name: Display name of the tool.
+        weight: Weight in oz.
+        image: Optional path to tool image.
+        dropped_by: List of monster names that drop this tool.
+        sell_to: List of NPCPrice objects representing NPCs who buy this tool.
+        reward_from: List of quest names that reward this tool.
+        description: Optional description of the tool's use.
+    """
+    
+    id: str
+    type: str
+    name: str
+    weight: float
+    image: Optional[str] = None
+    dropped_by: list[str] = field(default_factory=list)
+    sell_to: list[NPCPrice] = field(default_factory=list)
     reward_from: list[str] = field(default_factory=list)
     description: Optional[str] = None
 
@@ -257,6 +299,7 @@ class Food:
         hp_gain: Total HP restored by consuming (can be None for unknown values).
         hp_per_oz: HP restored per oz of weight (can be None for unknown values).
         hp_per_gp: HP restored per gold piece of value (can be None for unknown values).
+        sell_to: List of NPCPrice objects representing NPCs who buy this food.
     """
     
     name: str
@@ -265,3 +308,4 @@ class Food:
     hp_gain: Optional[int] = None
     hp_per_oz: Optional[float] = None
     hp_per_gp: Optional[float] = None
+    sell_to: list[NPCPrice] = field(default_factory=list)

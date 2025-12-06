@@ -167,6 +167,27 @@ def main() -> None:
             )
             image_base64 = get_image_as_base64(full_path)
         
+        # Handle sell_to - build tooltip data using NPCPrice objects
+        sell_to_count = len(item.sell_to) if item.sell_to else 0
+        sell_to_tooltip = ""
+        if item.sell_to:
+            # Group by price for cleaner display
+            price_groups = {}
+            for npc_price in item.sell_to:
+                price = npc_price.price
+                if price not in price_groups:
+                    price_groups[price] = []
+                npc_info = f"{npc_price.npc}"
+                if npc_price.location:
+                    npc_info += f" ({npc_price.location})"
+                price_groups[price].append(npc_info)
+            
+            # Build tooltip with price groups
+            for price in sorted(price_groups.keys(), reverse=True):
+                sell_to_tooltip += f"Sell To ({price} gp)||"
+                for npc_info in price_groups[price]:
+                    sell_to_tooltip += f"{npc_info}||"
+        
         # Handle dropped_by
         dropped_by_list = []
         if item.dropped_by:
@@ -195,6 +216,8 @@ def main() -> None:
             "Def": item.defense,
             "Properties": getattr(item, 'properties', None) or "-",
             "Weight": item.weight,
+            "Sell To": sell_to_count,
+            "sell_to_tooltip": sell_to_tooltip,
             "Dropped by": dropped_by_text,
             "Reward from": reward_from_text
         }
@@ -300,6 +323,52 @@ def main() -> None:
             margin-bottom: 10px;
             font-size: 14px;
         }
+        
+        /* NPC Tooltip Styles */
+        .npc-count {
+            cursor: help;
+            position: relative;
+            display: inline-block;
+            color: #d4af37;
+            font-weight: bold;
+        }
+        
+        .npc-tooltip {
+            visibility: hidden;
+            position: absolute;
+            z-index: 1000;
+            background-color: #2d2d2d;
+            color: #e0e0e0;
+            text-align: left;
+            border-radius: 6px;
+            padding: 10px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            min-width: 200px;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        
+        .npc-count:hover .npc-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .npc-tooltip-header {
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 8px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #444;
+        }
+        
+        .npc-tooltip-item {
+            padding: 3px 0;
+            font-size: 13px;
+        }
         </style>
     """, unsafe_allow_html=True)
     
@@ -318,8 +387,9 @@ def main() -> None:
         table_html += '<th class="center sortable" data-column="3">Armor</th>'
     
     table_html += '<th class="center sortable" data-column="4">Weight (oz.)</th>'
-    table_html += '<th class="sortable" data-column="5">Looted from</th>'
-    table_html += '<th class="sortable" data-column="6">Reward from</th>'
+    table_html += '<th class="center sortable" data-column="5">Sell To</th>'
+    table_html += '<th class="sortable" data-column="6">Looted from</th>'
+    table_html += '<th class="sortable" data-column="7">Reward from</th>'
     table_html += '</tr></thead><tbody>'
     
     for _, row in df.iterrows():
@@ -340,6 +410,22 @@ def main() -> None:
             table_html += f'<td class="center">{row["Def"]}</td>'
         
         table_html += f'<td class="center">{row["Weight"]}</td>'
+        
+        # Sell To column with tooltip
+        if row["Sell To"] > 0:
+            tooltip_lines = row["sell_to_tooltip"].split("||")
+            tooltip_html = '<div class="npc-tooltip">'
+            for i, line in enumerate(tooltip_lines):
+                if line:
+                    if "Sell To" in line:
+                        tooltip_html += f'<div class="npc-tooltip-header">{line}</div>'
+                    else:
+                        tooltip_html += f'<div class="npc-tooltip-item">{line}</div>'
+            tooltip_html += '</div>'
+            table_html += f'<td class="center"><span class="npc-count">💰 {row["Sell To"]} NPCs{tooltip_html}</span></td>'
+        else:
+            table_html += '<td class="center">-</td>'
+        
         table_html += f'<td>{row["Dropped by"]}</td>'
         table_html += f'<td>{row["Reward from"]}</td>'
         table_html += '</tr>'

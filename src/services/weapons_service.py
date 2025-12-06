@@ -4,6 +4,8 @@ Weapons service for Fibulopedia.
 This module handles loading, parsing, and querying weapon data.
 It provides functions to get all weapons, filter by type, search by name,
 and retrieve individual weapon details.
+
+Version: 2.0 - Refactored to use NPCPrice dataclass and removed buy_from support.
 """
 
 from typing import Optional
@@ -11,13 +13,14 @@ from typing import Optional
 import streamlit as st
 
 from src.config import WEAPONS_FILE
-from src.models import Weapon
+from src.models import Weapon, NPCPrice
 from src.services.data_loader import (
     load_json,
     validate_required_fields,
     safe_int,
     safe_float,
-    safe_list
+    safe_list,
+    parse_npc_prices
 )
 from src.logging_utils import setup_logger
 
@@ -61,8 +64,11 @@ def load_weapons() -> list[Weapon]:
                 hands=str(item.get("hands", "One-handed")),
                 image=item.get("image"),
                 dropped_by=safe_list(item.get("dropped_by")),
-                buy_from=safe_list(item.get("buy_from")),
-                sell_to=safe_list(item.get("sell_to")),
+                sell_to=parse_npc_prices(
+                    item.get("sell_to"),
+                    validate=True,
+                    item_name=item.get("name", "unknown")
+                ),
                 reward_from=safe_list(item.get("reward_from")),
                 description=item.get("description")
             )
@@ -146,9 +152,9 @@ def search_weapons(query: str) -> list[Weapon]:
             results.append(weapon)
             continue
         
-        # Search in NPC names
-        for npc_entry in weapon.buy_from + weapon.sell_to:
-            if isinstance(npc_entry, dict) and query_lower in npc_entry.get("npc", "").lower():
+        # Search in NPC names (sell_to only)
+        for npc_price in weapon.sell_to:
+            if isinstance(npc_price, NPCPrice) and query_lower in npc_price.npc.lower():
                 results.append(weapon)
                 break
     

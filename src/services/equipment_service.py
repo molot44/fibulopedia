@@ -3,6 +3,8 @@ Equipment service for Fibulopedia.
 
 This module handles loading, parsing, and querying equipment data.
 Equipment is organized by slots (helmet, armor, legs, boots, shield, ring, amulet).
+
+Version: 2.0 - Refactored to use NPCPrice dataclass and removed buy_from support.
 """
 
 from typing import Optional
@@ -10,13 +12,14 @@ from typing import Optional
 import streamlit as st
 
 from src.config import EQUIPMENT_FILE
-from src.models import EquipmentItem
+from src.models import EquipmentItem, NPCPrice
 from src.services.data_loader import (
     load_json,
     validate_required_fields,
     safe_int,
     safe_float,
-    safe_list
+    safe_list,
+    parse_npc_prices
 )
 from src.logging_utils import setup_logger
 
@@ -59,8 +62,11 @@ def load_equipment() -> list[EquipmentItem]:
                 image=item.get("image"),
                 properties=item.get("properties"),
                 dropped_by=safe_list(item.get("dropped_by")),
-                buy_from=safe_list(item.get("buy_from")),
-                sell_to=safe_list(item.get("sell_to")),
+                sell_to=parse_npc_prices(
+                    item.get("sell_to"),
+                    validate=True,
+                    item_name=item.get("name", "unknown")
+                ),
                 reward_from=safe_list(item.get("reward_from")),
                 description=item.get("description")
             )
@@ -144,9 +150,9 @@ def search_equipment(query: str) -> list[EquipmentItem]:
             results.append(item)
             continue
         
-        # Search in NPC names
-        for npc_entry in item.buy_from + item.sell_to:
-            if isinstance(npc_entry, dict) and query_lower in npc_entry.get("npc", "").lower():
+        # Search in NPC names (sell_to only)
+        for npc_price in item.sell_to:
+            if isinstance(npc_price, NPCPrice) and query_lower in npc_price.npc.lower():
                 results.append(item)
                 break
     

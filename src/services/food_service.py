@@ -4,6 +4,8 @@ Food service for Fibulopedia.
 This module handles loading, parsing, and querying food data.
 It provides functions to get all food items, search by name,
 and retrieve individual food item details.
+
+Version: 2.0 - Added support for sell_to NPC data.
 """
 
 from typing import Optional
@@ -11,11 +13,12 @@ from typing import Optional
 import streamlit as st
 
 from src.config import CONTENT_DIR
-from src.models import Food
+from src.models import Food, NPCPrice
 from src.services.data_loader import (
     load_json,
     safe_int,
-    safe_float
+    safe_float,
+    parse_npc_prices
 )
 from src.logging_utils import setup_logger
 
@@ -60,7 +63,12 @@ def load_food() -> list[Food]:
                 weight=weight,
                 hp_gain=hp_gain,
                 hp_per_oz=hp_per_oz,
-                hp_per_gp=hp_per_gp
+                hp_per_gp=hp_per_gp,
+                sell_to=parse_npc_prices(
+                    item.get("sell_to"),
+                    validate=True,
+                    item_name=item.get("name", "unknown")
+                )
             )
             food_items.append(food)
         except Exception as e:
@@ -94,7 +102,7 @@ def get_food_by_name(name: str) -> Optional[Food]:
 
 def search_food(query: str) -> list[Food]:
     """
-    Search food items by name.
+    Search food items by name and NPC names.
     
     Args:
         query: The search query string.
@@ -116,6 +124,14 @@ def search_food(query: str) -> list[Food]:
         # Search in name
         if query_lower in food.name.lower():
             results.append(food)
+            continue
+        
+        # Search in NPC names (sell_to)
+        for npc_price in food.sell_to:
+            if isinstance(npc_price, NPCPrice) and query_lower in npc_price.npc.lower():
+                results.append(food)
+                break
     
     logger.info(f"Search for '{query}' found {len(results)} food items")
+    return results
     return results

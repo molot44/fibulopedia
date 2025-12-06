@@ -6,8 +6,9 @@
     "defense": 17,
     "weight": 85.0,
     "image": "./assets/items/magic_plate_armor.gif",
-    "dropped_by": ["Demon"],
-    "buy_from": [],
+    "dropped_by": [
+      "Demon"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "The most powerful armor available."
@@ -20,9 +21,10 @@
     "weight": 80.0,
     "image": "./assets/items/demon_armor.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
-    "reward_from": ["Annihilator Quest"],
+    "reward_from": [
+      "Annihilator Quest"
+    ],
     "description": "Dark armor with demonic powers."
   },
   {
@@ -32,8 +34,10 @@
     "defense": 15,
     "weight": 114.0,
     "image": "./assets/items/dragon_scale_mail.gif",
-    "dropped_by": ["Dragon Lord", "Demodras"],
-    "buy_from": [],
+    "dropped_by": [
+      "Dragon Lord",
+      "Demodras"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Armor crafted from dragon scales."
@@ -45,10 +49,13 @@
     "defense": 14,
     "weight": 80.0,
     "image": "./assets/items/golden_armor.gif",
-    "dropped_by": ["Warlock"],
-    "buy_from": [],
+    "dropped_by": [
+      "Warlock"
+    ],
     "sell_to": [],
-    "reward_from": ["Behemoth Quest"],
+    "reward_from": [
+      "Behemoth Quest"
+    ],
     "description": "Armor made of pure gold."
   },
   {
@@ -58,8 +65,9 @@
     "defense": 13,
     "weight": 99.0,
     "image": "./assets/items/crown_armor.gif",
-    "dropped_by": ["Hero"],
-    "buy_from": [],
+    "dropped_by": [
+      "Hero"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Armor fit for royalty."
@@ -71,8 +79,10 @@
     "defense": 12,
     "weight": 120.0,
     "image": "./assets/items/knight_armor.gif",
-    "dropped_by": ["Black Knight", "Giant Spider"],
-    "buy_from": [],
+    "dropped_by": [
+      "Black Knight",
+      "Giant Spider"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Heavy armor for knights."
@@ -84,8 +94,9 @@
     "defense": 11,
     "weight": 22.0,
     "image": "./assets/items/blue_robe.gif",
-    "dropped_by": ["Warlock"],
-    "buy_from": [],
+    "dropped_by": [
+      "Warlock"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A magical robe for spellcasters."
@@ -98,9 +109,10 @@
     "weight": 120.0,
     "image": "./assets/items/noble_armor.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
-    "reward_from": ["Noble Armor Quest"],
+    "reward_from": [
+      "Noble Armor Quest"
+    ],
     "description": "Armor worn by nobles."
   },
   {
@@ -110,10 +122,14 @@
     "defense": 10,
     "weight": 120.0,
     "image": "./assets/items/dark_armor.gif",
-    "dropped_by": ["Black Knight"],
-    "buy_from": [],
+    "dropped_by": [
+      "Black Knight"
+    ],
     "sell_to": [],
-    "reward_from": ["Dark Armor Quest", "Black Knight Quest"],
+    "reward_from": [
+      "Dark Armor Quest",
+      "Black Knight Quest"
+    ],
     "description": "Dark and ominous armor."
   },
   {
@@ -123,10 +139,23 @@
     "defense": 10,
     "weight": 120.0,
     "image": "./assets/items/plate_armor.gif",
-    "dropped_by": ["Giant Spider", "Orc Warlord"],
-    "buy_from": [],
-    "sell_to": [],
-    "reward_from": ["Plate Armor Quest"],
+    "dropped_by": [
+      "Giant Spider",
+      "Orc Warlord"
+    ],
+    "sell_to": [
+      {"npc": "Sam", "location": "Thais", "price": 400},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 240},
+      {"npc": "Cornelia", "location": "Carlin", "price": 240},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 400},
+      {"npc": "Willard", "location": "Edron", "price": 400},
+      {"npc": "Azil", "location": "Darashia", "price": 240},
+      {"npc": "H.L.", "location": "Outlaw Camp", "price": 110},
+      {"npc": "Yanni", "location": "Venore", "price": 400}
+    ],
+    "reward_from": [
+      "Plate Armor Quest"
+    ],
     "description": "Strong plate armor."
   },
   {
@@ -136,9 +165,20 @@
     "defense": 8,
     "weight": 80.0,
     "image": "./assets/items/brass_armor.gif",
-    "dropped_by": ["Bandit", "Wild Warrior", "Orc Warlord"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Bandit",
+      "Wild Warrior",
+      "Orc Warlord"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 112},
+      {"npc": "Sam", "location": "Thais", "price": 150},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 112},
+      {"npc": "Cornelia", "location": "Carlin", "price": 112},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 150},
+      {"npc": "Azil", "location": "Darashia", "price": 112},
+      {"npc": "Yanni", "location": "Venore", "price": 150}
+    ],
     "reward_from": [],
     "description": "Armor made of brass."
   },
@@ -149,10 +189,15 @@
     "defense": 9,
     "weight": 105.0,
     "image": "./assets/items/scale_armor.gif",
-    "dropped_by": ["Dwarf Guard"],
-    "buy_from": [],
-    "sell_to": [],
-    "reward_from": ["Scale Armor Quest"],
+    "dropped_by": [
+      "Dwarf Guard"
+    ],
+    "sell_to": [
+      {"npc": "H.L.", "location": "Outlaw Camp", "price": 75}
+    ],
+    "reward_from": [
+      "Scale Armor Quest"
+    ],
     "description": "Armor made of metal scales."
   },
   {
@@ -162,10 +207,25 @@
     "defense": 6,
     "weight": 100.0,
     "image": "./assets/items/chain_armor.gif",
-    "dropped_by": ["Minotaur", "Minotaur Guard", "Valkyrie", "Orc Berserker", "Orc Warrior", "Orc Shaman"],
-    "buy_from": [],
-    "sell_to": [],
-    "reward_from": ["Bear Room Quest (Rookgaard)"],
+    "dropped_by": [
+      "Minotaur",
+      "Minotaur Guard",
+      "Valkyrie",
+      "Orc Berserker",
+      "Orc Warrior",
+      "Orc Shaman"
+    ],
+    "sell_to": [
+      {"npc": "Sam", "location": "Thais", "price": 70},
+      {"npc": "Timur", "location": "Fibula", "price": 40},
+      {"npc": "Cornelia", "location": "Carlin", "price": 70},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 70},
+      {"npc": "H.L.", "location": "Outlaw Camp", "price": 30},
+      {"npc": "Yanni", "location": "Venore", "price": 70}
+    ],
+    "reward_from": [
+      "Bear Room Quest (Rookgaard)"
+    ],
     "description": "Armor made of interlocking chains."
   },
   {
@@ -175,9 +235,21 @@
     "defense": 5,
     "weight": 71.0,
     "image": "./assets/items/studded_armor.gif",
-    "dropped_by": ["Orc"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Orc"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 25},
+      {"npc": "Sam", "location": "Thais", "price": 25},
+      {"npc": "Timur", "location": "Fibula", "price": 25},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 25},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 25},
+      {"npc": "Rowenna", "location": "Carlin", "price": 25},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 25},
+      {"npc": "Willard", "location": "Edron", "price": 25},
+      {"npc": "Yanni", "location": "Venore", "price": 25},
+      {"npc": "Romella", "location": "Venore", "price": 25}
+    ],
     "reward_from": [],
     "description": "Leather armor with metal studs."
   },
@@ -188,9 +260,16 @@
     "defense": 4,
     "weight": 60.0,
     "image": "./assets/items/leather_armor.gif",
-    "dropped_by": ["Goblin"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Goblin"
+    ],
+    "sell_to": [
+      {"npc": "Cornelia", "location": "Carlin", "price": 5},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 12},
+      {"npc": "Willard", "location": "Edron", "price": 12},
+      {"npc": "Azil", "location": "Darashia", "price": 5},
+      {"npc": "Yanni", "location": "Venore", "price": 12}
+    ],
     "reward_from": [],
     "description": "Basic leather armor."
   },
@@ -202,9 +281,10 @@
     "weight": 25.0,
     "image": "./assets/items/doublet.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
-    "reward_from": ["Doublet Quest (Rookgaard)"],
+    "reward_from": [
+      "Doublet Quest (Rookgaard)"
+    ],
     "description": "A simple cloth doublet."
   },
   {
@@ -215,7 +295,6 @@
     "weight": 14.0,
     "image": "./assets/items/red_tunic.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A red cloth tunic."
@@ -228,7 +307,6 @@
     "weight": 2.4,
     "image": "./assets/items/jacket.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A simple jacket."
@@ -241,7 +319,6 @@
     "weight": 2.7,
     "image": "./assets/items/coat.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A basic coat."
@@ -253,8 +330,9 @@
     "defense": 1,
     "weight": 2.6,
     "image": "./assets/items/red_robe.gif",
-    "dropped_by": ["Banshee"],
-    "buy_from": [],
+    "dropped_by": [
+      "Banshee"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A red magical robe."
@@ -266,8 +344,10 @@
     "defense": 1,
     "weight": 0.93,
     "image": "./assets/items/green_tunic.gif",
-    "dropped_by": ["Hero", "Elf Arcanist"],
-    "buy_from": [],
+    "dropped_by": [
+      "Hero",
+      "Elf Arcanist"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A light green tunic."
@@ -279,8 +359,9 @@
     "defense": 0,
     "weight": 24.0,
     "image": "./assets/items/simple_dress.gif",
-    "dropped_by": ["Banshee"],
-    "buy_from": [],
+    "dropped_by": [
+      "Banshee"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A simple dress."
@@ -293,7 +374,6 @@
     "weight": 25.0,
     "image": "./assets/items/ball_gown.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "An elegant ball gown."
@@ -306,7 +386,6 @@
     "weight": 24.0,
     "image": "./assets/items/white_dress.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A white ceremonial dress."
@@ -319,7 +398,6 @@
     "weight": 32.0,
     "image": "./assets/items/golden_helmet.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "The finest helmet available."
@@ -332,7 +410,6 @@
     "weight": 51.0,
     "image": "./assets/items/horned_helmet.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A helmet with horns."
@@ -345,7 +422,6 @@
     "weight": 12.0,
     "image": "./assets/items/winged_helmet.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A helmet with wings."
@@ -358,9 +434,10 @@
     "weight": 20.5,
     "image": "./assets/items/demon_helmet.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
-    "reward_from": ["Demon Helmet Quest"],
+    "reward_from": [
+      "Demon Helmet Quest"
+    ],
     "description": "A demonic helmet."
   },
   {
@@ -370,8 +447,9 @@
     "defense": 9,
     "weight": 48.0,
     "image": "./assets/items/royal_helmet.gif",
-    "dropped_by": ["Dragon Lord"],
-    "buy_from": [],
+    "dropped_by": [
+      "Dragon Lord"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A royal helmet."
@@ -384,7 +462,6 @@
     "weight": 32.5,
     "image": "./assets/items/dragon_scale_helmet.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A helmet made from dragon scales."
@@ -396,10 +473,13 @@
     "defense": 8,
     "weight": 52.0,
     "image": "./assets/items/crusader_helmet.gif",
-    "dropped_by": ["Orc Warlord"],
-    "buy_from": [],
+    "dropped_by": [
+      "Orc Warlord"
+    ],
     "sell_to": [],
-    "reward_from": ["Crusader Helmet Quest"],
+    "reward_from": [
+      "Crusader Helmet Quest"
+    ],
     "description": "A holy helmet worn by crusaders."
   },
   {
@@ -409,10 +489,13 @@
     "defense": 7,
     "weight": 29.5,
     "image": "./assets/items/crown_helmet.gif",
-    "dropped_by": ["Hero"],
-    "buy_from": [],
+    "dropped_by": [
+      "Hero"
+    ],
     "sell_to": [],
-    "reward_from": ["Crown Helmet Quest"],
+    "reward_from": [
+      "Crown Helmet Quest"
+    ],
     "description": "A crown helmet."
   },
   {
@@ -422,8 +505,9 @@
     "defense": 6,
     "weight": 46.0,
     "image": "./assets/items/dark_helmet.gif",
-    "dropped_by": ["Cyclops"],
-    "buy_from": [],
+    "dropped_by": [
+      "Cyclops"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A dark helmet."
@@ -436,7 +520,6 @@
     "weight": 42.0,
     "image": "./assets/items/dwarven_helmet.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A dwarven helmet."
@@ -448,9 +531,18 @@
     "defense": 6,
     "weight": 46.0,
     "image": "./assets/items/steel_helmet.gif",
-    "dropped_by": ["Dwarf Guard"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Dwarf Guard"
+    ],
+    "sell_to": [
+      {"npc": "Sam", "location": "Thais", "price": 190},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 293},
+      {"npc": "Cornelia", "location": "Carlin", "price": 293},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 190},
+      {"npc": "Willard", "location": "Edron", "price": 190},
+      {"npc": "Azil", "location": "Darashia", "price": 293},
+      {"npc": "Yanni", "location": "Venore", "price": 190}
+    ],
     "reward_from": [],
     "description": "A steel helmet."
   },
@@ -461,9 +553,13 @@
     "defense": 5,
     "weight": 32.0,
     "image": "./assets/items/soldier_helmet.gif",
-    "dropped_by": ["Dwarf Soldier", "Minotaur Archer"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Dwarf Soldier",
+      "Minotaur Archer"
+    ],
+    "sell_to": [
+      {"npc": "H.L.", "location": "Outlaw Camp", "price": 16}
+    ],
     "reward_from": [],
     "description": "A soldier's helmet."
   },
@@ -474,10 +570,15 @@
     "defense": 4,
     "weight": 31.0,
     "image": "./assets/items/legion_helmet.gif",
-    "dropped_by": ["Rotworm"],
-    "buy_from": [],
-    "sell_to": [],
-    "reward_from": ["Legion Helmet Quest (Rookgard)"],
+    "dropped_by": [
+      "Rotworm"
+    ],
+    "sell_to": [
+      {"npc": "H.L.", "location": "Outlaw Camp", "price": 8}
+    ],
+    "reward_from": [
+      "Legion Helmet Quest (Rookgard)"
+    ],
     "description": "A legion helmet."
   },
   {
@@ -487,9 +588,15 @@
     "defense": 3,
     "weight": 27.0,
     "image": "./assets/items/brass_helmet.gif",
-    "dropped_by": ["Minotaur"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Minotaur"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 30},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 30},
+      {"npc": "Cornelia", "location": "Carlin", "price": 30},
+      {"npc": "Azil", "location": "Darashia", "price": 30}
+    ],
     "reward_from": [],
     "description": "A brass helmet."
   },
@@ -500,9 +607,21 @@
     "defense": 2,
     "weight": 24.5,
     "image": "./assets/items/studded_helmet.gif",
-    "dropped_by": ["Orc"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Orc"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 20},
+      {"npc": "Sam", "location": "Thais", "price": 20},
+      {"npc": "Timur", "location": "Fibula", "price": 20},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 20},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 20},
+      {"npc": "Rowenna", "location": "Carlin", "price": 20},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 20},
+      {"npc": "Willard", "location": "Edron", "price": 20},
+      {"npc": "Yanni", "location": "Venore", "price": 20},
+      {"npc": "Romella", "location": "Venore", "price": 20}
+    ],
     "reward_from": [],
     "description": "A studded helmet."
   },
@@ -513,9 +632,37 @@
     "defense": 1,
     "weight": 22.0,
     "image": "./assets/items/leather_helmet.gif",
-    "dropped_by": ["Troll"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Troll"
+    ],
+    "sell_to": [
+      {"npc": "Sam", "location": "Thais", "price": 4},
+      {"npc": "Cornelia", "location": "Carlin", "price": 3},
+      {"npc": "Willard", "location": "Edron", "price": 4},
+      {"npc": "Azil", "location": "Darashia", "price": 3}
+    ],
+    "reward_from": [],
+    "description": "A leather helmet."
+  },
+  {
+    "id": "helmet_017",
+    "slot": "helmet",
+    "name": "Chain Helmet",
+    "defense": 2,
+    "weight": 42.0,
+    "image": "./assets/items/chain_helmet.gif",
+    "dropped_by": [
+      "Bandit",
+      "Wild Warrior"
+    ],
+    "sell_to": [
+      {"npc": "Sam", "location": "Thais", "price": 17},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 12},
+      {"npc": "Cornelia", "location": "Carlin", "price": 12},
+      {"npc": "Willard", "location": "Edron", "price": 17},
+      {"npc": "Azil", "location": "Darashia", "price": 12},
+      {"npc": "Yanni", "location": "Venore", "price": 17}
+    ],
     "reward_from": [],
     "description": "A leather helmet."
   },
@@ -527,9 +674,10 @@
     "weight": 8.5,
     "image": "./assets/items/santa_hat.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
-    "reward_from": ["Santa Claus (event)"],
+    "reward_from": [
+      "Santa Claus (event)"
+    ],
     "description": "A festive Santa hat."
   },
   {
@@ -539,8 +687,9 @@
     "defense": 1,
     "weight": 8.5,
     "image": "./assets/items/mystic_turban.gif",
-    "dropped_by": ["Necromancer"],
-    "buy_from": [],
+    "dropped_by": [
+      "Necromancer"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "A mystical turban."
@@ -552,8 +701,9 @@
     "defense": 10,
     "weight": 48.0,
     "image": "./assets/items/dragon_scale_legs.gif",
-    "dropped_by": ["Demodras"],
-    "buy_from": [],
+    "dropped_by": [
+      "Demodras"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Legs made from dragon scales."
@@ -566,7 +716,6 @@
     "weight": 70.0,
     "image": "./assets/items/demon_legs.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Demonic leg armor."
@@ -578,8 +727,9 @@
     "defense": 9,
     "weight": 56.0,
     "image": "./assets/items/golden_legs.gif",
-    "dropped_by": ["Demon"],
-    "buy_from": [],
+    "dropped_by": [
+      "Demon"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Golden leg armor."
@@ -591,8 +741,9 @@
     "defense": 8,
     "weight": 65.0,
     "image": "./assets/items/crown_legs.gif",
-    "dropped_by": ["Hero"],
-    "buy_from": [],
+    "dropped_by": [
+      "Hero"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Royal leg armor."
@@ -604,8 +755,11 @@
     "defense": 8,
     "weight": 70.0,
     "image": "./assets/items/knight_legs.gif",
-    "dropped_by": ["Giant Spider", "The Old Widow", "Black Knight"],
-    "buy_from": [],
+    "dropped_by": [
+      "Giant Spider",
+      "The Old Widow",
+      "Black Knight"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Knight leg armor."
@@ -617,9 +771,16 @@
     "defense": 7,
     "weight": 50.0,
     "image": "./assets/items/plate_legs.gif",
-    "dropped_by": ["Orc Leader", "Orc Warlord", "Dragon"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Orc Leader",
+      "Orc Warlord",
+      "Dragon"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 115},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 115},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 115}
+    ],
     "reward_from": [],
     "description": "Plate leg armor."
   },
@@ -630,10 +791,22 @@
     "defense": 5,
     "weight": 38.0,
     "image": "./assets/items/brass_legs.gif",
-    "dropped_by": ["The Old Widow", "Orc Warlord", "Black Knight", "Giant Spider", "Orc Leader"],
-    "buy_from": [],
-    "sell_to": [],
-    "reward_from": ["Edron Troll Cave Quest"],
+    "dropped_by": [
+      "The Old Widow",
+      "Orc Warlord",
+      "Black Knight",
+      "Giant Spider",
+      "Orc Leader"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 49},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 49},
+      {"npc": "Cornelia", "location": "Carlin", "price": 49},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 49}
+    ],
+    "reward_from": [
+      "Edron Troll Cave Quest"
+    ],
     "description": "Brass leg armor."
   },
   {
@@ -643,9 +816,20 @@
     "defense": 3,
     "weight": 35.0,
     "image": "./assets/items/chain_legs.gif",
-    "dropped_by": ["Minotaur Guard", "Minotaur Mage"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Minotaur Guard",
+      "Minotaur Mage"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 20},
+      {"npc": "Sam", "location": "Thais", "price": 25},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 20},
+      {"npc": "Cornelia", "location": "Carlin", "price": 20},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 20},
+      {"npc": "Willard", "location": "Edron", "price": 25},
+      {"npc": "Azil", "location": "Darashia", "price": 20},
+      {"npc": "Yanni", "location": "Venore", "price": 25}
+    ],
     "reward_from": [],
     "description": "Chain leg armor."
   },
@@ -656,10 +840,24 @@
     "defense": 2,
     "weight": 26.0,
     "image": "./assets/items/studded_legs.gif",
-    "dropped_by": ["Orc Spearman"],
-    "buy_from": [],
-    "sell_to": [],
-    "reward_from": ["Studded Legs Quest"],
+    "dropped_by": [
+      "Orc Spearman"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 15},
+      {"npc": "Sam", "location": "Thais", "price": 15},
+      {"npc": "Timur", "location": "Fibula", "price": 15},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 15},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 15},
+      {"npc": "Rowenna", "location": "Carlin", "price": 15},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 15},
+      {"npc": "Willard", "location": "Edron", "price": 15},
+      {"npc": "Yanni", "location": "Venore", "price": 15},
+      {"npc": "Romella", "location": "Venore", "price": 15}
+    ],
+    "reward_from": [
+      "Studded Legs Quest"
+    ],
     "description": "Studded leg armor."
   },
   {
@@ -669,9 +867,29 @@
     "defense": 1,
     "weight": 18.0,
     "image": "./assets/items/leather_legs.gif",
-    "dropped_by": ["Hunter", "Minotaur Archer", "Minotaur Guard", "Minotaur Mage", "Minotaur", "Stalker", "Vampire", "Wild Warrior", "Dwarf"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Hunter",
+      "Minotaur Archer",
+      "Minotaur Guard",
+      "Minotaur Mage",
+      "Minotaur",
+      "Stalker",
+      "Vampire",
+      "Wild Warrior",
+      "Dwarf"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 9},
+      {"npc": "Sam", "location": "Thais", "price": 9},
+      {"npc": "Timur", "location": "Fibula", "price": 9},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 9},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 9},
+      {"npc": "Rowenna", "location": "Carlin", "price": 9},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 9},
+      {"npc": "Willard", "location": "Edron", "price": 9},
+      {"npc": "Yanni", "location": "Venore", "price": 9},
+      {"npc": "Romella", "location": "Venore", "price": 9}
+    ],
     "reward_from": [],
     "description": "Leather leg armor."
   },
@@ -683,7 +901,6 @@
     "weight": 31.0,
     "image": "./assets/items/golden_boots.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "The finest boots available."
@@ -695,10 +912,25 @@
     "defense": 3,
     "weight": 29.0,
     "image": "./assets/items/steel_boots.gif",
-    "dropped_by": ["Behemoth", "Grorlam"],
-    "buy_from": [],
-    "sell_to": [],
-    "reward_from": ["Behemoth Quest"],
+    "dropped_by": [
+      "Behemoth",
+      "Grorlam"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 40000},
+      {"npc": "Sam", "location": "Thais", "price": 40000},
+      {"npc": "Timur", "location": "Fibula", "price": 40000},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 40000},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 40000},
+      {"npc": "Rowenna", "location": "Carlin", "price": 40000},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 40000},
+      {"npc": "Willard", "location": "Edron", "price": 40000},
+      {"npc": "Yanni", "location": "Venore", "price": 40000},
+      {"npc": "Romella", "location": "Venore", "price": 40000}
+    ],
+    "reward_from": [
+      "Behemoth Quest"
+    ],
     "description": "Heavy steel boots."
   },
   {
@@ -708,9 +940,26 @@
     "defense": 1,
     "weight": 9.0,
     "image": "./assets/items/leather_boots.gif",
-    "dropped_by": ["Troll", "Dwarf Geomancer", "Dwarf Guard", "Elf", "Swamp Troll", "Witch"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Troll",
+      "Dwarf Geomancer",
+      "Dwarf Guard",
+      "Elf",
+      "Swamp Troll",
+      "Witch"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 2},
+      {"npc": "Sam", "location": "Thais", "price": 2},
+      {"npc": "Timur", "location": "Fibula", "price": 2},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 2},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 2},
+      {"npc": "Rowenna", "location": "Carlin", "price": 2},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 2},
+      {"npc": "Willard", "location": "Edron", "price": 2},
+      {"npc": "Yanni", "location": "Venore", "price": 2},
+      {"npc": "Romella", "location": "Venore", "price": 2}
+    ],
     "reward_from": [],
     "description": "Simple leather boots."
   },
@@ -721,8 +970,11 @@
     "defense": 0,
     "weight": 7.5,
     "image": "./assets/items/boots_of_haste.gif",
-    "dropped_by": ["Necromancer", "Black Knight", "Orshabaal"],
-    "buy_from": [],
+    "dropped_by": [
+      "Necromancer",
+      "Black Knight",
+      "Orshabaal"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Boots that increase movement speed."
@@ -734,8 +986,12 @@
     "defense": 0,
     "weight": 6.0,
     "image": "./assets/items/sandals.gif",
-    "dropped_by": ["Elf Arcanist", "Elf Scout", "Ghost", "Monk"],
-    "buy_from": [],
+    "dropped_by": [
+      "Elf Arcanist",
+      "Elf Scout",
+      "Ghost",
+      "Monk"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Light sandals."
@@ -748,7 +1004,6 @@
     "weight": 68.0,
     "image": "./assets/items/blessed_shield.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A blessed shield."
@@ -761,7 +1016,6 @@
     "weight": 84.0,
     "image": "./assets/items/great_shield.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "A great shield."
@@ -773,8 +1027,9 @@
     "defense": 37,
     "weight": 57.0,
     "image": "./assets/items/mastermind_shield_old.gif",
-    "dropped_by": ["Demon"],
-    "buy_from": [],
+    "dropped_by": [
+      "Demon"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Mastermind shield."
@@ -786,10 +1041,14 @@
     "defense": 35,
     "weight": 26.0,
     "image": "./assets/items/demon_shield.gif",
-    "dropped_by": ["Demon"],
-    "buy_from": [],
+    "dropped_by": [
+      "Demon"
+    ],
     "sell_to": [],
-    "reward_from": ["Behemoth Quest", "Demon Helmet Quest"],
+    "reward_from": [
+      "Behemoth Quest",
+      "Demon Helmet Quest"
+    ],
     "description": "Demon shield."
   },
   {
@@ -799,8 +1058,9 @@
     "defense": 34,
     "weight": 38.0,
     "image": "./assets/items/vampire_shield.gif",
-    "dropped_by": ["Vampire"],
-    "buy_from": [],
+    "dropped_by": [
+      "Vampire"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Vampire shield."
@@ -813,9 +1073,10 @@
     "weight": 58.0,
     "image": "./assets/items/medusa_shield.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
-    "reward_from": ["Medusa Shield Quest"],
+    "reward_from": [
+      "Medusa Shield Quest"
+    ],
     "description": "Medusa shield."
   },
   {
@@ -826,7 +1087,6 @@
     "weight": 54.0,
     "image": "./assets/items/shield_of_honour.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "This item was a special promotion for Tibia's 5th Anniversary and as a kick start to the introduction of premium accounts started only three months earlier."
@@ -838,10 +1098,14 @@
     "defense": 32,
     "weight": 82.0,
     "image": "./assets/items/tower_shield.gif",
-    "dropped_by": ["Dragon Lord", "Demodras"],
-    "buy_from": [],
+    "dropped_by": [
+      "Dragon Lord",
+      "Demodras"
+    ],
     "sell_to": [],
-    "reward_from": ["Deeper Fibula Quest"],
+    "reward_from": [
+      "Deeper Fibula Quest"
+    ],
     "description": "Tower shield."
   },
   {
@@ -851,8 +1115,9 @@
     "defense": 31,
     "weight": 60.0,
     "image": "./assets/items/dragon_shield.gif",
-    "dropped_by": ["Dragon"],
-    "buy_from": [],
+    "dropped_by": [
+      "Dragon"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Dragon shield."
@@ -864,8 +1129,11 @@
     "defense": 30,
     "weight": 55.0,
     "image": "./assets/items/guardian_shield.gif",
-    "dropped_by": ["Demon", "Skeleton", "Fire Devil"],
-    "buy_from": [],
+    "dropped_by": [
+      "Demon",
+      "Skeleton",
+      "Fire Devil"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Guardian shield."
@@ -878,7 +1146,6 @@
     "weight": 50.0,
     "image": "./assets/items/griffin_shield.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Griffin shield."
@@ -890,8 +1157,9 @@
     "defense": 28,
     "weight": 49.0,
     "image": "./assets/items/castle_shield.gif",
-    "dropped_by": ["Lich"],
-    "buy_from": [],
+    "dropped_by": [
+      "Lich"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Castle shield."
@@ -903,8 +1171,10 @@
     "defense": 28,
     "weight": 47.0,
     "image": "./assets/items/beholder_shield_old.gif",
-    "dropped_by": ["Beholder", "Elder Beholder"],
-    "buy_from": [],
+    "dropped_by": [
+      "Beholder",
+      "Elder Beholder"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Beholder shield."
@@ -917,7 +1187,6 @@
     "weight": 52.0,
     "image": "./assets/items/rose_shield.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Only 6 of these beautiful shields were ever made, they were owned by members of the guild Red Rose. This was a gift from CipSoft to them, for being one of the oldest guilds of Tibia."
@@ -929,9 +1198,13 @@
     "defense": 26,
     "weight": 55.0,
     "image": "./assets/items/dwarven_shield.gif",
-    "dropped_by": ["Dwarven Soldier"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Dwarven Soldier"
+    ],
+    "sell_to": [
+      {"npc": "Kroox", "location": "Kazordoon", "price": 100},
+      {"npc": "H.L.", "location": "Outlaw Camp", "price": 55}
+    ],
     "reward_from": [],
     "description": "Dwarven shield."
   },
@@ -943,9 +1216,10 @@
     "weight": 52.0,
     "image": "./assets/items/dark_shield.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
-    "reward_from": ["Thais Lighthouse Quest"],
+    "reward_from": [
+      "Thais Lighthouse Quest"
+    ],
     "description": "Dark shield."
   },
   {
@@ -956,9 +1230,10 @@
     "weight": 67.0,
     "image": "./assets/items/ornamented_shield.gif",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
-    "reward_from": ["Ornamented Shield Quest"],
+    "reward_from": [
+      "Ornamented Shield Quest"
+    ],
     "description": "Ornamented shield."
   },
   {
@@ -969,8 +1244,9 @@
     "weight": 66.0,
     "image": "./assets/items/viking_shield.gif",
     "dropped_by": [],
-    "buy_from": [],
-    "sell_to": [],
+    "sell_to": [
+      {"npc": "Willard", "location": "Edron", "price": 85}
+    ],
     "reward_from": [],
     "description": "Viking shield."
   },
@@ -981,10 +1257,17 @@
     "defense": 19,
     "weight": 63.0,
     "image": "./assets/items/copper_shield.gif",
-    "dropped_by": ["Rotworm", "Orc Warrior", "Dwarf"],
-    "buy_from": [],
-    "sell_to": [],
-    "reward_from": ["Copper Shield Quest"],
+    "dropped_by": [
+      "Rotworm",
+      "Orc Warrior",
+      "Dwarf"
+    ],
+    "sell_to": [
+      {"npc": "H.L.", "location": "Outlaw Camp", "price": 10}
+    ],
+    "reward_from": [
+      "Copper Shield Quest"
+    ],
     "description": "Copper shield."
   },
   {
@@ -994,8 +1277,10 @@
     "defense": 18,
     "weight": 42.0,
     "image": "./assets/items/black_shield.gif",
-    "dropped_by": ["Mummy", "Priestess"],
-    "buy_from": [],
+    "dropped_by": [
+      "Mummy",
+      "Priestess"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Black shield."
@@ -1007,9 +1292,18 @@
     "defense": 17,
     "weight": 65.0,
     "image": "./assets/items/plate_shield.gif",
-    "dropped_by": ["Minotaur", "Orc Leader", "Cyclops"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Minotaur",
+      "Orc Leader",
+      "Cyclops"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 31},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 45},
+      {"npc": "Cornelia", "location": "Carlin", "price": 45},
+      {"npc": "Azil", "location": "Darashia", "price": 45},
+      {"npc": "Yanni", "location": "Venore", "price": 25}
+    ],
     "reward_from": [],
     "description": "Plate shield."
   },
@@ -1020,9 +1314,19 @@
     "defense": 16,
     "weight": 60.0,
     "image": "./assets/items/brass_shield.gif",
-    "dropped_by": ["Skeleton", "Wild Warrior", "Stalker", "Elf"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Skeleton",
+      "Wild Warrior",
+      "Stalker",
+      "Elf"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 16},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 16},
+      {"npc": "Cornelia", "location": "Carlin", "price": 16},
+      {"npc": "Azil", "location": "Darashia", "price": 16},
+      {"npc": "Yanni", "location": "Venore", "price": 15}
+    ],
     "reward_from": [],
     "description": "Brass shield."
   },
@@ -1033,10 +1337,25 @@
     "defense": 15,
     "weight": 58.0,
     "image": "./assets/items/studded_shield.gif",
-    "dropped_by": ["Orc", "Amazon"],
-    "buy_from": [],
-    "sell_to": [],
-    "reward_from": ["Studded Shield Quest"],
+    "dropped_by": [
+      "Orc",
+      "Amazon"
+    ],
+    "sell_to": [
+      {"npc": "Hardek", "location": "Thais", "price": 16},
+      {"npc": "Sam", "location": "Thais", "price": 16},
+      {"npc": "Timur", "location": "Fibula", "price": 16},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 16},
+      {"npc": "Uzgod", "location": "Kazordoon", "price": 16},
+      {"npc": "Rowenna", "location": "Carlin", "price": 16},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 16},
+      {"npc": "Willard", "location": "Edron", "price": 16},
+      {"npc": "Yanni", "location": "Venore", "price": 16},
+      {"npc": "Romella", "location": "Venore", "price": 16}
+    ],
+    "reward_from": [
+      "Studded Shield Quest"
+    ],
     "description": "Studded shield."
   },
   {
@@ -1046,9 +1365,63 @@
     "defense": 14,
     "weight": 40,
     "image": "./assets/items/wooden_shield.gif",
-    "dropped_by": ["Orc Warrior", "Troll", "Beholder", "The Evil Eye", "Frost Troll"],
-    "buy_from": [],
-    "sell_to": [],
+    "dropped_by": [
+      "Orc Warrior",
+      "Troll",
+      "Beholder",
+      "The Evil Eye",
+      "Frost Troll"
+    ],
+    "sell_to": [
+      {"npc": "Sam", "location": "Thais", "price": 3},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 3},
+      {"npc": "Cornelia", "location": "Carlin", "price": 3},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 5},
+      {"npc": "Willard", "location": "Edron", "price": 5},
+      {"npc": "Azil", "location": "Darashia", "price": 3}
+    ],
+    "reward_from": [],
+    "description": "Wooden shield."
+  },
+  {
+    "id": "shield_025",
+    "slot": "shields",
+    "name": "Steel Shield",
+    "defense": 21,
+    "weight": 69,
+    "image": "./assets/items/steel_shield.gif",
+    "dropped_by": [
+      "Dragon"
+    ],
+    "sell_to": [
+      {"npc": "Sam", "location": "Thais", "price": 80},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 80},
+      {"npc": "Willard", "location": "Edron", "price": 80},
+      {"npc": "Yanni", "location": "Venore", "price": 80}
+    ],
+    "reward_from": [],
+    "description": "Wooden shield."
+  },
+    {
+    "id": "shield_026",
+    "slot": "shields",
+    "name": "Battle Shield",
+    "defense": 23,
+    "weight": 62,
+    "image": "./assets/items/steel_shield.gif",
+    "dropped_by": [
+      "Cyclops"
+    ],
+    "sell_to": [
+      {"npc": "Sam", "location": "Thais", "price": 95},
+      {"npc": "Hardek", "location": "Thais", "price": 95},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 60},
+      {"npc": "Cornelia", "location": "Carlin", "price": 60},
+      {"npc": "Shanar", "location": "Ab'Dendriel", "price": 95},
+      {"npc": "Willard", "location": "Edron", "price": 95},
+      {"npc": "Azil", "location": "Darashia", "price": 60},
+      {"npc": "Yanni", "location": "Venore", "price": 95}
+    ],
     "reward_from": [],
     "description": "Wooden shield."
   },
@@ -1061,7 +1434,6 @@
     "image": "./assets/items/wedding_ring.gif",
     "properties": "No special effect.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Wedding ring."
@@ -1075,7 +1447,6 @@
     "image": "./assets/items/ring_of_the_sky.gif",
     "properties": "No special effect.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Ring of the Sky."
@@ -1089,7 +1460,6 @@
     "image": "./assets/items/crystal_ring.gif",
     "properties": "No special effect.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Crystal ring."
@@ -1103,7 +1473,6 @@
     "image": "./assets/items/emerald_bangle.gif",
     "properties": "No special effect.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Emerald bangle."
@@ -1117,7 +1486,6 @@
     "image": "./assets/items/might_ring.gif",
     "properties": "Damage reduction by 25%. Has 20 charges.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Might Ring."
@@ -1131,7 +1499,6 @@
     "image": "./assets/items/stealth_ring.gif",
     "properties": "Invisibility for 10 minutes.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Stealth Ring."
@@ -1145,7 +1512,6 @@
     "image": "./assets/items/power_ring.gif",
     "properties": "Fist Fighting +6 for 30 minutes.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Power Ring."
@@ -1159,7 +1525,6 @@
     "image": "./assets/items/energy_ring.gif",
     "properties": "Magic Shield for 10 minutes.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Energy Ring."
@@ -1172,8 +1537,9 @@
     "weight": 0.8,
     "image": "./assets/items/life_ring.gif",
     "properties": "Adds health and mana for 20 minutes.",
-    "dropped_by": ["Demon"],
-    "buy_from": [],
+    "dropped_by": [
+      "Demon"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Life Ring."
@@ -1187,7 +1553,6 @@
     "image": "./assets/items/time_ring.gif",
     "properties": "Speed +30 for 10 minutes.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Time Ring."
@@ -1201,7 +1566,6 @@
     "image": "./assets/items/gold_ring.gif",
     "properties": "No special effect.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Gold ring."
@@ -1215,7 +1579,6 @@
     "image": "./assets/items/sword_ring.gif",
     "properties": "Sword Fighting +4 for 30 minutes.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Sword Ring."
@@ -1229,7 +1592,6 @@
     "image": "./assets/items/axe_ring.gif",
     "properties": "Axe Fighting +4 for 30 minutes.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Axe Ring."
@@ -1243,7 +1605,6 @@
     "image": "./assets/items/club_ring.gif",
     "properties": "Club Fighting +4 for 30 minutes.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Club Ring."
@@ -1257,7 +1618,6 @@
     "image": "./assets/items/dwarven_ring.gif",
     "properties": "Prevents drunkenness for 60 minutes.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Dwarven Ring."
@@ -1271,7 +1631,6 @@
     "image": "./assets/items/ring_of_healing.gif",
     "properties": "Adds health and mana for 7 minutes 30 seconds.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Ring of Healing."
@@ -1284,8 +1643,9 @@
     "weight": 2.0,
     "image": "./assets/items/scarf.gif",
     "properties": "No special effect.",
-    "dropped_by": ["Hero"],
-    "buy_from": [],
+    "dropped_by": [
+      "Hero"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Scarf."
@@ -1298,10 +1658,16 @@
     "weight": 6.3,
     "image": "./assets/items/dragon_necklace.gif",
     "properties": "Fire damage -8%.",
-    "dropped_by": ["Hunter"],
-    "buy_from": [],
+    "dropped_by": [
+      "Hunter"
+    ],
     "sell_to": [],
-    "reward_from": ["Life Ring Quest", "Ornamented Shield Quest", "Edron Dragon Lair Quest", "Wedding Ring Quest"],
+    "reward_from": [
+      "Life Ring Quest",
+      "Ornamented Shield Quest",
+      "Edron Dragon Lair Quest",
+      "Wedding Ring Quest"
+    ],
     "description": "Dragon Necklace."
   },
   {
@@ -1312,10 +1678,16 @@
     "weight": 5.5,
     "image": "./assets/items/protection_amulet.gif",
     "properties": "Physical damage -6%.",
-    "dropped_by": ["Kongra", "Orc Warlord", "Valkyrie"],
-    "buy_from": [],
+    "dropped_by": [
+      "Kongra",
+      "Orc Warlord",
+      "Valkyrie"
+    ],
     "sell_to": [],
-    "reward_from": ["The Desert Dungeon Quest", "Stealth Ring Quest"],
+    "reward_from": [
+      "The Desert Dungeon Quest",
+      "Stealth Ring Quest"
+    ],
     "description": "Protection Amulet."
   },
   {
@@ -1326,10 +1698,16 @@
     "weight": 3.8,
     "image": "./assets/items/garlic_necklace.gif",
     "properties": "Life drain -20%.",
-    "dropped_by": ["Witch"],
-    "buy_from": [],
+    "dropped_by": [
+      "Witch"
+    ],
     "sell_to": [],
-    "reward_from": ["Ghoul Room Quest", "Ornamented Shield Quest", "Triangle Tower Quest", "Edron Troll Cave Quest"],
+    "reward_from": [
+      "Ghoul Room Quest",
+      "Ornamented Shield Quest",
+      "Triangle Tower Quest",
+      "Edron Troll Cave Quest"
+    ],
     "description": "Garlic Necklace."
   },
   {
@@ -1340,10 +1718,14 @@
     "weight": 2.7,
     "image": "./assets/items/elven_amulet.gif",
     "properties": "All damage types -5%.",
-    "dropped_by": ["Elf Arcanist"],
-    "buy_from": [],
+    "dropped_by": [
+      "Elf Arcanist"
+    ],
     "sell_to": [],
-    "reward_from": ["Deeper Fibula Quest", "Time Ring Quest"],
+    "reward_from": [
+      "Deeper Fibula Quest",
+      "Time Ring Quest"
+    ],
     "description": "Elven Amulet."
   },
   {
@@ -1354,10 +1736,14 @@
     "weight": 7.0,
     "image": "./assets/items/stone_skin_amulet.gif",
     "properties": "Physical damage -80%.",
-    "dropped_by": ["Warlock"],
-    "buy_from": [],
+    "dropped_by": [
+      "Warlock"
+    ],
     "sell_to": [],
-    "reward_from": ["Draconia Quest", "Mad Mage Room Quest"],
+    "reward_from": [
+      "Draconia Quest",
+      "Mad Mage Room Quest"
+    ],
     "description": "Stone Skin Amulet."
   },
   {
@@ -1369,7 +1755,6 @@
     "image": "./assets/items/amulet_of_loss.gif",
     "properties": "Prevents item loss on death. Breaks when used.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Amulet of Loss."
@@ -1382,10 +1767,13 @@
     "weight": 5.0,
     "image": "./assets/items/bronze_amulet.gif",
     "properties": "Mana drain -20%. Has 200 charges.",
-    "dropped_by": ["Vampire"],
-    "buy_from": [],
+    "dropped_by": [
+      "Vampire"
+    ],
     "sell_to": [],
-    "reward_from": ["Power Ring Quest"],
+    "reward_from": [
+      "Power Ring Quest"
+    ],
     "description": "Bronze Amulet."
   },
   {
@@ -1396,10 +1784,14 @@
     "weight": 6.0,
     "image": "./assets/items/platinum_amulet.gif",
     "properties": "Armor +2.",
-    "dropped_by": ["Giant Spider", "The Old Widow"],
-    "buy_from": [],
+    "dropped_by": [
+      "Giant Spider",
+      "The Old Widow"
+    ],
     "sell_to": [],
-    "reward_from": ["Behemoth Quest"],
+    "reward_from": [
+      "Behemoth Quest"
+    ],
     "description": "Platinum Amulet."
   },
   {
@@ -1410,10 +1802,14 @@
     "weight": 5.0,
     "image": "./assets/items/silver_amulet.gif",
     "properties": "Poison damage -10%.",
-    "dropped_by": ["Banshee"],
-    "buy_from": [],
+    "dropped_by": [
+      "Banshee"
+    ],
     "sell_to": [],
-    "reward_from": ["Silver Amulet Quest", "Edron Goblin Quest"],
+    "reward_from": [
+      "Silver Amulet Quest",
+      "Edron Goblin Quest"
+    ],
     "description": "Silver Amulet."
   },
   {
@@ -1425,7 +1821,6 @@
     "image": "./assets/items/strange_talisman.gif",
     "properties": "Energy damage -10%.",
     "dropped_by": [],
-    "buy_from": [],
     "sell_to": [],
     "reward_from": [],
     "description": "Strange Talisman."
@@ -1438,8 +1833,9 @@
     "weight": 5.7,
     "image": "./assets/items/ruby_necklace.gif",
     "properties": "Decorative item only.",
-    "dropped_by": ["Black Knight"],
-    "buy_from": [],
+    "dropped_by": [
+      "Black Knight"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Ruby Necklace."
@@ -1452,8 +1848,11 @@
     "weight": 3.3,
     "image": "./assets/items/wolf_tooth_chain.gif",
     "properties": "No special effect.",
-    "dropped_by": ["Cyclops", "Orc Rider", "Witch"],
-    "buy_from": [],
+    "dropped_by": [
+      "Cyclops",
+      "Orc Rider",
+      "Witch"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Wolf Tooth Chain."
@@ -1466,8 +1865,11 @@
     "weight": 4.9,
     "image": "./assets/items/crystal_necklace.gif",
     "properties": "Decorative item only.",
-    "dropped_by": ["Amazon", "Behemoth", "Priestess"],
-    "buy_from": [],
+    "dropped_by": [
+      "Amazon",
+      "Behemoth",
+      "Priestess"
+    ],
     "sell_to": [],
     "reward_from": [],
     "description": "Crystal Necklace."
