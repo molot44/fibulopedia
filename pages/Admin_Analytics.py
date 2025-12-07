@@ -417,6 +417,14 @@ def main() -> None:
         icon="📊"
     )
     
+    # Add refresh button
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        if st.button("🔄 Refresh Statistics", use_container_width=True, type="primary"):
+            st.rerun()
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    
     # Display summary cards
     display_analytics_summary()
     
