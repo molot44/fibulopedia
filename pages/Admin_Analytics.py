@@ -17,6 +17,13 @@ from src.ui.layout import (
     create_footer
 )
 from src.logging_utils import setup_logger
+from src.analytics_utils import (
+    get_page_views,
+    get_total_page_views,
+    get_unique_sessions,
+    get_analytics_summary,
+    reset_analytics
+)
 
 logger = setup_logger(__name__)
 
@@ -101,86 +108,80 @@ def display_analytics_summary():
     """Display summary statistics in cards."""
     st.markdown("### 📈 Summary Statistics")
     
+    # Get our custom analytics data
+    summary = get_analytics_summary()
+    
     col1, col2, col3, col4 = st.columns(4)
-    
-    # Get analytics data
-    counts = streamlit_analytics.counts
-    
-    # Calculate metrics - handle different data structures
-    total_pageviews = 0
-    unique_pages = 0
-    
-    if counts:
-        if isinstance(counts, dict):
-            # Check if values are integers or dicts
-            for key, value in counts.items():
-                if isinstance(value, int):
-                    total_pageviews += value
-                    unique_pages += 1
-                elif isinstance(value, dict):
-                    # If nested dict, count the inner values
-                    total_pageviews += sum(v for v in value.values() if isinstance(v, int))
-                    unique_pages += len(value)
     
     with col1:
         st.markdown(f"""
-            <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); 
-                        padding: 20px; border-radius: 8px; text-align: center;
-                        border: 2px solid #5ba3d0; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-                <div style="font-size: 2.5rem;">📊</div>
-                <div style="font-size: 2rem; font-weight: bold; color: #5ba3d0;">{total_pageviews}</div>
-                <div style="color: #e0e0e0; font-size: 0.9rem;">Total Page Views</div>
+            <div style='
+                background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+                border: 2px solid #d4af37;
+                border-radius: 8px;
+                padding: 1.5rem;
+                text-align: center;
+            '>
+                <div style='font-size: 2.5rem; font-weight: bold; color: #d4af37;'>
+                    {summary['total_page_views']}
+                </div>
+                <div style='font-size: 0.9rem; color: #888; margin-top: 0.5rem;'>
+                    Total Page Views
+                </div>
             </div>
         """, unsafe_allow_html=True)
     
     with col2:
         st.markdown(f"""
-            <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); 
-                        padding: 20px; border-radius: 8px; text-align: center;
-                        border: 2px solid #a855f7; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-                <div style="font-size: 2.5rem;">📄</div>
-                <div style="font-size: 2rem; font-weight: bold; color: #a855f7;">{unique_pages}</div>
-                <div style="color: #e0e0e0; font-size: 0.9rem;">Unique Pages</div>
+            <div style='
+                background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+                border: 2px solid #5ba3d0;
+                border-radius: 8px;
+                padding: 1.5rem;
+                text-align: center;
+            '>
+                <div style='font-size: 2.5rem; font-weight: bold; color: #5ba3d0;'>
+                    {summary['unique_sessions']}
+                </div>
+                <div style='font-size: 0.9rem; color: #888; margin-top: 0.5rem;'>
+                    Unique Visitors
+                </div>
             </div>
         """, unsafe_allow_html=True)
     
     with col3:
-        avg_views = total_pageviews / unique_pages if unique_pages > 0 else 0
         st.markdown(f"""
-            <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); 
-                        padding: 20px; border-radius: 8px; text-align: center;
-                        border: 2px solid #84cc16; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-                <div style="font-size: 2.5rem;">📈</div>
-                <div style="font-size: 2rem; font-weight: bold; color: #84cc16;">{avg_views:.1f}</div>
-                <div style="color: #e0e0e0; font-size: 0.9rem;">Avg Views/Page</div>
+            <div style='
+                background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+                border: 2px solid #50c878;
+                border-radius: 8px;
+                padding: 1.5rem;
+                text-align: center;
+            '>
+                <div style='font-size: 2.5rem; font-weight: bold; color: #50c878;'>
+                    {summary['pages_tracked']}
+                </div>
+                <div style='font-size: 0.9rem; color: #888; margin-top: 0.5rem;'>
+                    Pages Tracked
+                </div>
             </div>
         """, unsafe_allow_html=True)
     
     with col4:
-        most_popular = "N/A"
-        if counts and isinstance(counts, dict):
-            try:
-                # Find page with most views, handling nested structures
-                max_views = 0
-                for key, value in counts.items():
-                    if isinstance(value, int) and value > max_views:
-                        max_views = value
-                        most_popular = key
-                    elif isinstance(value, dict):
-                        page_total = sum(v for v in value.values() if isinstance(v, int))
-                        if page_total > max_views:
-                            max_views = page_total
-                            most_popular = key
-            except:
-                most_popular = "N/A"
-        
         st.markdown(f"""
-            <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); 
-                        padding: 20px; border-radius: 8px; text-align: center;
-                        border: 2px solid #ff6b35; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-                <div style="font-size: 2.5rem;">🔥</div>
-                <div style="font-size: 1.2rem; font-weight: bold; color: #ff6b35;">{most_popular}</div>
-                <div style="color: #e0e0e0; font-size: 0.9rem;">Most Popular</div>
+            <div style='
+                background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+                border: 2px solid #e67e22;
+                border-radius: 8px;
+                padding: 1.5rem;
+                text-align: center;
+            '>
+                <div style='font-size: 2.5rem; font-weight: bold; color: #e67e22;'>
+                    {summary['avg_pages_per_session']}
+                </div>
+                <div style='font-size: 0.9rem; color: #888; margin-top: 0.5rem;'>
+                    Avg Pages/Visit
+                </div>
             </div>
         """, unsafe_allow_html=True)
 
@@ -189,25 +190,11 @@ def display_page_views_table():
     """Display table of page views."""
     st.markdown("### 📑 Page Views Breakdown")
     
-    counts = streamlit_analytics.counts
-    
-    if not counts:
-        st.info("No analytics data available yet. Start browsing the site to collect data!")
-        return
-    
-    # Flatten nested structure if needed
-    page_views = {}
-    if isinstance(counts, dict):
-        for key, value in counts.items():
-            if isinstance(value, int):
-                page_views[key] = value
-            elif isinstance(value, dict):
-                # Sum nested values
-                total = sum(v for v in value.values() if isinstance(v, int))
-                page_views[key] = total
+    # Get our custom analytics data
+    page_views = get_page_views()
     
     if not page_views:
-        st.info("No page view data available yet.")
+        st.info("No page view data available yet. Start browsing the site to collect data!")
         return
     
     # Sort by views descending
@@ -311,14 +298,104 @@ def display_reset_button():
     col1, col2, col3 = st.columns([1, 1, 2])
     
     with col1:
-        if st.button("🔄 Reset Analytics", type="secondary", use_container_width=True):
-            streamlit_analytics.reset_counts()
-            st.success("Analytics data has been reset!")
+        if st.button("🔄 Reset Page Analytics", type="secondary", use_container_width=True):
+            reset_analytics()
+            st.success("Page analytics data has been reset!")
             st.rerun()
     
     with col2:
-        if st.button("📥 Export Data", type="secondary", use_container_width=True):
-            st.info("Export functionality coming soon!")
+        if st.button("🔄 Reset Widget Analytics", type="secondary", use_container_width=True):
+            streamlit_analytics.reset_counts()
+            st.success("Widget analytics data has been reset!")
+            st.rerun()
+
+
+def display_page_popularity_chart():
+    """Display bar chart of page popularity."""
+    st.markdown("### 📊 Page Popularity")
+    
+    # Get our custom analytics data
+    page_views = get_page_views()
+    
+    if not page_views:
+        st.info("No page view data available yet.")
+        return
+    
+    # Sort by views
+    sorted_pages = sorted(page_views.items(), key=lambda x: x[1], reverse=True)[:10]
+    
+    # Create bar chart data
+    import pandas as pd
+    df = pd.DataFrame(sorted_pages, columns=["Page", "Views"])
+    
+    st.bar_chart(df.set_index("Page"))
+
+
+def display_session_statistics():
+    """Display session-related statistics."""
+    st.markdown("### ⏱️ Session Statistics")
+    
+    # Get our custom analytics data
+    summary = get_analytics_summary()
+    total_page_views = summary['total_page_views']
+    unique_sessions = summary['unique_sessions']
+    avg_pages = summary['avg_pages_per_session']
+    
+    col1, col2, col3 = st.columns(3)
+        
+    with col1:
+        st.markdown(f"""
+            <div style='
+                background: linear-gradient(135deg, rgba(30,30,30,0.95), rgba(40,40,40,0.95));
+                border: 2px solid #d4af37;
+                border-radius: 8px;
+                padding: 1.5rem;
+                text-align: center;
+            '>
+                <div style='color: #d4af37; font-size: 2.5rem; font-weight: bold;'>
+                    {unique_sessions}
+                </div>
+                <div style='color: #888; font-size: 0.9rem; margin-top: 0.5rem;'>
+                    Unique Sessions
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown(f"""
+            <div style='
+                background: linear-gradient(135deg, rgba(30,30,30,0.95), rgba(40,40,40,0.95));
+                border: 2px solid #5ba3d0;
+                border-radius: 8px;
+                padding: 1.5rem;
+                text-align: center;
+            '>
+                <div style='color: #5ba3d0; font-size: 2.5rem; font-weight: bold;'>
+                    {total_page_views}
+                </div>
+                <div style='color: #888; font-size: 0.9rem; margin-top: 0.5rem;'>
+                    Total Page Views
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        st.markdown(f"""
+            <div style='
+                background: linear-gradient(135deg, rgba(30,30,30,0.95), rgba(40,40,40,0.95));
+                border: 2px solid #50c878;
+                border-radius: 8px;
+                padding: 1.5rem;
+                text-align: center;
+            '>
+                <div style='color: #50c878; font-size: 2.5rem; font-weight: bold;'>
+                    {avg_pages}
+                </div>
+                <div style='color: #888; font-size: 0.9rem; margin-top: 0.5rem;'>
+                    Avg Pages/Session
+                </div>
+            </div>
+        """, unsafe_allow_html=True)
 
 
 def main() -> None:
@@ -345,6 +422,16 @@ def main() -> None:
     
     st.markdown("---")
     
+    # Display session statistics
+    display_session_statistics()
+    
+    st.markdown("---")
+    
+    # Display page popularity chart
+    display_page_popularity_chart()
+    
+    st.markdown("---")
+    
     # Display page views table
     display_page_views_table()
     
@@ -357,8 +444,9 @@ def main() -> None:
         **ℹ️ About Analytics**
         
         This dashboard shows page view statistics collected by streamlit-analytics2. 
-        Data is stored locally and no personal information is collected. Only page URLs 
-        and view counts are tracked to help improve the website experience.
+        Data is stored locally and no personal information is collected. Only session IDs 
+        (randomly generated UUIDs) and page view counts are tracked to help improve the 
+        website experience. No personal information, IP addresses, or cookies are collected.
     """)
 
     # Footer

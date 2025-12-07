@@ -14,6 +14,7 @@ import streamlit as st
 import json
 from pathlib import Path
 from datetime import datetime
+import uuid
 import streamlit_analytics2 as streamlit_analytics
 
 from src.config import APP_TITLE, APP_SUBTITLE, APP_ICON
@@ -25,6 +26,7 @@ from src.ui.layout import (
 )
 from src.logging_utils import setup_logger
 from src.services.fibula_status import fetch_online_count
+from src.analytics_utils import track_page_view
 import base64
 
 # Initialize logger
@@ -41,8 +43,9 @@ def main() -> None:
     """Main function to render the home page."""
     logger.info("Rendering home page")
     
-    # Start analytics tracking
-    streamlit_analytics.start_tracking()
+    # Track page view
+    session_id = st.session_state.get("session_id")
+    track_page_view("Home", session_id)
     
     # Large centered logo with subtitle and rotworm gif
     logo_path = Path("assets/logo_fibulopedia.png")
@@ -253,45 +256,30 @@ def main() -> None:
                 <h1>Welcome to Fibulopedia</h1>
                 <p>Your comprehensive guide to the Fibula Project - a faithful recreation of the classic Tibia 7.1 experience.</p>
                 <p>Explore weapons, equipment, spells, monsters, quests, and more.</p>
-                <p><i>The website is under construction and may contain incomplete or incorrect information. If you notice any issues, please contact me on Discord.</i></p>
                 <p>Molot (Grozze in-game)</p>
             </div>
         """, unsafe_allow_html=True)
-
-        # Quick Search under welcome box
-        st.markdown("<h2 style='font-size: 1.3rem;'>⚡ Quick Search</h2>", unsafe_allow_html=True)
-        search_query = st.text_input(
-            "Search",
-            placeholder="Search for weapons, spells, monsters, quests...",
-            label_visibility="collapsed"
-        )
-        
-        if st.button("Search", type="primary", use_container_width=True):
-            if search_query:
-                st.session_state["search_query"] = search_query
-                st.switch_page("pages/Search.py")
-        
-        st.markdown("---")
         
         # Quick Links section
         st.markdown("<h2 style='font-size: 1.3rem;'>▶ Quick Links</h2>", unsafe_allow_html=True)
         st.markdown("""
             <div style="
                 background: rgba(40,40,40,0.4);
-                border: 2px dashed #555;
+                border: 2px solid #d4af37;
                 border-radius: 8px;
-                padding: 2rem;
+                padding: 1.5rem;
                 text-align: center;
-                color: #888;
-                min-height: 300px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
             ">
-                <div>
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">📦</div>
-                    <div style="font-size: 1rem;">Coming Soon</div>
-                </div>
+                <p style="margin: 0.5rem 0;">
+                    <a href="https://amera.fibula.app/" target="_blank" style="color: #d4af37; text-decoration: none; font-size: 1.1rem; font-weight: bold;">
+                        🌐 Project Fibula Official Website
+                    </a>
+                </p>
+                <p style="margin: 0.5rem 0;">
+                    <a href="https://discord.gg/Jzz6yUme" target="_blank" style="color: #7289da; text-decoration: none; font-size: 1.1rem; font-weight: bold;">
+                        💬 Project Fibula Discord
+                    </a>
+                </p>
             </div>
         """, unsafe_allow_html=True)
 
@@ -299,11 +287,20 @@ def main() -> None:
 if __name__ == "__main__":
     setup_page_config("Home", APP_ICON, layout="wide")
     load_custom_css()
+    
+    # Initialize analytics with session tracking
+    if "session_id" not in st.session_state:
+        st.session_state.session_id = str(uuid.uuid4())
+    
+    # Start analytics tracking before any interactive elements
+    streamlit_analytics.start_tracking()
+    
     create_sidebar_navigation("Home")
     
-    main()
-    
-    # Stop analytics tracking
-    streamlit_analytics.stop_tracking()
+    try:
+        main()
+    finally:
+        # Stop analytics tracking
+        streamlit_analytics.stop_tracking()
     
     create_footer()

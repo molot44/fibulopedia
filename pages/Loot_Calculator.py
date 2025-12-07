@@ -9,6 +9,8 @@ import streamlit as st
 from typing import List, Dict, Optional
 import base64
 import os
+import uuid
+import streamlit_analytics2 as streamlit_analytics
 
 from src.services.equipment_service import load_equipment
 from src.services.weapons_service import load_weapons
@@ -20,8 +22,16 @@ from src.ui.layout import (
     create_footer
 )
 from src.logging_utils import setup_logger
+from src.analytics_utils import track_page_view
 
 logger = setup_logger(__name__)
+
+# Initialize session ID for analytics
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
+
+# Start analytics tracking
+streamlit_analytics.start_tracking()
 
 # Configure page
 setup_page_config("Loot Calculator", "")
@@ -86,6 +96,10 @@ def get_all_sellable_items():
 def main() -> None:
     """Main function to render the loot calculator page."""
     logger.info("Rendering loot calculator page")
+    
+    # Track page view
+    session_id = st.session_state.get("session_id")
+    track_page_view("Loot Calculator", session_id)
 
     # Page header
     create_page_header(
@@ -474,4 +488,8 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    finally:
+        # Stop analytics tracking
+        streamlit_analytics.stop_tracking()

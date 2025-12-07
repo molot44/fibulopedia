@@ -8,6 +8,8 @@ import streamlit as st
 import re
 import base64
 import os
+import uuid
+import streamlit_analytics2 as streamlit_analytics
 
 from src.services.quests_service import load_quests
 from src.services.equipment_service import load_equipment
@@ -21,8 +23,16 @@ from src.ui.layout import (
 )
 from src.config import ASSETS_DIR
 from src.logging_utils import setup_logger
+from src.analytics_utils import track_page_view
 
 logger = setup_logger(__name__)
+
+# Initialize session ID for analytics
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
+
+# Start analytics tracking
+streamlit_analytics.start_tracking()
 
 # Configure page
 setup_page_config("Quests", "📜")
@@ -150,6 +160,10 @@ def build_reward_html(reward_text: str):
 def main() -> None:
     """Main function to render the quests page."""
     logger.info("Rendering quests page")
+    
+    # Track page view
+    session_id = st.session_state.get("session_id")
+    track_page_view("Quests", session_id)
 
     # Page header
     create_page_header(
@@ -388,5 +402,9 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    finally:
+        # Stop analytics tracking
+        streamlit_analytics.stop_tracking()
 

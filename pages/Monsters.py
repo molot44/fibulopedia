@@ -8,6 +8,8 @@ Users can search monsters and plan their hunting strategies.
 import streamlit as st
 from pathlib import Path
 import os
+import uuid
+import streamlit_analytics2 as streamlit_analytics
 
 from src.services.monsters_service import (
     load_monsters, 
@@ -26,6 +28,7 @@ from src.ui.layout import (
 )
 from src.config import ASSETS_DIR, Theme
 from src.logging_utils import setup_logger
+from src.analytics_utils import track_page_view
 import base64
 
 logger = setup_logger(__name__)
@@ -40,6 +43,13 @@ def get_image_base64(image_path: str) -> str:
     except Exception as e:
         logger.error(f"Error loading image {image_path}: {e}")
         return ""
+
+# Initialize session ID for analytics
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
+
+# Start analytics tracking
+streamlit_analytics.start_tracking()
 
 # Configure page
 setup_page_config("Monsters", "")
@@ -284,6 +294,10 @@ def main() -> None:
     """Main function to render the monsters page."""
     logger.info("Rendering monsters page")
     
+    # Track page view
+    session_id = st.session_state.get("session_id")
+    track_page_view("Monsters", session_id)
+    
     # Check if modal should be shown
     if "show_monster_modal" in st.session_state and st.session_state.show_monster_modal:
         show_monster_details(st.session_state.selected_monster)
@@ -488,4 +502,8 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    finally:
+        # Stop analytics tracking
+        streamlit_analytics.stop_tracking()

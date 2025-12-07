@@ -1,0 +1,59 @@
+{
+  "page_views": {
+    "Home": 3,
+    "Weapons": 1,
+    "Monsters": 1
+  },
+  "sessions": {
+    "314784a7-9464-45b5-9d58-3eaa84e7ceaf": {
+      "first_seen": "2025-12-07T11:55:53.697825",
+      "pages_visited": [
+        "Home",
+        "Weapons",
+        "Monsters"
+      ],
+      "last_seen": "2025-12-07T11:55:53.713450"
+    },
+    "173e4bb5-95b9-4810-83a6-09fc757385a2": {
+      "first_seen": "2025-12-07T11:55:53.719458",
+      "pages_visited": [
+        "Home"
+      ],
+      "last_seen": "2025-12-07T11:55:53.719458"
+    },
+    "ea6a485a-2711-4fa4-91e6-5ccaae112f37": {
+      "first_seen": "2025-12-07T11:56:29.739066",
+      "pages_visited": [
+        "Home"
+      ],
+      "last_seen": "2025-12-07T11:56:29.739066"
+    }
+  },
+  "timeline": [
+    {
+      "page": "Home",
+      "timestamp": "2025-12-07T11:55:53.697825",
+      "session_id": "314784a7-9464-45b5-9d58-3eaa84e7ceaf"
+    },
+    {
+      "page": "Weapons",
+      "timestamp": "2025-12-07T11:55:53.706482",
+      "session_id": "314784a7-9464-45b5-9d58-3eaa84e7ceaf"
+    },
+    {
+      "page": "Monsters",
+      "timestamp": "2025-12-07T11:55:53.713450",
+      "session_id": "314784a7-9464-45b5-9d58-3eaa84e7ceaf"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-07T11:55:53.719458",
+      "session_id": "173e4bb5-95b9-4810-83a6-09fc757385a2"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-07T11:56:29.739066",
+      "session_id": "ea6a485a-2711-4fa4-91e6-5ccaae112f37"
+    }
+  ]
+}

@@ -9,6 +9,8 @@ import streamlit as st
 import pandas as pd
 import base64
 import os
+import uuid
+import streamlit_analytics2 as streamlit_analytics
 
 from src.services.equipment_service import load_equipment, search_equipment, get_equipment_slots
 from src.ui.layout import (
@@ -20,6 +22,7 @@ from src.ui.layout import (
 )
 from src.ui.components import create_type_badge
 from src.logging_utils import setup_logger
+from src.analytics_utils import track_page_view
 
 logger = setup_logger(__name__)
 
@@ -37,6 +40,13 @@ def get_image_as_base64(image_path: str) -> str:
         logger.error(f"Error loading image {image_path}: {e}")
     return ""
 
+# Initialize session ID for analytics
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
+
+# Start analytics tracking
+streamlit_analytics.start_tracking()
+
 # Configure page
 setup_page_config("Equipment", "🛡️")
 load_custom_css()
@@ -46,6 +56,10 @@ create_sidebar_navigation("Equipment")
 def main() -> None:
     """Main function to render the equipment page."""
     logger.info("Rendering equipment page")
+    
+    # Track page view
+    session_id = st.session_state.get("session_id")
+    track_page_view("Equipment", session_id)
     
     # Page header
     create_page_header(
@@ -498,8 +512,11 @@ def main() -> None:
     # Footer
     create_footer()
 
-
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    finally:
+        # Stop analytics tracking
+        streamlit_analytics.stop_tracking()
 
 
