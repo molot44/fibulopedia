@@ -8,7 +8,8 @@ import json
 import os
 from pathlib import Path
 from datetime import datetime
-from typing import Dict, Any
+from typing import Dict, Any, List
+from collections import Counter
 import threading
 
 # Thread lock for safe file writing
@@ -101,6 +102,64 @@ def get_analytics_summary() -> Dict[str, Any]:
         "page_views": page_views,
         "most_popular_page": max(page_views.items(), key=lambda x: x[1]) if page_views else ("N/A", 0)
     }
+
+
+def get_timeline_data() -> List[Dict[str, Any]]:
+    """Get timeline of all page views."""
+    data = _load_analytics_data()
+    return data.get("timeline", [])
+
+
+def get_hourly_activity() -> Dict[int, int]:
+    """Get page views grouped by hour of day (0-23)."""
+    timeline = get_timeline_data()
+    hourly_counts = Counter()
+    
+    for entry in timeline:
+        try:
+            timestamp = datetime.fromisoformat(entry["timestamp"])
+            hour = timestamp.hour
+            hourly_counts[hour] += 1
+        except (ValueError, KeyError):
+            continue
+    
+    # Return all 24 hours, even if some have 0 views
+    return {hour: hourly_counts.get(hour, 0) for hour in range(24)}
+
+
+def get_daily_activity() -> Dict[str, int]:
+    """Get page views grouped by day of week."""
+    timeline = get_timeline_data()
+    daily_counts = Counter()
+    
+    day_names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    
+    for entry in timeline:
+        try:
+            timestamp = datetime.fromisoformat(entry["timestamp"])
+            day_name = day_names[timestamp.weekday()]
+            daily_counts[day_name] += 1
+        except (ValueError, KeyError):
+            continue
+    
+    # Return all days in order, even if some have 0 views
+    return {day: daily_counts.get(day, 0) for day in day_names}
+
+
+def get_activity_by_date() -> Dict[str, int]:
+    """Get page views grouped by date (YYYY-MM-DD)."""
+    timeline = get_timeline_data()
+    date_counts = Counter()
+    
+    for entry in timeline:
+        try:
+            timestamp = datetime.fromisoformat(entry["timestamp"])
+            date_str = timestamp.strftime("%Y-%m-%d")
+            date_counts[date_str] += 1
+        except (ValueError, KeyError):
+            continue
+    
+    return dict(sorted(date_counts.items()))
 
 
 def reset_analytics() -> None:

@@ -8,6 +8,9 @@ Access is restricted to administrators only.
 import streamlit as st
 import streamlit_analytics2 as streamlit_analytics
 from datetime import datetime
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
 
 from src.ui.layout import (
     setup_page_config,
@@ -22,7 +25,10 @@ from src.analytics_utils import (
     get_total_page_views,
     get_unique_sessions,
     get_analytics_summary,
-    reset_analytics
+    reset_analytics,
+    get_hourly_activity,
+    get_daily_activity,
+    get_activity_by_date
 )
 
 logger = setup_logger(__name__)
@@ -310,6 +316,122 @@ def display_reset_button():
             st.rerun()
 
 
+def display_hourly_activity_chart():
+    """Display chart showing activity by hour of day."""
+    st.markdown("### ⏰ Activity by Hour of Day")
+    
+    hourly_data = get_hourly_activity()
+    
+    if not hourly_data or sum(hourly_data.values()) == 0:
+        st.info("No hourly activity data available yet.")
+        return
+    
+    # Create DataFrame
+    df = pd.DataFrame([
+        {"Hour": f"{hour:02d}:00", "Views": count}
+        for hour, count in sorted(hourly_data.items())
+    ])
+    
+    # Create bar chart
+    fig = px.bar(
+        df,
+        x="Hour",
+        y="Views",
+        title="Page Views by Hour (24-hour format)",
+        color="Views",
+        color_continuous_scale="Blues"
+    )
+    
+    fig.update_layout(
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='#e0e0e0'),
+        xaxis=dict(showgrid=True, gridcolor='rgba(128,128,128,0.2)'),
+        yaxis=dict(showgrid=True, gridcolor='rgba(128,128,128,0.2)')
+    )
+    
+    st.plotly_chart(fig, use_container_width=True)
+
+
+def display_daily_activity_chart():
+    """Display chart showing activity by day of week."""
+    st.markdown("### 📅 Activity by Day of Week")
+    
+    daily_data = get_daily_activity()
+    
+    if not daily_data or sum(daily_data.values()) == 0:
+        st.info("No daily activity data available yet.")
+        return
+    
+    # Create DataFrame (preserve order)
+    days_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    df = pd.DataFrame([
+        {"Day": day, "Views": daily_data[day]}
+        for day in days_order
+    ])
+    
+    # Create bar chart
+    fig = px.bar(
+        df,
+        x="Day",
+        y="Views",
+        title="Page Views by Day of Week",
+        color="Views",
+        color_continuous_scale="Viridis"
+    )
+    
+    fig.update_layout(
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='#e0e0e0'),
+        xaxis=dict(showgrid=True, gridcolor='rgba(128,128,128,0.2)'),
+        yaxis=dict(showgrid=True, gridcolor='rgba(128,128,128,0.2)')
+    )
+    
+    st.plotly_chart(fig, use_container_width=True)
+
+
+def display_date_activity_chart():
+    """Display chart showing activity over time (by date)."""
+    st.markdown("### 📈 Activity Over Time")
+    
+    date_data = get_activity_by_date()
+    
+    if not date_data or sum(date_data.values()) == 0:
+        st.info("No date activity data available yet.")
+        return
+    
+    # Create DataFrame
+    df = pd.DataFrame([
+        {"Date": date, "Views": count}
+        for date, count in sorted(date_data.items())
+    ])
+    
+    # Create line chart
+    fig = px.line(
+        df,
+        x="Date",
+        y="Views",
+        title="Page Views Over Time",
+        markers=True
+    )
+    
+    fig.update_traces(
+        line=dict(color='#d4af37', width=3),
+        marker=dict(size=8, color='#d4af37')
+    )
+    
+    fig.update_layout(
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='#e0e0e0'),
+        xaxis=dict(showgrid=True, gridcolor='rgba(128,128,128,0.2)'),
+        yaxis=dict(showgrid=True, gridcolor='rgba(128,128,128,0.2)')
+    )
+    
+    st.plotly_chart(fig, use_container_width=True)
+
+
 def display_page_popularity_chart():
     """Display bar chart of page popularity."""
     st.markdown("### 📊 Page Popularity")
@@ -432,6 +554,22 @@ def main() -> None:
     
     # Display session statistics
     display_session_statistics()
+    
+    st.markdown("---")
+    
+    # Display time-based activity charts
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        display_hourly_activity_chart()
+    
+    with col2:
+        display_daily_activity_chart()
+    
+    st.markdown("---")
+    
+    # Display activity over time
+    display_date_activity_chart()
     
     st.markdown("---")
     
