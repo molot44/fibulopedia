@@ -1212,7 +1212,7 @@
     "weight": 55.0,
     "image": "./assets/items/dwarven_shield.gif",
     "dropped_by": [
-      "Dwarven Soldier"
+      "Dwarf Soldier"
     ],
     "sell_to": [],
     "reward_from": [],

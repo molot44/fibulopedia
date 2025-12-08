@@ -1,5 +1,13 @@
 [
     {
+        "id": 4,
+        "date": "2025-12-08",
+        "title": "New feature - Training Calculator!",
+        "content": "A new tool has been added: the Training Calculator.\n\n---\n\nThis early version calculates the time required to advance melee skill for knights. Upcoming expansions will include distance skill for paladins, shielding for all vocations, and magic level progression for all vocations as well.",
+        "author": "Molot",
+        "category": "announcement"
+    },
+    {
         "id": 3,
         "date": "2025-12-06",
         "title": "December Update #2",
