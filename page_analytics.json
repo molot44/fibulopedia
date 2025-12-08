@@ -1,6 +1,6 @@
 {
   "page_views": {
-    "Home": 6,
+    "Home": 7,
     "Weapons": 1,
     "Monsters": 2,
     "Quests": 2,
@@ -63,9 +63,10 @@
     "20d82867-9be5-4ecf-8a7c-ea28ea0551f8": {
       "first_seen": "2025-12-08T22:41:12.923696",
       "pages_visited": [
-        "Training Calculator"
+        "Training Calculator",
+        "Home"
       ],
-      "last_seen": "2025-12-08T22:41:19.946196"
+      "last_seen": "2025-12-08T22:46:54.083791"
     }
   },
   "timeline": [
@@ -312,6 +313,11 @@
     {
       "page": "Training Calculator",
       "timestamp": "2025-12-08T22:41:19.946196",
+      "session_id": "20d82867-9be5-4ecf-8a7c-ea28ea0551f8"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-08T22:46:54.083791",
       "session_id": "20d82867-9be5-4ecf-8a7c-ea28ea0551f8"
     }
   ]
