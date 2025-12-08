@@ -187,7 +187,7 @@ def main() -> None:
     st.markdown("<br>", unsafe_allow_html=True)
 
     # Calculate button
-    if st.button("⚔️ Calculate Training Time", type="primary", use_container_width=True):
+    if st.button("Calculate Training Time", type="primary", use_container_width=True):
         # Calculate training time
         result = calculate_training_time(current_skill, current_percent, vocation, skill_type)
             
