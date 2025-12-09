@@ -259,6 +259,8 @@ class SearchResult:
         entity_id: The unique ID of the entity.
         name: Display name of the entity.
         snippet: Short context snippet showing why this matched.
+        page_route: The page route for navigation (e.g., "pages/Weapons.py").
+        image_base64: Base64 encoded image data (optional, for weapons/equipment).
         score: Relevance score (optional, for future ranking).
     """
     
@@ -266,6 +268,8 @@ class SearchResult:
     entity_id: str
     name: str
     snippet: Optional[str] = None
+    page_route: Optional[str] = None
+    image_base64: Optional[str] = None
     score: Optional[float] = None
 
 

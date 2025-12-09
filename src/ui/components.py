@@ -9,8 +9,12 @@ throughout the application.
 import streamlit as st
 import pandas as pd
 from typing import Any, Optional
+import html
 
 from src.config import Theme
+from src.logging_utils import setup_logger
+
+logger = setup_logger(__name__)
 
 
 def create_card(
@@ -201,19 +205,23 @@ def create_search_result_item(
     entity_type: str,
     name: str,
     snippet: Optional[str] = None,
-    entity_id: Optional[str] = None
+    entity_id: Optional[str] = None,
+    page_route: Optional[str] = None,
+    image_base64: Optional[str] = None
 ) -> None:
     """
-    Create a search result item display.
+    Create a search result item display with clickable link to page.
     
     Args:
         entity_type: Type of entity (weapon, spell, etc.).
         name: Name of the entity.
         snippet: Optional text snippet showing context.
         entity_id: Optional entity ID for linking.
+        page_route: Optional page route for navigation.
+        image_base64: Optional base64 encoded image data URL.
     
     Example:
-        >>> create_search_result_item("weapon", "Dragon Slayer", "A powerful sword...")
+        >>> create_search_result_item("weapon", "Dragon Slayer", "A powerful sword...", "weapon_001", "pages/Weapons.py")
     """
     # Icon mapping for entity types
     type_icons = {
@@ -221,26 +229,36 @@ def create_search_result_item(
         "equipment": "🛡️",
         "spell": "✨",
         "monster": "👹",
-        "quest": "📜"
+        "quest": "📜",
+        "food": "🍖",
+        "tool": "🔧"
     }
     
     icon = type_icons.get(entity_type.lower(), "📄")
-    type_badge_html = create_type_badge(entity_type)
     
-    with st.container():
-        st.markdown(
-            f"""
-            <div class="search-result-item">
-                <div class="search-result-header">
-                    <span class="search-result-icon">{icon}</span>
-                    <strong class="search-result-name">{name}</strong>
-                    {type_badge_html}
-                </div>
-                <p class="search-result-snippet">{snippet if snippet else ''}</p>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+    # Escape HTML in snippet to prevent rendering issues
+    safe_snippet = html.escape(snippet) if snippet else ''
+    safe_name = html.escape(name)
+    
+    # Create button with link to page
+    col1, col2 = st.columns([5, 1])
+    
+    with col1:
+        # Use image if available, otherwise use emoji icon
+        if image_base64:
+            image_html = f'<img src="{image_base64}" style="width: 32px; height: 32px; image-rendering: pixelated; image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; vertical-align: middle; margin-right: 8px;">'
+            st.markdown(f"{image_html}**{safe_name}** `{entity_type.upper()}`", unsafe_allow_html=True)
+        else:
+            st.markdown(f"**{icon} {safe_name}** `{entity_type.upper()}`")
+        st.caption(safe_snippet)
+    
+    with col2:
+        if page_route:
+            # Use form with form_submit_button - navigation handled in Search.py
+            form_key = f"nav_{entity_type}_{entity_id}_{hash(name)}"
+            
+            with st.form(key=form_key):
+                st.form_submit_button("View →", use_container_width=True, type="secondary")
 
 
 def create_info_box(message: str, box_type: str = "info") -> None:

@@ -8,6 +8,10 @@ search results with entity type, name, and snippet information.
 Version: 2.0 - Added food and tools search support.
 """
 
+import os
+import base64
+from pathlib import Path
+
 from src.config import MAX_SEARCH_RESULTS, SEARCH_SNIPPET_LENGTH
 from src.models import SearchResult
 from src.services import (
@@ -22,6 +26,61 @@ from src.services import (
 from src.logging_utils import setup_logger
 
 logger = setup_logger(__name__)
+
+
+def get_image_base64(image_path: str) -> str:
+    """
+    Convert an image file to base64 data URL.
+    
+    Args:
+        image_path: Relative path to the image (e.g., "./assets/items/weapons/axe.gif").
+    
+    Returns:
+        Base64 data URL string or empty string if loading fails.
+    """
+    try:
+        # Get project root (3 levels up from this file)
+        base_path = Path(__file__).parent.parent.parent
+        # Clean path and construct full path
+        clean_path = image_path.replace("./", "")
+        full_path = base_path / clean_path
+        
+        if full_path.exists():
+            with open(full_path, "rb") as f:
+                encoded = base64.b64encode(f.read()).decode()
+                ext = full_path.suffix[1:]  # Remove the dot
+                return f"data:image/{ext};base64,{encoded}"
+    except Exception as e:
+        logger.debug(f"Failed to load image {image_path}: {e}")
+    
+    return ""
+
+
+def get_page_route(entity_type: str) -> str:
+    """
+    Get the page route for a given entity type.
+    
+    Args:
+        entity_type: The type of entity (weapon, equipment, spell, etc.).
+    
+    Returns:
+        The page route string for st.switch_page().
+    """
+    page_mapping = {
+        "weapon": "pages/Weapons.py",
+        "equipment": "pages/Equipment.py",
+        "spell": "pages/Spells.py",
+        "monster": "pages/Monsters.py",
+        "quest": "pages/Quests.py",
+        "food": "pages/Food.py",
+        "tool": "pages/Tools.py",
+        "calculator": "pages/Training_Calculator.py",
+        "experience": "pages/Experience_Table.py",
+        "server": "pages/Server_Info.py",
+        "travel": "pages/Travel_Calculator.py",
+        "magic": "pages/Magic_Damage_Calculator.py"
+    }
+    return page_mapping.get(entity_type.lower(), "pages/Home.py")
 
 
 def create_snippet(text: str, query: str, max_length: int = SEARCH_SNIPPET_LENGTH) -> str:
@@ -99,11 +158,18 @@ def search_all(query: str) -> list[SearchResult]:
             if weapon.description:
                 snippet_text = weapon.description
             
+            # Load image if available
+            image_b64 = ""
+            if hasattr(weapon, 'image') and weapon.image:
+                image_b64 = get_image_base64(weapon.image)
+            
             results.append(SearchResult(
                 entity_type="weapon",
                 entity_id=weapon.id,
                 name=weapon.name,
-                snippet=create_snippet(snippet_text, query)
+                snippet=create_snippet(snippet_text, query),
+                page_route=get_page_route("weapon"),
+                image_base64=image_b64
             ))
     except Exception as e:
         logger.error(f"Error searching weapons: {e}")
@@ -116,11 +182,18 @@ def search_all(query: str) -> list[SearchResult]:
             if item.description:
                 snippet_text = item.description
             
+            # Load image if available
+            image_b64 = ""
+            if hasattr(item, 'image') and item.image:
+                image_b64 = get_image_base64(item.image)
+            
             results.append(SearchResult(
                 entity_type="equipment",
                 entity_id=item.id,
                 name=item.name,
-                snippet=create_snippet(snippet_text, query)
+                snippet=create_snippet(snippet_text, query),
+                page_route=get_page_route("equipment"),
+                image_base64=image_b64
             ))
     except Exception as e:
         logger.error(f"Error searching equipment: {e}")
@@ -135,7 +208,8 @@ def search_all(query: str) -> list[SearchResult]:
                 entity_type="spell",
                 entity_id=spell.id,
                 name=spell.name,
-                snippet=create_snippet(snippet_text, query)
+                snippet=create_snippet(snippet_text, query),
+                page_route=get_page_route("spell")
             ))
     except Exception as e:
         logger.error(f"Error searching spells: {e}")
@@ -150,7 +224,8 @@ def search_all(query: str) -> list[SearchResult]:
                 entity_type="monster",
                 entity_id=monster.id,
                 name=monster.name,
-                snippet=create_snippet(snippet_text, query)
+                snippet=create_snippet(snippet_text, query),
+                page_route=get_page_route("monster")
             ))
     except Exception as e:
         logger.error(f"Error searching monsters: {e}")
@@ -165,7 +240,8 @@ def search_all(query: str) -> list[SearchResult]:
                 entity_type="quest",
                 entity_id=quest.id,
                 name=quest.name,
-                snippet=create_snippet(snippet_text, query)
+                snippet=create_snippet(snippet_text, query),
+                page_route=get_page_route("quest")
             ))
     except Exception as e:
         logger.error(f"Error searching quests: {e}")
@@ -180,7 +256,8 @@ def search_all(query: str) -> list[SearchResult]:
                 entity_type="food",
                 entity_id=food.name,  # Food uses name as ID
                 name=food.name,
-                snippet=create_snippet(snippet_text, query)
+                snippet=create_snippet(snippet_text, query),
+                page_route=get_page_route("food")
             ))
     except Exception as e:
         logger.error(f"Error searching food: {e}")
@@ -197,7 +274,8 @@ def search_all(query: str) -> list[SearchResult]:
                 entity_type="tool",
                 entity_id=tool.id,
                 name=tool.name,
-                snippet=create_snippet(snippet_text, query)
+                snippet=create_snippet(snippet_text, query),
+                page_route=get_page_route("tool")
             ))
     except Exception as e:
         logger.error(f"Error searching tools: {e}")
@@ -232,7 +310,8 @@ def search_by_entity_type(query: str, entity_type: str) -> list[SearchResult]:
                 entity_type="weapon",
                 entity_id=w.id,
                 name=w.name,
-                snippet=f"Type: {w.type}, Attack: {w.attack}, Defense: {w.defense}"
+                snippet=f"Type: {w.type}, Attack: {w.attack}, Defense: {w.defense}",
+                page_route=get_page_route("weapon")
             )
             for w in weapons
         ]
@@ -244,7 +323,8 @@ def search_by_entity_type(query: str, entity_type: str) -> list[SearchResult]:
                 entity_type="equipment",
                 entity_id=e.id,
                 name=e.name,
-                snippet=f"Slot: {e.slot}, Defense: {e.defense}"
+                snippet=f"Slot: {e.slot}, Defense: {e.defense}",
+                page_route=get_page_route("equipment")
             )
             for e in equipment
         ]
@@ -256,7 +336,8 @@ def search_by_entity_type(query: str, entity_type: str) -> list[SearchResult]:
                 entity_type="spell",
                 entity_id=s.id,
                 name=s.name,
-                snippet=f"Incantation: {s.incantation}, Vocation: {s.vocation}"
+                snippet=f"Incantation: {s.incantation}, Vocation: {s.vocation}",
+                page_route=get_page_route("spell")
             )
             for s in spells
         ]
@@ -268,7 +349,8 @@ def search_by_entity_type(query: str, entity_type: str) -> list[SearchResult]:
                 entity_type="monster",
                 entity_id=m.id,
                 name=m.name,
-                snippet=f"HP: {m.hp}, EXP: {m.exp}, Location: {m.location}"
+                snippet=f"HP: {m.hp}, EXP: {m.exp}, Location: {m.location}",
+                page_route=get_page_route("monster")
             )
             for m in monsters
         ]
@@ -280,7 +362,8 @@ def search_by_entity_type(query: str, entity_type: str) -> list[SearchResult]:
                 entity_type="quest",
                 entity_id=q.id,
                 name=q.name,
-                snippet=f"Location: {q.location}"
+                snippet=f"Location: {q.location}",
+                page_route=get_page_route("quest")
             )
             for q in quests
         ]
@@ -292,7 +375,8 @@ def search_by_entity_type(query: str, entity_type: str) -> list[SearchResult]:
                 entity_type="food",
                 entity_id=f.name,
                 name=f.name,
-                snippet=f"HP Gain: {f.hp_gain or 'N/A'}, Weight: {f.weight or 'N/A'} oz"
+                snippet=f"HP Gain: {f.hp_gain or 'N/A'}, Weight: {f.weight or 'N/A'} oz",
+                page_route=get_page_route("food")
             )
             for f in food_items
         ]
@@ -304,7 +388,8 @@ def search_by_entity_type(query: str, entity_type: str) -> list[SearchResult]:
                 entity_type="tool",
                 entity_id=t.id,
                 name=t.name,
-                snippet=f"Type: {t.type}, Weight: {t.weight} oz"
+                snippet=f"Type: {t.type}, Weight: {t.weight} oz",
+                page_route=get_page_route("tool")
             )
             for t in tools
         ]

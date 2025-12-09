@@ -1,11 +1,12 @@
 {
   "page_views": {
-    "Home": 9,
-    "Weapons": 1,
+    "Home": 19,
+    "Weapons": 2,
     "Monsters": 2,
-    "Quests": 2,
-    "Training Calculator": 79,
-    "Loot Calculator": 2
+    "Quests": 5,
+    "Training Calculator": 85,
+    "Loot Calculator": 2,
+    "Search": 150
   },
   "sessions": {
     "314784a7-9464-45b5-9d58-3eaa84e7ceaf": {
@@ -95,9 +96,144 @@
     "4dfa8ace-1882-4a2e-98be-66b42a04d929": {
       "first_seen": "2025-12-09T18:58:59.508263",
       "pages_visited": [
-        "Training Calculator"
+        "Training Calculator",
+        "Home"
       ],
-      "last_seen": "2025-12-09T19:01:52.739888"
+      "last_seen": "2025-12-09T19:51:30.233407"
+    },
+    "ca66411c-1f1b-40a6-96f9-331d18cce1c9": {
+      "first_seen": "2025-12-09T21:09:38.652481",
+      "pages_visited": [
+        "Home",
+        "Training Calculator",
+        "Quests"
+      ],
+      "last_seen": "2025-12-09T21:30:59.632066"
+    },
+    "bbcc9f34-6a23-47bc-a850-982fe576b14c": {
+      "first_seen": "2025-12-09T21:35:01.119179",
+      "pages_visited": [
+        "Search",
+        "Home",
+        "Quests"
+      ],
+      "last_seen": "2025-12-09T21:40:22.050145"
+    },
+    "2e67774c-0d81-4239-8f83-2769e06e3f99": {
+      "first_seen": "2025-12-09T21:40:25.276292",
+      "pages_visited": [
+        "Search"
+      ],
+      "last_seen": "2025-12-09T21:40:51.181083"
+    },
+    "c7805edb-9b16-499d-bbad-37f6648defc5": {
+      "first_seen": "2025-12-09T21:41:03.306039",
+      "pages_visited": [
+        "Search"
+      ],
+      "last_seen": "2025-12-09T21:42:15.375730"
+    },
+    "ed939290-07b9-407c-acc2-c872738cd1fc": {
+      "first_seen": "2025-12-09T21:42:18.234445",
+      "pages_visited": [
+        "Search"
+      ],
+      "last_seen": "2025-12-09T21:42:18.234445"
+    },
+    "9e9d9f28-886b-46b1-8b28-ee306f575955": {
+      "first_seen": "2025-12-09T21:42:31.999506",
+      "pages_visited": [
+        "Home",
+        "Search"
+      ],
+      "last_seen": "2025-12-09T21:54:01.065840"
+    },
+    "47636a74-7318-411a-8bf9-a97aceec1c01": {
+      "first_seen": "2025-12-09T21:48:40.769750",
+      "pages_visited": [
+        "Home"
+      ],
+      "last_seen": "2025-12-09T21:51:12.542231"
+    },
+    "505d8620-344d-466a-9395-08497b80199c": {
+      "first_seen": "2025-12-09T21:54:59.893087",
+      "pages_visited": [
+        "Home"
+      ],
+      "last_seen": "2025-12-09T21:54:59.893087"
+    },
+    "70188272-1bc0-4bfb-be71-5dbef595f9ca": {
+      "first_seen": "2025-12-09T21:55:07.120990",
+      "pages_visited": [
+        "Search"
+      ],
+      "last_seen": "2025-12-09T21:56:21.996138"
+    },
+    "934a52de-b240-4aae-acee-6888ef3a5e91": {
+      "first_seen": "2025-12-09T21:57:34.575245",
+      "pages_visited": [
+        "Search"
+      ],
+      "last_seen": "2025-12-09T21:57:36.306324"
+    },
+    "e921079d-e45e-4508-8bae-c0c82a805b1a": {
+      "first_seen": "2025-12-09T21:57:39.025124",
+      "pages_visited": [
+        "Search"
+      ],
+      "last_seen": "2025-12-09T22:01:27.022449"
+    },
+    "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487": {
+      "first_seen": "2025-12-09T22:03:08.102438",
+      "pages_visited": [
+        "Search"
+      ],
+      "last_seen": "2025-12-09T22:09:51.549798"
+    },
+    "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397": {
+      "first_seen": "2025-12-09T22:10:39.566072",
+      "pages_visited": [
+        "Search"
+      ],
+      "last_seen": "2025-12-09T22:19:43.265852"
+    },
+    "280d4d68-7ec6-4961-abcf-c6c582fc1582": {
+      "first_seen": "2025-12-09T22:20:00.797223",
+      "pages_visited": [
+        "Search"
+      ],
+      "last_seen": "2025-12-09T22:20:47.650739"
+    },
+    "4e4303f9-25aa-4e48-aa0d-a89d8941c502": {
+      "first_seen": "2025-12-09T22:22:27.620118",
+      "pages_visited": [
+        "Search"
+      ],
+      "last_seen": "2025-12-09T22:27:21.714531"
+    },
+    "a8aa1086-4fec-4367-91f7-07361528b0f9": {
+      "first_seen": "2025-12-09T22:27:55.501525",
+      "pages_visited": [
+        "Search"
+      ],
+      "last_seen": "2025-12-09T22:28:40.208177"
+    },
+    "2a759ef3-1692-495f-b814-f82108ccaa0b": {
+      "first_seen": "2025-12-09T22:29:25.520119",
+      "pages_visited": [
+        "Search"
+      ],
+      "last_seen": "2025-12-09T22:30:02.682119"
+    },
+    "e9971fc3-fb0b-445c-ba0e-45481b01115b": {
+      "first_seen": "2025-12-09T22:31:51.048379",
+      "pages_visited": [
+        "Search",
+        "Weapons",
+        "Quests",
+        "Home"
+      ],
+      "last_seen": "2025-12-09T22:32:42.768187"
     }
   },
   "timeline": [
@@ -575,6 +711,856 @@
       "page": "Training Calculator",
       "timestamp": "2025-12-09T19:01:52.739888",
       "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T19:51:30.233407",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T21:09:38.652481",
+      "session_id": "ca66411c-1f1b-40a6-96f9-331d18cce1c9"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T21:09:43.347021",
+      "session_id": "ca66411c-1f1b-40a6-96f9-331d18cce1c9"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T21:09:44.866232",
+      "session_id": "ca66411c-1f1b-40a6-96f9-331d18cce1c9"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T21:10:14.037850",
+      "session_id": "ca66411c-1f1b-40a6-96f9-331d18cce1c9"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T21:10:43.895201",
+      "session_id": "ca66411c-1f1b-40a6-96f9-331d18cce1c9"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T21:11:32.499277",
+      "session_id": "ca66411c-1f1b-40a6-96f9-331d18cce1c9"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T21:11:39.085311",
+      "session_id": "ca66411c-1f1b-40a6-96f9-331d18cce1c9"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T21:11:53.484941",
+      "session_id": "ca66411c-1f1b-40a6-96f9-331d18cce1c9"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T21:11:57.532991",
+      "session_id": "ca66411c-1f1b-40a6-96f9-331d18cce1c9"
+    },
+    {
+      "page": "Quests",
+      "timestamp": "2025-12-09T21:30:59.632066",
+      "session_id": "ca66411c-1f1b-40a6-96f9-331d18cce1c9"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:35:01.119179",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:35:06.037926",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:36:22.972286",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:36:25.008997",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:36:26.539818",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T21:36:35.727990",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:36:38.254084",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:36:40.957482",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:36:47.040783",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:36:48.660508",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:37:26.380912",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:37:32.487044",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Quests",
+      "timestamp": "2025-12-09T21:38:43.950828",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:38:45.708037",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:38:49.897330",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:38:53.136087",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:38:55.672341",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:39:12.214764",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:39:33.338209",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:39:42.318765",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:39:52.848982",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:40:01.995195",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:40:08.842099",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:40:20.157471",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:40:22.050145",
+      "session_id": "bbcc9f34-6a23-47bc-a850-982fe576b14c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:40:25.276292",
+      "session_id": "2e67774c-0d81-4239-8f83-2769e06e3f99"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:40:28.276375",
+      "session_id": "2e67774c-0d81-4239-8f83-2769e06e3f99"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:40:29.556577",
+      "session_id": "2e67774c-0d81-4239-8f83-2769e06e3f99"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:40:31.185110",
+      "session_id": "2e67774c-0d81-4239-8f83-2769e06e3f99"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:40:51.181083",
+      "session_id": "2e67774c-0d81-4239-8f83-2769e06e3f99"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:41:03.306039",
+      "session_id": "c7805edb-9b16-499d-bbad-37f6648defc5"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:41:07.044023",
+      "session_id": "c7805edb-9b16-499d-bbad-37f6648defc5"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:41:07.154135",
+      "session_id": "c7805edb-9b16-499d-bbad-37f6648defc5"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:41:08.748144",
+      "session_id": "c7805edb-9b16-499d-bbad-37f6648defc5"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:41:11.187804",
+      "session_id": "c7805edb-9b16-499d-bbad-37f6648defc5"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:41:58.874291",
+      "session_id": "c7805edb-9b16-499d-bbad-37f6648defc5"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:42:07.367354",
+      "session_id": "c7805edb-9b16-499d-bbad-37f6648defc5"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:42:15.375730",
+      "session_id": "c7805edb-9b16-499d-bbad-37f6648defc5"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:42:18.234445",
+      "session_id": "ed939290-07b9-407c-acc2-c872738cd1fc"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T21:42:31.999506",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:42:38.974613",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:42:42.946080",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:42:43.229040",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:43:41.014650",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:44:13.725725",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:44:35.266044",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:44:43.911146",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:44:51.605627",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:44:53.140001",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:45:54.389126",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T21:48:40.769750",
+      "session_id": "47636a74-7318-411a-8bf9-a97aceec1c01"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:49:57.788357",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:50:18.977126",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T21:51:12.542231",
+      "session_id": "47636a74-7318-411a-8bf9-a97aceec1c01"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:51:12.559256",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:53:38.405131",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:53:39.631501",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:53:51.146153",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:54:01.065840",
+      "session_id": "9e9d9f28-886b-46b1-8b28-ee306f575955"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T21:54:59.893087",
+      "session_id": "505d8620-344d-466a-9395-08497b80199c"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:55:07.120990",
+      "session_id": "70188272-1bc0-4bfb-be71-5dbef595f9ca"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:55:08.868389",
+      "session_id": "70188272-1bc0-4bfb-be71-5dbef595f9ca"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:55:18.919195",
+      "session_id": "70188272-1bc0-4bfb-be71-5dbef595f9ca"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:55:20.380255",
+      "session_id": "70188272-1bc0-4bfb-be71-5dbef595f9ca"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:55:53.079552",
+      "session_id": "70188272-1bc0-4bfb-be71-5dbef595f9ca"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:56:11.723930",
+      "session_id": "70188272-1bc0-4bfb-be71-5dbef595f9ca"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:56:20.488693",
+      "session_id": "70188272-1bc0-4bfb-be71-5dbef595f9ca"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:56:21.996138",
+      "session_id": "70188272-1bc0-4bfb-be71-5dbef595f9ca"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:57:34.575245",
+      "session_id": "934a52de-b240-4aae-acee-6888ef3a5e91"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:57:36.306324",
+      "session_id": "934a52de-b240-4aae-acee-6888ef3a5e91"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:57:39.025124",
+      "session_id": "e921079d-e45e-4508-8bae-c0c82a805b1a"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:57:44.560050",
+      "session_id": "e921079d-e45e-4508-8bae-c0c82a805b1a"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:57:44.776354",
+      "session_id": "e921079d-e45e-4508-8bae-c0c82a805b1a"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:58:01.941516",
+      "session_id": "e921079d-e45e-4508-8bae-c0c82a805b1a"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:58:29.945047",
+      "session_id": "e921079d-e45e-4508-8bae-c0c82a805b1a"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:59:15.646220",
+      "session_id": "e921079d-e45e-4508-8bae-c0c82a805b1a"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T21:59:19.154161",
+      "session_id": "e921079d-e45e-4508-8bae-c0c82a805b1a"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:00:02.321645",
+      "session_id": "e921079d-e45e-4508-8bae-c0c82a805b1a"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:00:37.135029",
+      "session_id": "e921079d-e45e-4508-8bae-c0c82a805b1a"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:00:51.067322",
+      "session_id": "e921079d-e45e-4508-8bae-c0c82a805b1a"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:01:18.843049",
+      "session_id": "e921079d-e45e-4508-8bae-c0c82a805b1a"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:01:27.022449",
+      "session_id": "e921079d-e45e-4508-8bae-c0c82a805b1a"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:03:08.102438",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:03:11.262309",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:03:14.390279",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:03:16.162293",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:03:38.828143",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:06:19.706583",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:06:21.336438",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:06:30.791151",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:06:59.045416",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:08:14.454088",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:08:14.568056",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:08:27.730375",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:08:49.147276",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:08:50.936037",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:09:01.917926",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:09:33.581054",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:09:51.549798",
+      "session_id": "0e8f9524-defc-4d4f-8aae-a1b5c4a2d487"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:10:39.566072",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:10:42.281403",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:10:42.385504",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:10:43.943386",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:11:29.279200",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:11:30.612249",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:13:24.638146",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:13:26.496250",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:14:12.879284",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:14:21.915714",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:15:09.800253",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:15:11.469133",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:15:33.668946",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:16:22.750987",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:16:24.281105",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:18:33.513059",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:18:40.185137",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:19:20.909444",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:19:22.410437",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:19:43.265852",
+      "session_id": "23ea5ca5-e5f1-4681-95b8-8fa9f3e69397"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:20:00.797223",
+      "session_id": "280d4d68-7ec6-4961-abcf-c6c582fc1582"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:20:05.289263",
+      "session_id": "280d4d68-7ec6-4961-abcf-c6c582fc1582"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:20:05.505382",
+      "session_id": "280d4d68-7ec6-4961-abcf-c6c582fc1582"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:20:06.635359",
+      "session_id": "280d4d68-7ec6-4961-abcf-c6c582fc1582"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:20:32.873734",
+      "session_id": "280d4d68-7ec6-4961-abcf-c6c582fc1582"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:20:43.691096",
+      "session_id": "280d4d68-7ec6-4961-abcf-c6c582fc1582"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:20:47.650739",
+      "session_id": "280d4d68-7ec6-4961-abcf-c6c582fc1582"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:22:27.620118",
+      "session_id": "4e4303f9-25aa-4e48-aa0d-a89d8941c502"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:22:29.520292",
+      "session_id": "4e4303f9-25aa-4e48-aa0d-a89d8941c502"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:22:49.847143",
+      "session_id": "4e4303f9-25aa-4e48-aa0d-a89d8941c502"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:24:29.734138",
+      "session_id": "4e4303f9-25aa-4e48-aa0d-a89d8941c502"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:24:31.592060",
+      "session_id": "4e4303f9-25aa-4e48-aa0d-a89d8941c502"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:25:04.025637",
+      "session_id": "4e4303f9-25aa-4e48-aa0d-a89d8941c502"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:26:54.557606",
+      "session_id": "4e4303f9-25aa-4e48-aa0d-a89d8941c502"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:26:56.063341",
+      "session_id": "4e4303f9-25aa-4e48-aa0d-a89d8941c502"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:27:21.714531",
+      "session_id": "4e4303f9-25aa-4e48-aa0d-a89d8941c502"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:27:55.501525",
+      "session_id": "a8aa1086-4fec-4367-91f7-07361528b0f9"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:28:00.062951",
+      "session_id": "a8aa1086-4fec-4367-91f7-07361528b0f9"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:28:00.168398",
+      "session_id": "a8aa1086-4fec-4367-91f7-07361528b0f9"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:28:01.725349",
+      "session_id": "a8aa1086-4fec-4367-91f7-07361528b0f9"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:28:31.078204",
+      "session_id": "a8aa1086-4fec-4367-91f7-07361528b0f9"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:28:40.208177",
+      "session_id": "a8aa1086-4fec-4367-91f7-07361528b0f9"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:29:25.520119",
+      "session_id": "2a759ef3-1692-495f-b814-f82108ccaa0b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:29:27.685706",
+      "session_id": "2a759ef3-1692-495f-b814-f82108ccaa0b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:29:30.302208",
+      "session_id": "2a759ef3-1692-495f-b814-f82108ccaa0b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:29:30.517902",
+      "session_id": "2a759ef3-1692-495f-b814-f82108ccaa0b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:30:02.682119",
+      "session_id": "2a759ef3-1692-495f-b814-f82108ccaa0b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:31:51.048379",
+      "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:31:54.681008",
+      "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:32:00.002196",
+      "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:32:00.218044",
+      "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
+    },
+    {
+      "page": "Weapons",
+      "timestamp": "2025-12-09T22:32:01.795665",
+      "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:32:08.819290",
+      "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:32:11.779049",
+      "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:32:12.043342",
+      "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:32:21.925132",
+      "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:32:25.197348",
+      "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:32:25.492053",
+      "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
+    },
+    {
+      "page": "Quests",
+      "timestamp": "2025-12-09T22:32:28.035170",
+      "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T22:32:42.768187",
+      "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
     }
   ]
 }

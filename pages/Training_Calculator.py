@@ -34,21 +34,22 @@ load_custom_css()
 create_sidebar_navigation("Training Calculator")
 
 
-def calculate_training_time(current_skill: int, current_percent: float, vocation: str, skill_type: str) -> dict:
+def calculate_training_time(current_skill: int, current_percent: float, vocation: str, skill_type: str, efficiency: float = 80.0) -> dict:
     """
     Calculate training time needed to reach next skill level.
     
     Formulas:
     - Knight Melee: time_seconds = 50 × 1.1^(skill-10) × (remaining_percent / 100)
-    - Knight Shielding: HitsNeeded = 50 × (1000/1100)^(skill-10)
+    - Knight Shielding: HitsNeeded = 100 × (1100/1000)^(skill-10)
     - Paladin Distance: HitsNeeded = 30 × (1100/1000)^(skill-10)
-    - Paladin Shielding: HitsNeeded = 100 × (1000/1100)^(skill-10)
+    - Paladin Shielding: HitsNeeded = 100 × (1100/1000)^(skill-10)
     
     Args:
         current_skill: Current skill level (10-999)
         current_percent: Current progress on skill bar (0-100)
         vocation: Character vocation ("Knight" or "Paladin")
         skill_type: Type of skill ("Melee", "Distance", or "Shielding")
+        efficiency: Training efficiency percentage (default 80%)
     
     Returns:
         Dictionary with time in various units and assumptions
@@ -57,12 +58,13 @@ def calculate_training_time(current_skill: int, current_percent: float, vocation
     # Calculate remaining percent to reach next level (100% - current%)
     remaining_percent = 100 - current_percent
     percent_fraction = remaining_percent / 100
+    efficiency_multiplier = 100.0 / efficiency
     
-    if vocation == "Knight" and skill_type == "Melee":
+    if vocation == "Knight" and skill_type == "Melee (Sword/Axe/Club)":
         # Knight Melee formula
         base_constant = 50
         difficulty = math.pow(1.1, current_skill - 10)
-        time_seconds = base_constant * difficulty * percent_fraction
+        time_seconds = base_constant * difficulty * percent_fraction * efficiency_multiplier
         
     elif vocation == "Knight" and skill_type == "Shielding":
         # Knight Shielding formula
@@ -75,9 +77,9 @@ def calculate_training_time(current_skill: int, current_percent: float, vocation
         # Apply remaining percent
         hits_needed = hits_needed_full_level * percent_fraction
         
-        # Time in minutes (1 hit every 2 seconds)
-        time_minutes = (hits_needed * 2) / 60
-        time_seconds = time_minutes * 60
+        # Time in minutes (1 hit every 2 seconds, /2 for 2 creatures = 2x hits/sec)
+        time_minutes = ((hits_needed * 2) / 60) / 2
+        time_seconds = time_minutes * 60 * efficiency_multiplier
         
     elif vocation == "Paladin" and skill_type == "Distance":
         # Paladin Distance formula
@@ -92,7 +94,7 @@ def calculate_training_time(current_skill: int, current_percent: float, vocation
         
         # Time in minutes (1 hit every 2 seconds)
         time_minutes = (hits_needed * 2) / 60
-        time_seconds = time_minutes * 60
+        time_seconds = time_minutes * 60 * efficiency_multiplier
         
     elif vocation == "Paladin" and skill_type == "Shielding":
         # Paladin Shielding formula
@@ -105,9 +107,9 @@ def calculate_training_time(current_skill: int, current_percent: float, vocation
         # Apply remaining percent
         hits_needed = hits_needed_full_level * percent_fraction
         
-        # Time in minutes (1 hit every 2 seconds)
-        time_minutes = (hits_needed * 2) / 60
-        time_seconds = time_minutes * 60
+        # Time in minutes (1 hit every 2 seconds, /2 for 2 creatures = 2x hits/sec)
+        time_minutes = ((hits_needed * 2) / 60) / 2
+        time_seconds = time_minutes * 60 * efficiency_multiplier
         
     else:
         # Fallback to Knight Melee if unknown combination
@@ -137,10 +139,10 @@ def calculate_training_time(current_skill: int, current_percent: float, vocation
 def get_available_skills(vocation: str) -> list:
     """Get available skills for a specific vocation."""
     skill_mapping = {
-        "Knight": ["Melee", "Shielding"],
+        "Knight": ["Melee (Sword/Axe/Club)", "Shielding"],
         "Paladin": ["Distance", "Shielding"]
     }
-    return skill_mapping.get(vocation, ["Melee"])
+    return skill_mapping.get(vocation, ["Melee (Sword/Axe/Club)"])
 
 
 def format_time_readable(time_dict: dict) -> str:
@@ -175,7 +177,7 @@ def main() -> None:
 
     # Page header
     create_page_header(
-        title="Training Calculator (work in progress)",
+        title="Training Calculator",
         subtitle="Calculate time needed to train your skills",
         icon=""
     )
@@ -246,10 +248,15 @@ def main() -> None:
 
     st.markdown("<br>", unsafe_allow_html=True)
 
+    # Hidden efficiency parameter for realistic ETA (80% default)
+    efficiency = 80.0
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
     # Calculate button
     if st.button("Calculate Training Time", type="primary", use_container_width=True):
         # Calculate training time
-        result = calculate_training_time(current_skill, current_percent, vocation, skill_type)
+        result = calculate_training_time(current_skill, current_percent, vocation, skill_type, efficiency)
             
         # Display results
         st.markdown("---")

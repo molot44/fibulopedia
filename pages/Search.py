@@ -6,6 +6,8 @@ weapons, equipment, spells, monsters, and quests.
 """
 
 import streamlit as st
+import uuid
+import streamlit_analytics2 as streamlit_analytics
 
 from src.services.search_service import search_all, search_by_entity_type
 from src.ui.layout import (
@@ -17,8 +19,41 @@ from src.ui.layout import (
 )
 from src.ui.components import create_search_result_item
 from src.logging_utils import setup_logger
+from src.analytics_utils import track_page_view
+from src.services.search_service import get_page_route
 
 logger = setup_logger(__name__)
+
+# Check for form submissions FIRST and convert to navigation
+for key in list(st.session_state.keys()):
+    if key.startswith("FormSubmitter:nav_") and key.endswith("-View →"):
+        if st.session_state[key]:
+            # Extract entity info from form key: FormSubmitter:nav_weapon_axe_001_123456-View →
+            parts = key.replace("FormSubmitter:nav_", "").replace("-View →", "").split("_")
+            if len(parts) >= 3:
+                entity_type = parts[0]
+                page_route = get_page_route(entity_type)
+                logger.info(f"✓✓✓ Form submitted: {key} -> navigating to {page_route}")
+                st.switch_page(page_route)
+
+# Check for pending navigation
+logger.info(f">>> Session state keys: {list(st.session_state.keys())}")
+if "navigate_to" in st.session_state:
+    logger.info(f">>> navigate_to value: {st.session_state['navigate_to']}")
+    if st.session_state["navigate_to"]:
+        page = st.session_state["navigate_to"]
+        st.session_state["navigate_to"] = None  # Clear immediately
+        logger.info(f"✓✓✓ NAVIGATING TO: {page}")
+        st.switch_page(page)
+else:
+    logger.info(">>> navigate_to NOT in session_state")
+
+# Initialize session ID for analytics
+if "session_id" not in st.session_state:
+    st.session_state.session_id = str(uuid.uuid4())
+
+# Start analytics tracking
+streamlit_analytics.start_tracking()
 
 # Configure page
 setup_page_config("Search", "🔍")
@@ -28,13 +63,17 @@ create_sidebar_navigation("Search")
 
 def main() -> None:
     """Main function to render the search page."""
+    
+    # Track page view
+    track_page_view("Search", st.session_state.session_id)
+    
     logger.info("Rendering search page")
     
     # Page header
     create_page_header(
         title="Advanced Search",
         subtitle="Search across all content: weapons, equipment, spells, monsters, and quests",
-        icon="🔍"
+        icon=""
     )
     
     # Check if there's a query from the home page
@@ -54,7 +93,7 @@ def main() -> None:
     with col2:
         entity_filter = st.selectbox(
             "Content type",
-            options=["All", "Weapon", "Equipment", "Spell", "Monster", "Quest"],
+            options=["All", "Weapon", "Equipment", "Spell", "Monster", "Quest", "Food", "Tool"],
             key="entity_type_filter"
         )
     
@@ -90,64 +129,25 @@ def main() -> None:
             
             # Display results grouped by type
             for entity_type, type_results in entity_types.items():
-                with st.expander(f"{entity_type.title()} ({len(type_results)})", expanded=True):
-                    for result in type_results:
-                        create_search_result_item(
-                            entity_type=result.entity_type,
-                            name=result.name,
-                            snippet=result.snippet,
-                            entity_id=result.entity_id
-                        )
-                        st.markdown("<br>", unsafe_allow_html=True)
-    else:
-        # Show search tips
-        st.markdown("---")
-        st.subheader("Search Tips")
-        
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            st.markdown("""
-            **How to search effectively:**
-            - Use specific keywords (e.g., "dragon", "fire spell", "steel")
-            - Search by monster names to find loot
-            - Search by NPC names to find items
-            - Use the content type filter to narrow results
-            """)
-        
-        with col2:
-            st.markdown("""
-            **Search examples:**
-            - `"sword"` - Find all swords
-            - `"thais"` - Find quests and monsters in Thais
-            - `"healing"` - Find healing spells
-            - `"dragon"` - Find dragons and dragon-related items
-            """)
-        
-        st.markdown("---")
-        st.subheader("Quick Links")
-        
-        col1, col2, col3, col4 = st.columns(4)
-        
-        with col1:
-            if st.button("⚔️ Browse Weapons", use_container_width=True):
-                st.switch_page("pages/2_Weapons.py")
-        
-        with col2:
-            if st.button("🛡️ Browse Equipment", use_container_width=True):
-                st.switch_page("pages/3_Equipment.py")
-        
-        with col3:
-            if st.button("✨ Browse Spells", use_container_width=True):
-                st.switch_page("pages/4_Spells.py")
-        
-        with col4:
-            if st.button("👹 Browse Monsters", use_container_width=True):
-                st.switch_page("pages/5_Monsters.py")
+                st.markdown(f"### {entity_type.title()} ({len(type_results)})")
+                for result in type_results:
+                    create_search_result_item(
+                        entity_type=result.entity_type,
+                        name=result.name,
+                        snippet=result.snippet,
+                        entity_id=result.entity_id,
+                        page_route=result.page_route,
+                        image_base64=result.image_base64
+                    )
+                    st.markdown("<br>", unsafe_allow_html=True)
+                st.markdown("---")
     
     # Footer
     create_footer()
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    finally:
+        streamlit_analytics.stop_tracking()
