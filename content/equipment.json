@@ -1039,7 +1039,7 @@
     "name": "Mastermind Shield",
     "defense": 37,
     "weight": 57.0,
-    "image": "./assets/items/mastermind_shield_old.gif",
+    "image": "./assets/items/Mastermind_shield_old.gif",
     "dropped_by": [
       "Demon"
     ],
@@ -1214,7 +1214,9 @@
     "dropped_by": [
       "Dwarf Soldier"
     ],
-    "sell_to": [],
+    "sell_to": [
+      {"npc": "Kroox", "location": "Kazordoon", "price": 100}
+    ],
     "reward_from": [],
     "description": "Dwarven shield."
   },

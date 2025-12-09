@@ -1,10 +1,11 @@
 {
   "page_views": {
-    "Home": 7,
+    "Home": 9,
     "Weapons": 1,
     "Monsters": 2,
     "Quests": 2,
-    "Training Calculator": 38
+    "Training Calculator": 79,
+    "Loot Calculator": 2
   },
   "sessions": {
     "314784a7-9464-45b5-9d58-3eaa84e7ceaf": {
@@ -67,6 +68,36 @@
         "Home"
       ],
       "last_seen": "2025-12-08T22:46:54.083791"
+    },
+    "c84687b6-0bfb-4274-891e-b485d3bd6040": {
+      "first_seen": "2025-12-09T18:13:25.261974",
+      "pages_visited": [
+        "Home",
+        "Training Calculator",
+        "Loot Calculator"
+      ],
+      "last_seen": "2025-12-09T18:36:46.932594"
+    },
+    "c24eebd7-28b7-4f1b-8ac8-a8fb151030c0": {
+      "first_seen": "2025-12-09T18:37:43.667138",
+      "pages_visited": [
+        "Training Calculator"
+      ],
+      "last_seen": "2025-12-09T18:42:21.233228"
+    },
+    "99da0182-48d7-4310-81c9-d8fd2129dc01": {
+      "first_seen": "2025-12-09T18:43:26.844391",
+      "pages_visited": [
+        "Training Calculator"
+      ],
+      "last_seen": "2025-12-09T18:58:09.207878"
+    },
+    "4dfa8ace-1882-4a2e-98be-66b42a04d929": {
+      "first_seen": "2025-12-09T18:58:59.508263",
+      "pages_visited": [
+        "Training Calculator"
+      ],
+      "last_seen": "2025-12-09T19:01:52.739888"
     }
   },
   "timeline": [
@@ -319,6 +350,231 @@
       "page": "Home",
       "timestamp": "2025-12-08T22:46:54.083791",
       "session_id": "20d82867-9be5-4ecf-8a7c-ea28ea0551f8"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T18:13:25.261974",
+      "session_id": "c84687b6-0bfb-4274-891e-b485d3bd6040"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T18:13:30.922380",
+      "session_id": "c84687b6-0bfb-4274-891e-b485d3bd6040"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:13:32.477763",
+      "session_id": "c84687b6-0bfb-4274-891e-b485d3bd6040"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:24:37.685809",
+      "session_id": "c84687b6-0bfb-4274-891e-b485d3bd6040"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:24:50.334624",
+      "session_id": "c84687b6-0bfb-4274-891e-b485d3bd6040"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:25:03.602435",
+      "session_id": "c84687b6-0bfb-4274-891e-b485d3bd6040"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:25:57.960547",
+      "session_id": "c84687b6-0bfb-4274-891e-b485d3bd6040"
+    },
+    {
+      "page": "Loot Calculator",
+      "timestamp": "2025-12-09T18:25:59.138349",
+      "session_id": "c84687b6-0bfb-4274-891e-b485d3bd6040"
+    },
+    {
+      "page": "Loot Calculator",
+      "timestamp": "2025-12-09T18:26:00.094976",
+      "session_id": "c84687b6-0bfb-4274-891e-b485d3bd6040"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:26:00.753263",
+      "session_id": "c84687b6-0bfb-4274-891e-b485d3bd6040"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:26:06.526153",
+      "session_id": "c84687b6-0bfb-4274-891e-b485d3bd6040"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:26:11.965558",
+      "session_id": "c84687b6-0bfb-4274-891e-b485d3bd6040"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:36:46.932594",
+      "session_id": "c84687b6-0bfb-4274-891e-b485d3bd6040"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:37:43.667138",
+      "session_id": "c24eebd7-28b7-4f1b-8ac8-a8fb151030c0"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:37:48.029028",
+      "session_id": "c24eebd7-28b7-4f1b-8ac8-a8fb151030c0"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:37:50.258834",
+      "session_id": "c24eebd7-28b7-4f1b-8ac8-a8fb151030c0"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:37:53.849365",
+      "session_id": "c24eebd7-28b7-4f1b-8ac8-a8fb151030c0"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:37:54.063705",
+      "session_id": "c24eebd7-28b7-4f1b-8ac8-a8fb151030c0"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:38:17.815351",
+      "session_id": "c24eebd7-28b7-4f1b-8ac8-a8fb151030c0"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:38:18.979208",
+      "session_id": "c24eebd7-28b7-4f1b-8ac8-a8fb151030c0"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:42:21.233228",
+      "session_id": "c24eebd7-28b7-4f1b-8ac8-a8fb151030c0"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:43:26.844391",
+      "session_id": "99da0182-48d7-4310-81c9-d8fd2129dc01"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:43:30.529666",
+      "session_id": "99da0182-48d7-4310-81c9-d8fd2129dc01"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:43:31.979913",
+      "session_id": "99da0182-48d7-4310-81c9-d8fd2129dc01"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:43:33.804421",
+      "session_id": "99da0182-48d7-4310-81c9-d8fd2129dc01"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:43:35.058261",
+      "session_id": "99da0182-48d7-4310-81c9-d8fd2129dc01"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:48:56.174089",
+      "session_id": "99da0182-48d7-4310-81c9-d8fd2129dc01"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:48:58.094282",
+      "session_id": "99da0182-48d7-4310-81c9-d8fd2129dc01"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:49:01.038520",
+      "session_id": "99da0182-48d7-4310-81c9-d8fd2129dc01"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:49:01.273467",
+      "session_id": "99da0182-48d7-4310-81c9-d8fd2129dc01"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:58:09.207878",
+      "session_id": "99da0182-48d7-4310-81c9-d8fd2129dc01"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:58:59.508263",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:59:03.898588",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:59:04.510294",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:59:09.269373",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:59:11.376301",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T18:59:12.031166",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T19:00:12.369786",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T19:01:27.755366",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T19:01:29.141386",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T19:01:46.592414",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T19:01:48.374428",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T19:01:48.952724",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T19:01:51.540976",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
+    },
+    {
+      "page": "Training Calculator",
+      "timestamp": "2025-12-09T19:01:52.739888",
+      "session_id": "4dfa8ace-1882-4a2e-98be-66b42a04d929"
     }
   ]
 }

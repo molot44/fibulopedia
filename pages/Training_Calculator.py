@@ -38,31 +38,82 @@ def calculate_training_time(current_skill: int, current_percent: float, vocation
     """
     Calculate training time needed to reach next skill level.
     
-    Formula for knight melee:
-    time_seconds = 50 × 1.1^(skill-10) × (remaining_percent / 100)
+    Formulas:
+    - Knight Melee: time_seconds = 50 × 1.1^(skill-10) × (remaining_percent / 100)
+    - Knight Shielding: HitsNeeded = 50 × (1000/1100)^(skill-10)
+    - Paladin Distance: HitsNeeded = 30 × (1100/1000)^(skill-10)
+    - Paladin Shielding: HitsNeeded = 100 × (1000/1100)^(skill-10)
     
     Args:
         current_skill: Current skill level (10-999)
         current_percent: Current progress on skill bar (0-100)
-        vocation: Character vocation (currently only "Knight")
-        skill_type: Type of skill (currently only "Melee")
+        vocation: Character vocation ("Knight" or "Paladin")
+        skill_type: Type of skill ("Melee", "Distance", or "Shielding")
     
     Returns:
         Dictionary with time in various units and assumptions
     """
     
-    # Base constant for skill training
-    base_constant = 50
-    
-    # Difficulty multiplier: 1.1^(skill-10)
-    difficulty = math.pow(1.1, current_skill - 10)
-    
     # Calculate remaining percent to reach next level (100% - current%)
     remaining_percent = 100 - current_percent
     percent_fraction = remaining_percent / 100
     
-    # Calculate time in seconds
-    time_seconds = base_constant * difficulty * percent_fraction
+    if vocation == "Knight" and skill_type == "Melee":
+        # Knight Melee formula
+        base_constant = 50
+        difficulty = math.pow(1.1, current_skill - 10)
+        time_seconds = base_constant * difficulty * percent_fraction
+        
+    elif vocation == "Knight" and skill_type == "Shielding":
+        # Knight Shielding formula
+        delta = 100
+        factor = 1100 / 1000
+        
+        # Calculate hits needed for full level
+        hits_needed_full_level = delta * math.pow(factor, current_skill - 10)
+        
+        # Apply remaining percent
+        hits_needed = hits_needed_full_level * percent_fraction
+        
+        # Time in minutes (1 hit every 2 seconds)
+        time_minutes = (hits_needed * 2) / 60
+        time_seconds = time_minutes * 60
+        
+    elif vocation == "Paladin" and skill_type == "Distance":
+        # Paladin Distance formula
+        delta = 30
+        factor = 1100 / 1000
+        
+        # Calculate hits needed for full level
+        hits_needed_full_level = delta * math.pow(factor, current_skill - 10)
+        
+        # Apply remaining percent
+        hits_needed = hits_needed_full_level * percent_fraction
+        
+        # Time in minutes (1 hit every 2 seconds)
+        time_minutes = (hits_needed * 2) / 60
+        time_seconds = time_minutes * 60
+        
+    elif vocation == "Paladin" and skill_type == "Shielding":
+        # Paladin Shielding formula
+        delta = 100
+        factor = 1100 / 1000
+        
+        # Calculate hits needed for full level
+        hits_needed_full_level = delta * math.pow(factor, current_skill - 10)
+        
+        # Apply remaining percent
+        hits_needed = hits_needed_full_level * percent_fraction
+        
+        # Time in minutes (1 hit every 2 seconds)
+        time_minutes = (hits_needed * 2) / 60
+        time_seconds = time_minutes * 60
+        
+    else:
+        # Fallback to Knight Melee if unknown combination
+        base_constant = 50
+        difficulty = math.pow(1.1, current_skill - 10)
+        time_seconds = base_constant * difficulty * percent_fraction
     
     # Convert to various time units
     time_minutes = time_seconds / 60
@@ -79,10 +130,17 @@ def calculate_training_time(current_skill: int, current_percent: float, vocation
         "current_percent": current_percent,
         "remaining_percent": remaining_percent,
         "vocation": vocation,
-        "skill_type": skill_type,
-        "base_constant": base_constant,
-        "difficulty_multiplier": round(difficulty, 4)
+        "skill_type": skill_type
     }
+
+
+def get_available_skills(vocation: str) -> list:
+    """Get available skills for a specific vocation."""
+    skill_mapping = {
+        "Knight": ["Melee", "Shielding"],
+        "Paladin": ["Distance", "Shielding"]
+    }
+    return skill_mapping.get(vocation, ["Melee"])
 
 
 def format_time_readable(time_dict: dict) -> str:
@@ -138,14 +196,16 @@ def main() -> None:
     with col1:
         vocation = st.selectbox(
             "Vocation",
-            options=["Knight"],
+            options=["Knight", "Paladin"],
             help="Select your character's vocation"
         )
 
     with col2:
+        # Get available skills for selected vocation
+        available_skills = get_available_skills(vocation)
         skill_type = st.selectbox(
             "Skill Type",
-            options=["Melee"],
+            options=available_skills,
             help="Select the skill you want to train"
         )
 
