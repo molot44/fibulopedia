@@ -6,7 +6,7 @@
     "Quests": 5,
     "Training Calculator": 85,
     "Loot Calculator": 2,
-    "Search": 157
+    "Search": 160
   },
   "sessions": {
     "314784a7-9464-45b5-9d58-3eaa84e7ceaf": {
@@ -249,7 +249,7 @@
         "Monsters",
         "Home"
       ],
-      "last_seen": "2025-12-09T22:48:59.360315"
+      "last_seen": "2025-12-09T22:52:45.262042"
     }
   },
   "timeline": [
@@ -1626,6 +1626,21 @@
     {
       "page": "Home",
       "timestamp": "2025-12-09T22:48:59.360315",
+      "session_id": "280d58bc-7f8d-43be-a4cf-0593dd46f7fe"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:52:42.088173",
+      "session_id": "280d58bc-7f8d-43be-a4cf-0593dd46f7fe"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:52:45.152227",
+      "session_id": "280d58bc-7f8d-43be-a4cf-0593dd46f7fe"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:52:45.262042",
       "session_id": "280d58bc-7f8d-43be-a4cf-0593dd46f7fe"
     }
   ]

@@ -8,6 +8,7 @@ headers, footers, and structural elements across all pages.
 import streamlit as st
 from pathlib import Path
 from typing import Optional
+from PIL import Image
 
 from src.config import (
     APP_TITLE,
@@ -181,12 +182,17 @@ def setup_page_config(page_title: str, page_icon: str = "", layout: str = "wide"
     Example:
         >>> setup_page_config("Weapons", "")
     """
-    # Use favicon.png for all pages
-    favicon_path = "./assets/favicon.png"
+    # Load favicon as PIL Image for Streamlit Cloud compatibility
+    try:
+        favicon_path = Path(__file__).parent.parent.parent / "assets" / "favicon.png"
+        favicon = Image.open(favicon_path)
+    except Exception:
+        # Fallback to emoji if favicon not found
+        favicon = "🎮"
     
     st.set_page_config(
         page_title=f"{page_title} - {APP_TITLE}",
-        page_icon=favicon_path,
+        page_icon=favicon,
         layout=layout,
         initial_sidebar_state="expanded"
     )
