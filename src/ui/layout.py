@@ -175,15 +175,18 @@ def setup_page_config(page_title: str, page_icon: str = "", layout: str = "wide"
     
     Args:
         page_title: Title of the page (shown in browser tab).
-        page_icon: Emoji icon for the page.
+        page_icon: Emoji icon for the page (ignored, favicon used instead).
         layout: Page layout ("wide" or "centered").
     
     Example:
         >>> setup_page_config("Weapons", "")
     """
+    # Use favicon.png for all pages
+    favicon_path = "./assets/favicon.png"
+    
     st.set_page_config(
         page_title=f"{page_title} - {APP_TITLE}",
-        page_icon=page_icon,
+        page_icon=favicon_path,
         layout=layout,
         initial_sidebar_state="expanded"
     )

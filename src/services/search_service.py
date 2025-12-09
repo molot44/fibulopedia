@@ -220,12 +220,20 @@ def search_all(query: str) -> list[SearchResult]:
         for monster in monsters[:MAX_SEARCH_RESULTS // 7]:
             snippet_text = f"HP: {monster.hp}, EXP: {monster.exp}, Location: {monster.location}, Loot: {monster.loot}"
             
+            # Load image if available
+            image_b64 = ""
+            if hasattr(monster, 'image') and monster.image:
+                # Monster images are in assets/monsters/ folder
+                monster_image_path = f"./assets/monsters/{monster.image}"
+                image_b64 = get_image_base64(monster_image_path)
+            
             results.append(SearchResult(
                 entity_type="monster",
                 entity_id=monster.id,
                 name=monster.name,
                 snippet=create_snippet(snippet_text, query),
-                page_route=get_page_route("monster")
+                page_route=get_page_route("monster"),
+                image_base64=image_b64
             ))
     except Exception as e:
         logger.error(f"Error searching monsters: {e}")
@@ -252,12 +260,18 @@ def search_all(query: str) -> list[SearchResult]:
         for food in food_items[:MAX_SEARCH_RESULTS // 7]:
             snippet_text = f"HP Gain: {food.hp_gain or 'N/A'}, Weight: {food.weight or 'N/A'} oz"
             
+            # Load image if available
+            image_b64 = ""
+            if hasattr(food, 'image') and food.image:
+                image_b64 = get_image_base64(food.image)
+            
             results.append(SearchResult(
                 entity_type="food",
                 entity_id=food.name,  # Food uses name as ID
                 name=food.name,
                 snippet=create_snippet(snippet_text, query),
-                page_route=get_page_route("food")
+                page_route=get_page_route("food"),
+                image_base64=image_b64
             ))
     except Exception as e:
         logger.error(f"Error searching food: {e}")
@@ -270,12 +284,18 @@ def search_all(query: str) -> list[SearchResult]:
             if tool.description:
                 snippet_text = tool.description
             
+            # Load image if available
+            image_b64 = ""
+            if hasattr(tool, 'image') and tool.image:
+                image_b64 = get_image_base64(tool.image)
+            
             results.append(SearchResult(
                 entity_type="tool",
                 entity_id=tool.id,
                 name=tool.name,
                 snippet=create_snippet(snippet_text, query),
-                page_route=get_page_route("tool")
+                page_route=get_page_route("tool"),
+                image_base64=image_b64
             ))
     except Exception as e:
         logger.error(f"Error searching tools: {e}")

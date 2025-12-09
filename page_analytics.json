@@ -1,12 +1,12 @@
 {
   "page_views": {
-    "Home": 19,
+    "Home": 21,
     "Weapons": 2,
-    "Monsters": 2,
+    "Monsters": 3,
     "Quests": 5,
     "Training Calculator": 85,
     "Loot Calculator": 2,
-    "Search": 150
+    "Search": 157
   },
   "sessions": {
     "314784a7-9464-45b5-9d58-3eaa84e7ceaf": {
@@ -234,6 +234,22 @@
         "Home"
       ],
       "last_seen": "2025-12-09T22:32:42.768187"
+    },
+    "e9a8e568-6463-4bb6-988f-e460751da6a9": {
+      "first_seen": "2025-12-09T22:39:37.284394",
+      "pages_visited": [
+        "Search"
+      ],
+      "last_seen": "2025-12-09T22:39:51.358735"
+    },
+    "280d58bc-7f8d-43be-a4cf-0593dd46f7fe": {
+      "first_seen": "2025-12-09T22:41:06.673665",
+      "pages_visited": [
+        "Search",
+        "Monsters",
+        "Home"
+      ],
+      "last_seen": "2025-12-09T22:48:59.360315"
     }
   },
   "timeline": [
@@ -1561,6 +1577,56 @@
       "page": "Home",
       "timestamp": "2025-12-09T22:32:42.768187",
       "session_id": "e9971fc3-fb0b-445c-ba0e-45481b01115b"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:39:37.284394",
+      "session_id": "e9a8e568-6463-4bb6-988f-e460751da6a9"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:39:37.985043",
+      "session_id": "e9a8e568-6463-4bb6-988f-e460751da6a9"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:39:49.529905",
+      "session_id": "e9a8e568-6463-4bb6-988f-e460751da6a9"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:39:51.358735",
+      "session_id": "e9a8e568-6463-4bb6-988f-e460751da6a9"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:41:06.673665",
+      "session_id": "280d58bc-7f8d-43be-a4cf-0593dd46f7fe"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:41:09.454436",
+      "session_id": "280d58bc-7f8d-43be-a4cf-0593dd46f7fe"
+    },
+    {
+      "page": "Search",
+      "timestamp": "2025-12-09T22:41:09.565296",
+      "session_id": "280d58bc-7f8d-43be-a4cf-0593dd46f7fe"
+    },
+    {
+      "page": "Monsters",
+      "timestamp": "2025-12-09T22:41:17.243082",
+      "session_id": "280d58bc-7f8d-43be-a4cf-0593dd46f7fe"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T22:41:20.701372",
+      "session_id": "280d58bc-7f8d-43be-a4cf-0593dd46f7fe"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-09T22:48:59.360315",
+      "session_id": "280d58bc-7f8d-43be-a4cf-0593dd46f7fe"
     }
   ]
 }
