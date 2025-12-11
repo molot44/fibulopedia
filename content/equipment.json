@@ -190,7 +190,10 @@
     "weight": 105.0,
     "image": "./assets/items/scale_armor.gif",
     "dropped_by": [
-      "Dwarf Guard"
+      "Dwarf Guard",
+      "Ghoul",
+      "Minotaur Archer",
+      "Orc Rider"
     ],
     "sell_to": [
       {"npc": "H.L.", "location": "Outlaw Camp", "price": 75}

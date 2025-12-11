@@ -984,7 +984,7 @@
     "attack": 35,
     "defense": 20,
     "weight": 23.0,
-    "hands": "Two-handed",
+    "hands": "One-handed",
     "image": "./assets/items/fire_sword.gif",
     "dropped_by": [
       "Dragon Lord"
