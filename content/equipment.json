@@ -695,6 +695,25 @@
     "description": "A mystical turban."
   },
   {
+    "id": "helmet_020",
+    "slot": "helmet",
+    "name": "Iron Helmet",
+    "defense": 5,
+    "weight": 30.0,
+    "image": "./assets/items/iron_helmet.gif",
+    "dropped_by": [],
+    "sell_to": [
+      {"npc": "Willard", "location": "Edron", "price": 150},
+      {"npc": "Kroox", "location": "Kazordoon", "price": 150},
+      {"npc": "H.L.", "location": "Outlaw Camp", "price": 150},
+      {"npc": "Hardek", "location": "Thais", "price": 150},
+      {"npc": "Sam", "location": "Thais", "price": 150},
+      {"npc": "Yanni", "location": "Venore", "price": 150}
+    ],
+    "reward_from": [],
+    "description": "A sturdy iron helmet with solid protection."
+  },
+  {
     "id": "legs_001",
     "slot": "legs",
     "name": "Dragon Scale Legs",
@@ -1455,6 +1474,22 @@
     ],
     "reward_from": [],
     "description": "Wooden shield."
+  },
+  {
+    "id": "shield_027",
+    "slot": "shields",
+    "name": "Crown Shield",
+    "defense": 32,
+    "weight": 62.0,
+    "image": "./assets/items/crown_shield.gif",
+    "dropped_by": [
+      "Hero"
+    ],
+    "sell_to": [
+      {"npc": "H.L.", "location": "Outlaw Camp", "price": 109}
+    ],
+    "reward_from": [],
+    "description": "A shield fit for royalty with excellent defense."
   },
   {
     "id": "ring_001",
