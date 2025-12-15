@@ -211,7 +211,7 @@
     "loot": "Bone, Gold Coin, Bag, Sword, Mace, Hatchet, Brass Shield, Viking Helmet, Torch",
     "location": "Various tombs and crypts",
     "difficulty": "easy",
-    "image": "skeleton.gif",
+    "image": "Skeleton.gif",
     "summon": 300,
     "convince": 300
   },
@@ -499,7 +499,7 @@
     "loot": "",
     "location": "Various caves",
     "difficulty": "medium",
-    "image": "slime.gif",
+    "image": "Slime.gif",
     "summon": null,
     "convince": null
   },
