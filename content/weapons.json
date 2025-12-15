@@ -987,7 +987,7 @@
     "hands": "One-handed",
     "image": "./assets/items/fire_sword.gif",
     "dropped_by": [
-      "Dragon Lord"
+      "Dragon"
     ],
     "sell_to": [
       {

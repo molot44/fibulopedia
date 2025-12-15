@@ -528,7 +528,7 @@ def create_sidebar_navigation(current_page: str = "Home") -> None:
 
         if st.session_state.show_equipment:
             with st.container(border=True):
-                equipment_categories = ["All", "Helmets", "Armor", "Legs", "Shields", "Amulets & Rings"]
+                equipment_categories = ["All", "Helmets", "Armor", "Legs", "Shields", "Boots", "Amulets & Rings"]
                 for category in equipment_categories:
                     if st.button(f" {category}", key=f"nav_equipment_{category}", use_container_width=True, type="secondary"):
                         st.session_state["equipment_filter"] = category

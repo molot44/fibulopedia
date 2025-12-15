@@ -1,13 +1,13 @@
 {
   "page_views": {
-    "Home": 24,
-    "Weapons": 2,
+    "Home": 26,
+    "Weapons": 3,
     "Monsters": 6,
     "Quests": 5,
     "Training Calculator": 85,
     "Loot Calculator": 2,
     "Search": 160,
-    "Equipment": 1
+    "Equipment": 4
   },
   "sessions": {
     "314784a7-9464-45b5-9d58-3eaa84e7ceaf": {
@@ -260,6 +260,15 @@
         "Monsters"
       ],
       "last_seen": "2025-12-10T09:50:55.848516"
+    },
+    "504fb73c-4e29-4abf-a1ba-c92073ff91bd": {
+      "first_seen": "2025-12-15T01:02:33.291495",
+      "pages_visited": [
+        "Home",
+        "Equipment",
+        "Weapons"
+      ],
+      "last_seen": "2025-12-15T01:02:54.967003"
     }
   },
   "timeline": [
@@ -1687,6 +1696,36 @@
       "page": "Home",
       "timestamp": "2025-12-10T09:50:55.848516",
       "session_id": "3985d003-73f3-48d2-a4bb-d50b3dc79f0c"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-15T01:02:33.291495",
+      "session_id": "504fb73c-4e29-4abf-a1ba-c92073ff91bd"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-15T01:02:36.207336",
+      "session_id": "504fb73c-4e29-4abf-a1ba-c92073ff91bd"
+    },
+    {
+      "page": "Equipment",
+      "timestamp": "2025-12-15T01:02:38.105768",
+      "session_id": "504fb73c-4e29-4abf-a1ba-c92073ff91bd"
+    },
+    {
+      "page": "Equipment",
+      "timestamp": "2025-12-15T01:02:48.781172",
+      "session_id": "504fb73c-4e29-4abf-a1ba-c92073ff91bd"
+    },
+    {
+      "page": "Equipment",
+      "timestamp": "2025-12-15T01:02:53.642998",
+      "session_id": "504fb73c-4e29-4abf-a1ba-c92073ff91bd"
+    },
+    {
+      "page": "Weapons",
+      "timestamp": "2025-12-15T01:02:54.967003",
+      "session_id": "504fb73c-4e29-4abf-a1ba-c92073ff91bd"
     }
   ]
 }
