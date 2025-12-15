@@ -1,6 +1,6 @@
 {
   "page_views": {
-    "Home": 26,
+    "Home": 27,
     "Weapons": 3,
     "Monsters": 6,
     "Quests": 5,
@@ -268,7 +268,7 @@
         "Equipment",
         "Weapons"
       ],
-      "last_seen": "2025-12-15T01:02:54.967003"
+      "last_seen": "2025-12-15T01:05:03.235355"
     }
   },
   "timeline": [
@@ -1725,6 +1725,11 @@
     {
       "page": "Weapons",
       "timestamp": "2025-12-15T01:02:54.967003",
+      "session_id": "504fb73c-4e29-4abf-a1ba-c92073ff91bd"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2025-12-15T01:05:03.235355",
       "session_id": "504fb73c-4e29-4abf-a1ba-c92073ff91bd"
     }
   ]
