@@ -640,7 +640,7 @@
     "name": "Dragon",
     "hp": 1000,
     "exp": 700,
-    "loot": "Gold Coin, Salmon, Steel Shield, Crossbow, Burst Arrow, Longsword, Steel Helmet, Plate Legs, Broadsword, Double Axe, Dragon Shield, Fire Sword, Mace, Dragon Hammer, Serpent Sword, Short Sword",
+    "loot": "Gold Coin, Salmon, Steel Shield, Crossbow, Burst Arrow, Longsword, Steel Helmet, Plate Legs, Broadsword, Double Axe, Dragon Shield, Fire Sword, Mace, Dragon Hammer, Short Sword",
     "location": "Darashia dragons, Mintwallin, Isle of the Kings",
     "difficulty": "hard",
     "image": "dragon.gif",

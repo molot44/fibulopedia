@@ -475,7 +475,7 @@
     "name": "Crusader Helmet",
     "defense": 8,
     "weight": 52.0,
-    "image": "./assets/items/crusader_helmet.gif",
+    "image": "./assets/items/crusader_helmet_old.gif",
     "dropped_by": [
       "Orc Warlord"
     ],
