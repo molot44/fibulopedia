@@ -42,7 +42,7 @@
   {"id": "quest_041", "name": "Explorer Brooch Quest", "min_level": 0, "location": "North side of The Jolly Axeman Tavern in Kazordoon", "reward": "Explorer Brooch"},
   {"id": "quest_042", "name": "Orc Fortress Quest", "min_level": 40, "location": "Orc Fortress, near Ab'Dendriel", "reward": "Knight Armor, Knight Axe, Fire Sword"},
   {"id": "quest_043", "name": "Panpipe Quest", "min_level": 0, "location": "Jakundaf Desert", "reward": "Panpipes, 2 Small Amethysts, Power Ring"},
-  {"id": "quest_044", "name": "The Desert Dungeon Quest", "min_level": 20, "location": "Deep below the Jakundaf Desert", "reward": "Golden Bag with 25 Platinum Coins for each participating vocation, Green Bag: Protection Amulet, Ring Of Healing, Magic Light Wand, Ankh"},
+  {"id": "quest_044", "name": "The Desert Dungeon Quest", "min_level": 20, "location": "Deep below the Jakundaf Desert", "reward": "Golden Bag with 100 Platinum Coins for each participating vocation, Green Bag: Protection Amulet, Ring Of Healing, Magic Light Wand, Ankh"},
   {"id": "quest_045", "name": "Draconia Quest", "min_level": 25, "location": "Draconia, through Hellgate, near Ab'Dendriel", "reward": "Ice Rapier, Serpent Sword, Stone Skin Amulet, Energy Ring"},
   {"id": "quest_046", "name": "Adorned UH Rune Quest", "min_level": 0, "location": "Edron Hero Cave", "reward": "Silver Rune Emblem (Ultimate Healing)"},
   {"id": "quest_047", "name": "Barbarian Axe Quest", "min_level": 0, "location": "Edron Orc Cave", "reward": "Barbarian Axe, Scimitar"},

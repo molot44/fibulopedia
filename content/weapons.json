@@ -479,7 +479,9 @@
       {"npc": "Willard", "location": "Edron", "price": 120},
       {"npc": "Habdel", "location": "Darashia", "price": 50}
     ],
-    "reward_from": [],
+    "reward_from": [
+      "Lighthouse Quest"
+    ],
     "description": "A heavy war hammer."
   },
   {
@@ -1036,7 +1038,7 @@
     "defense": 35,
     "weight": 42.0,
     "hands": "One-handed",
-    "image": "./assets/items/magic_longsword.gif",
+    "image": "./assets/items/magic_sword.gif",
     "dropped_by": [],
     "sell_to": [
       {
