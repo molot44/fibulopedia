@@ -45,15 +45,6 @@
     "sell_to": []
   },
   {
-    "name": "Dragon Ham",
-    "image": "./assets/items/Dragon_Ham.gif",
-    "weight": 30.0,
-    "hp_gain": 120,
-    "hp_per_oz": 4,
-    "hp_per_gp": null,
-    "sell_to": []
-  },
-  {
     "name": "Cheese",
     "image": "./assets/items/Cheese.gif",
     "weight": 4.0,
