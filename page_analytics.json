@@ -1,6 +1,6 @@
 {
   "page_views": {
-    "Home": 119,
+    "Home": 123,
     "Weapons": 3,
     "Monsters": 6,
     "Quests": 5,
@@ -549,6 +549,20 @@
         "Home"
       ],
       "last_seen": "2026-01-10T22:45:59.499769"
+    },
+    "a9b672ff-e437-4bf0-a054-f56a77064d91": {
+      "first_seen": "2026-01-10T23:21:54.793591",
+      "pages_visited": [
+        "Home"
+      ],
+      "last_seen": "2026-01-10T23:22:19.021342"
+    },
+    "201c7824-660a-4dd1-bd60-9dafbfb44ffb": {
+      "first_seen": "2026-01-10T23:23:20.347945",
+      "pages_visited": [
+        "Home"
+      ],
+      "last_seen": "2026-01-10T23:23:20.347945"
     }
   },
   "timeline": [
@@ -2471,6 +2485,26 @@
       "page": "Home",
       "timestamp": "2026-01-10T22:45:59.499769",
       "session_id": "16cd3758-bb23-498e-ac89-459ca0d034ff"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2026-01-10T23:21:54.793591",
+      "session_id": "a9b672ff-e437-4bf0-a054-f56a77064d91"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2026-01-10T23:22:13.700240",
+      "session_id": "a9b672ff-e437-4bf0-a054-f56a77064d91"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2026-01-10T23:22:19.021342",
+      "session_id": "a9b672ff-e437-4bf0-a054-f56a77064d91"
+    },
+    {
+      "page": "Home",
+      "timestamp": "2026-01-10T23:23:20.347945",
+      "session_id": "201c7824-660a-4dd1-bd60-9dafbfb44ffb"
     }
   ]
 }

@@ -196,14 +196,24 @@ def main() -> None:
                 # Check if news has modal
                 has_modal = news.get("hasModal", False)
                 
-                # Check if this is the interview news (id=5) to add image
-                if news.get('id') == 5:
-                    # Load interview banner image
-                    interview_banner_path = Path("assets/interview_erik/interview_banner_small.png")
-                    interview_banner_data = ""
-                    if interview_banner_path.exists():
-                        with open(interview_banner_path, "rb") as f:
-                            interview_banner_data = base64.b64encode(f.read()).decode()
+                # Define news thumbnails mapping
+                news_thumbnails = {
+                    5: "assets/interview_erik/interview_banner_small.png",
+                    4: "assets/news_thumbnail/training_calculator.png",
+                    3: "assets/news_thumbnail/december_update_2.png",
+                    2: "assets/news_thumbnail/december_update_1.png",
+                    1: "assets/logo_transparent.png"
+                }
+                
+                # Check if this news has a thumbnail
+                news_id = news.get('id')
+                if news_id in news_thumbnails:
+                    # Load news thumbnail image
+                    thumbnail_path = Path(news_thumbnails[news_id])
+                    thumbnail_data = ""
+                    if thumbnail_path.exists():
+                        with open(thumbnail_path, "rb") as f:
+                            thumbnail_data = base64.b64encode(f.read()).decode()
                     
                     st.markdown(f"""
                         <div style="
@@ -235,8 +245,8 @@ def main() -> None:
                                     </div>
                                 </div>
                                 <div style="flex-shrink: 0; margin-top: 1rem;">
-                                    <img src="data:image/png;base64,{interview_banner_data}" 
-                                         alt="Interview Banner" 
+                                    <img src="data:image/png;base64,{thumbnail_data}" 
+                                         alt="News Thumbnail" 
                                          style="width: 280px; border-radius: 6px; object-fit: cover;">
                                 </div>
                             </div>
